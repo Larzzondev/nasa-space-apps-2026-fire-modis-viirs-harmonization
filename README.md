@@ -1,243 +1,322 @@
-# NASA Space Apps 2026 - MODIS and VIIRS Fire Harmonization
+# FireLens
 
-One Planet. Multiple Sensors. One Consistent Fire History.
+One planet. Multiple sensors. One consistent fire history.
 
-This repository is the NASA Space Apps Challenge 2026 project for harmonizing MODIS and VIIRS active-fire hot spots. The scientific goal is a fire record that can be compared across Terra, Aqua, Suomi-NPP, NOAA-20, and NOAA-21 without treating every detection as a separate fire or treating every nearby pair as the same fire.
+FireLens is the NASA Space Apps Challenge 2026 demonstration for comparing MODIS and VIIRS active-fire observations. The interactive site shows how Terra, Aqua, Suomi-NPP, NOAA-20, and NOAA-21 describe the same month, and it keeps a bright line between verified archive statistics and a synthetic globe.
 
-The FireLens demo is the interactive site. Run `npm install` and `npm run dev`, then open the local URL. It has four screens: a globe, a July 2024 historical explorer, a MODIS and VIIRS comparison, and a conceptual propagation sketch.
+A validated historical harmonization coefficient is not claimed. The scientific record in this repository is a July 2024 audit of NASA FIRMS active-fire tables: what the files contain, how the sensors differ, and which comparisons are still only candidates.
 
-The globe draws a bounded synthetic sample labeled DEMO DATA. It is not the FIRMS archive. Historical counts, FRP summaries, confidence, and day/night figures are the July 2024 delivered-row statistics already recorded in `backend/reports/`. A date with no delivered rows, or a month with no loaded archive, is left blank. It is not shown as zero fires. The propagation screen is a demonstration simulation, not a validated forecast, and no forecast model is trained or deployed.
+| | |
+| --- | --- |
+| Demonstration | Four-screen FireLens site. Run it with Node.js. No NASA key and no raw archive are required. |
+| Archive shown in the interface | July 2024 delivered-row statistics, transcribed from the tracked reports and checked in code. |
+| Globe | 1,484 synthetic points for 1–7 July 2024. Illustrative positions, not FIRMS coordinates. |
+| Science status | Descriptive audit and four bounded experiments. `same_fire` remains `not_assessed`. XGBoost is not trained. |
 
-The scientific work so far is a reproducible audit of the July 2024 FIRMS extracts, centered on 2024-07-07. A harmonization algorithm and a predictive model are not implemented.
+Further reading: [architecture](docs/ARCHITECTURE.md), [data and scientific limitations](docs/DATA_AND_LIMITATIONS.md), and the [screenshot inventory](docs/screenshots/README.md).
 
-## 1. Project overview
+## Project overview
 
-MODIS and VIIRS have both mapped active fires for years. They do not measure the same pixel, use the same confidence scale, or publish one shared processing label in the FIRMS tables used here. Counts from one sensor cannot be subtracted from counts from another and called a change in fire activity.
+Wildfire monitoring already has more than one global satellite record. MODIS, on Terra and Aqua, and VIIRS, on Suomi-NPP, NOAA-20, and NOAA-21, all publish active-fire detections through NASA's Fire Information for Resource Management System (FIRMS). A researcher who wants one history has to decide when a difference is the fire and when it is the instrument.
 
-This project separates three ideas that are often collapsed:
+FireLens is built for that decision. The site has four screens:
 
-- A **detection** is one archived row: one sensor, one pixel, one acquisition time.
-- A **proximity match** is two detections that fall inside a chosen distance and time window. It is evidence of nearness, not identity.
-- A **physical fire** is a real burning event. Identifying one requires more than a pair of nearby rows, and this repository does not make that identification.
+- **Global Fire Intelligence** places a labeled synthetic sample on a CesiumJS globe and, beside it, the verified July delivered-row counts.
+- **Historical Fire Explorer** charts the July 2024 archive by day and satellite. Dates with no delivered rows stay blank.
+- **Sensor Comparison** keeps MODIS and VIIRS on their own confidence scales, pixel sizes, and FRP summaries.
+- **Fire Propagation Preview** is a conceptual wind-and-weather sketch. The screen states that it is not a validated forecast.
 
-Fire Radiative Power (FRP) is the pixel-integrated radiant power of a detected hot spot, stored in megawatts (MW). It is the measurement a later calibration could compare. No calibration coefficient is calculated in this repository.
+The Python package in `backend/fire_data` is a separate scientific workflow. It reads local FIRMS CSV extracts and writes the reports under `backend/reports/` and `backend/experiments/`. The website does not call that package, and it does not call NASA.
 
-## 2. The scientific problem
+Three ideas stay separate throughout the project:
 
-A consistent multi-sensor fire history has to answer a narrow question: when two satellites report hot spots in the same region, how much of the difference is fire activity, and how much is the instrument, the pixel footprint, the overpass time, or the processing stream?
+- A **detection** is one archived row: one sensor, one stored location, one acquisition minute.
+- A **candidate pair** is two detections inside a stated distance and time window. It is evidence of nearness.
+- A **physical fire** is a real burning event. Identifying one requires more than a nearby pair, and this repository does not make that identification.
 
-The current extracts cannot answer that across time. They contain one acquisition date. They also omit the processing-stream field needed to know whether a file is near-real-time or standard quality. The project therefore starts by measuring what the files actually contain, and by writing down what is still unknown, before any sensor is rescaled to another.
+Fire radiative power (FRP) is the stored radiant power of a detected hot spot, in megawatts. It is the measurement a later calibration could compare. No calibration coefficient is fit here.
 
-## 3. Why MODIS and VIIRS observations cannot be directly compared
+## The scientific challenge
 
-The five satellites in this project are not interchangeable.
+A consistent multi-sensor fire history has to answer a narrow question. When two satellites report hot spots in the same region, how much of the difference is fire activity, and how much is the instrument, the pixel footprint, the overpass time, or the processing stream?
 
-| Platform | Sensor | Role in these files |
+July 2024 is the month this repository can actually describe. The tracked extracts contain:
+
+- **7,985,467** delivered observations for 1–31 July 2024, across Terra, Aqua, Suomi-NPP, NOAA-20, and NOAA-21.
+- **277,259** delivered observations on 7 July 2024. The same five counts appear both in the separate one-day sample and on that date inside the monthly files. The monthly exploratory report records a difference of zero for each satellite.
+
+Those numbers are archive rows. They are not a count of unique fires, and they are not a ranking of which sensor is more sensitive.
+
+The work completed against those files is descriptive and diagnostic:
+
+- Inventory of columns, satellites, instruments, versions, confidence codes, and acquisition dates.
+- A provenance review that leaves the processing stream of each local file unresolved.
+- Exploratory summaries of FRP, brightness, confidence, day/night, and stored pixel size, for 7 July and for the full month.
+- An investigation of VIIRS brightness stored at 367 K, and of two extreme Aqua FRP rows on 7 July.
+- Spatial-temporal candidate pairs, nearest neighbors, and within-sensor analytical clusters. Each report states that these are not confirmed fires.
+- Four experiments (clustering stability, measurement distributions, overpass timing, and resolution proxies) run on the same July input. Each one records `harmonization_coefficient: null` and `xgboost_trained: false`.
+
+The design for a later multi-year sample is written down in `backend/research/`. No file for that sample was downloaded. July 2024 is excluded from the proposed training, calibration, and validation periods so the month already studied is not reused as if it were new.
+
+## Why MODIS and VIIRS harmonization matters
+
+Counts from one sensor cannot be subtracted from counts from another and called a change in fire activity. The five platforms in this project are not interchangeable.
+
+| Platform | Sensor in these files | What differs |
 | --- | --- | --- |
-| Terra | MODIS | Morning and night observations. Stored confidence is an integer from 0 to 100. |
-| Aqua | MODIS | Early-afternoon and night observations. Same confidence scale as Terra. On 2024-07-07, Aqua holds the largest FRP values in the extract. |
-| Suomi-NPP | VIIRS, 375 m | The local file stores `satellite` and `instrument` as `SNPP`. Confidence is `l`, `n`, or `h`. |
-| NOAA-20 (JPSS-1) | VIIRS, 375 m | Confidence is `l`, `n`, or `h`. The brightness column reaches an exact stored value of 367 K. |
-| NOAA-21 (JPSS-2) | VIIRS, 375 m | Same VIIRS table shape as NOAA-20. Its orbit samples the same regions at a different time. |
+| Terra | MODIS | Morning and night observations. Confidence is an integer from 0 to 100. Nominal pixel class is about 1 km. |
+| Aqua | MODIS | Early-afternoon and night observations. Same confidence scale as Terra. A different orbit and a different row count. |
+| Suomi-NPP | VIIRS 375 m | Confidence is `l`, `n`, or `h`. The July extract has multi-day gaps. |
+| NOAA-20 (JPSS-1) | VIIRS 375 m | Same VIIRS confidence flags and a different overpass time. |
+| NOAA-21 (JPSS-2) | VIIRS 375 m | Same table shape as NOAA-20. On this month, NOAA-20 and NOAA-21 candidate pairs inside 30 minutes are absent at the published radii, while pairs inside 60 minutes are common. |
 
-Direct comparison fails for specific, observed reasons:
+Harmonization matters because a long fire history will cross these instruments. Terra and Aqua MODIS and the VIIRS series do not share a pixel, a confidence scale, or, in this repository, a demonstrated processing stream. Until those differences are measured and a coefficient is fit on data held out from this month, a combined count would mix the sensor into the fire.
 
-- **Detections are not fires.** Summing Terra, Aqua, and three VIIRS archives counts pixels, including many pixels from one burning area and from repeated overpasses.
-- **Confidence scales differ.** A MODIS value of 75 and a VIIRS flag of `h` are not the same quantity. A MODIS value of 0 is a stored confidence, including on a very large Aqua FRP row.
-- **Brightness is not one temperature.** VIIRS `brightness` is the FIRMS name for the I-4 channel. On this date it stops at the exact text `367`, with no values above it and none in the open interval from 360 K to 367 K. The files do not contain a Level-1 saturation flag, so those rows are not labeled confirmed saturated. MODIS brightness is a different stored temperature and reaches above 367 K, including a Terra daytime maximum whose stored brightness text is `500`.
-- **FRP retrievals differ by sensor.** The unit is MW in every file. The algorithm, the pixel size, and the behavior at saturation are not the same. NOAA-21's largest FRP on this date does not sit on a 367 K brightness row.
-- **Pixel geometry changes with scan angle.** `scan` and `track` are stored along-scan and along-track pixel sizes in kilometres. A 1 km proximity threshold is not a sensor footprint.
-- **Proximity is not identity.** Two rows can be metres apart and many hours apart. On 2024-07-07, every satellite pair has zero proximity pairs at the same UTC minute inside 5 km. Inside wider windows, one detection can join many partners. Those pair totals are not a fire count.
-- **Processing provenance is unresolved.** The FIRMS download readme and the FIRMS API catalog do not agree about NOAA-20 and NOAA-21 standard products. These CSVs do not store a processing-stream field. The filename prefix and the version column were recorded and were not used to assign near-real-time or standard processing.
+The practical consequences already visible in the July tables:
 
-## 4. Project objectives
+- **Detections are not fires.** One burning area can produce many pixels and can be seen again on a later overpass.
+- **Confidence scales differ.** A MODIS value of 75 and a VIIRS flag of `h` are different quantities. The interface never converts one into the other.
+- **Brightness is not one temperature.** VIIRS `brightness` in these CSVs reaches an exact stored maximum of 367 K. MODIS brightness is a different stored temperature and, in the July archive, exceeds 367 K.
+- **FRP retrievals differ by sensor.** The unit is megawatts in every file. The algorithm, the pixel size, and the behavior at high brightness are not the same. A ratio of two positive FRP values, where one is published, is a description of a candidate sample. It is not a coefficient.
+- **Pixel geometry changes with scan position.** `scan` and `track` are stored along-scan and along-track sizes in kilometres. A 1 km search radius is not a sensor footprint.
+- **Missing rows are not zero fire activity.** Suomi-NPP has ten July dates with no delivered rows. Those dates are omitted from comparison denominators. They are not filled from another satellite.
 
-1. Keep Terra, Aqua, Suomi-NPP, NOAA-20, and NOAA-21 distinct.
-2. Describe each archive before interpreting it.
-3. Test whether apparent anomalies, including the VIIRS 367 K brightness and extreme MODIS FRP, survive inspection of the original rows and of product documents.
-4. Measure spatial and temporal proximity without declaring same-fire matches.
-5. State which variables could enter a later calibration, and which must wait.
-6. Specify the 30-date, five-sensor bundle required before a temporal validation can be claimed.
-7. Show the audit on a globe once a verified dataset is connected to the interface.
+## NASA satellite data sources
 
-Objectives 1 through 6 are underway for the audited extracts. Objective 7 is the FireLens demo: the globe shows the labeled synthetic sample, and the historical and sensor screens show the verified archive statistics.
+The analysis uses FIRMS active-fire CSV extracts. The product codes requested for this project are:
 
-## 5. Proposed scientific methodology
-
-The methodology is a sequence. Later steps are not started until the earlier evidence exists.
-
-1. **Inventory.** Read the CSV headers and values. Confirm satellites, instruments, dates, and code lists. Do not rename VIIRS `brightness` or `bright_t31` to channel names the file does not use.
-2. **Provenance.** Require an explicit processing stream. Do not infer it from `fire_archive` or `fire_nrt`, or from version `2` or `61.03`.
-3. **Describe one day, then repeat across days.** Report counts, FRP distributions, confidence, day and night, and geography as detection rows. Repeat the same measurements on additional dates before claiming that a pattern is stable.
-4. **Inspect anomalies in the original rows.** Keep extreme FRP. Separate a stored number from a confirmed physical condition. A 367 K brightness without a saturation bit remains an observed value, not a confirmed saturated pixel.
-5. **Match by proximity, then stop.** For configurable distances and time windows, report pair counts, the unique detections involved, and the distributions of distance and time gap. Set same-fire status to not assessed.
-6. **Calibrate only after the design is ready.** FRP is the candidate measurement. `scan` and `track` are geometry. Day/night and satellite are strata. Coordinates and acquisition time are match keys. Brightness and confidence stay excluded until the scales and quality metadata support a shared use. No coefficient is fit in this phase.
-7. **Do not add detections across sensors and call the sum a fire count.**
-
-Harmonization coefficients, unique-fire clustering, anomaly baselines, and prediction are later steps. They are not in the code.
-
-## 6. System architecture
-
-Implemented and planned pieces are listed separately. Nothing in the planned column is a deployed service.
-
-### Implemented
-
-**Frontend.** A React single-page app named FireLens. The globe renders a deterministic synthetic hotspot sample with CesiumJS and an OpenStreetMap basemap, so it does not need a Cesium ion token. The historical explorer and the sensor comparison read July 2024 aggregate statistics transcribed from the tracked reports. They do not load the raw CSVs. CSV export writes the filtered delivered-row table. The propagation view is a canvas sketch with a persistent demonstration disclaimer. The interface does not call NASA.
-
-**Scientific backend.** The Python package `backend/fire_data` reads local CSV archives and writes reports:
-
-| Command | What it does now | Output |
+| Code | Product family used here | Satellites in the file |
 | --- | --- | --- |
-| `python -m fire_data discover` | Measures the four archives | `backend/reports/discovery.json` |
-| `python -m fire_data validate` | Checks the observed column contract | Exit status |
-| `python -m fire_data eda` | One-day exploratory summary and figures | `backend/reports/eda_report.md`, `eda_summary.json`, `figures/` |
-| `python -m fire_data.investigate` | VIIRS 367 K and the two extreme Aqua FRP rows | `backend/reports/anomaly_investigation.md` |
-| `python -m fire_data.temporal` | Provenance notes and single-date proximity | `backend/reports/temporal_validation.md` |
-| `python -m fire_data.readiness` | Provenance matrix, matcher audit, 30-date specification | `backend/reports/data_readiness.md` |
+| `M-C61` | MODIS Collection 6.1 fire locations | Terra and Aqua, kept separate after the file is read |
+| `SV-C2` | VIIRS 375 m Suomi-NPP | Suomi-NPP. The file stores `satellite` and `instrument` as `SNPP`. |
+| `J1V-C2` | VIIRS 375 m NOAA-20 | NOAA-20, stored as `N20` |
+| `J2V-C2` | VIIRS 375 m NOAA-21 | NOAA-21, stored as `N21` |
 
-There is no HTTP service between the frontend and the backend.
+Download tables from the [FIRMS archive download](https://firms.modaps.eosdis.nasa.gov/download/). The current code does not call the FIRMS area API and does not contain a FIRMS `MAP_KEY`.
 
-### Planned, not built
+Every analyzed file uses this header:
 
-- A harmonization pipeline that estimates sensor adjustments.
-- A historical anomaly engine and any predictive model.
-- A calendar driven by real detections rather than the selected month alone.
-- Parquet or GeoParquet analytical tables.
-- Firebase Firestore for application state or alerts.
-- A public API.
+`latitude,longitude,brightness,scan,track,acq_date,acq_time,satellite,instrument,confidence,version,bright_t31,frp,daynight,type`
 
-Three.js is not a dependency. CesiumJS is the globe.
+`acq_date` and `acq_time` are UTC. `acq_time` is `HHMM`. The files have no seconds. MODIS version text in these extracts is `61.03`. VIIRS version text is `2`. Those strings are stored. They are not used to assign near-real-time or standard processing.
 
-## 7. Technology stack
+Two local orders exist, and they are different files:
+
+- A **7 July 2024 sample** under `backend/data/raw/`, request ids 850118–850121.
+- A **1–31 July 2024 extract** under `backend/data/raw/monthly_2024_07/`, request ids 850319–850322.
+
+Both orders are gitignored. The reports that describe them are tracked. Paths and the rule against committing CSVs or keys are in [`backend/data/raw/README.md`](backend/data/raw/README.md).
+
+The FIRMS download readme defines `fire_archive_M-C61` and `fire_archive_SV-C2`, and it says standard-quality data are not yet available from FIRMS for NOAA-20 and NOAA-21. The FIRMS API availability catalog lists standard-processing sensor codes for both NOAA-20 and NOAA-21. The CSVs store neither the readme short names nor the API sensor codes. The project therefore leaves `processing_stream` unresolved for every local archive, including the files whose names the readme does define. That decision is recorded in [`backend/reports/data_readiness.md`](backend/reports/data_readiness.md) and [`backend/research/HISTORICAL_DATA_STRATEGY.md`](backend/research/HISTORICAL_DATA_STRATEGY.md).
+
+## FireLens features
+
+The interface is a React single-page application. Navigation is local. Nothing on these screens requests a satellite product at runtime.
+
+### Global Fire Intelligence
+
+The globe screen is the default view. CesiumJS draws the Earth. Marker color and size follow the demo FRP scale. The ring color is the platform: Terra, Aqua, NOAA-20, NOAA-21, or Suomi-NPP.
+
+What a reviewer can do:
+
+- Step through 1–31 July 2024.
+- Filter the drawn sample by sensor and by the demo day/night flag.
+- Select a point and read its synthetic brightness, FRP, confidence, and illustrative cluster name.
+- Return to a world view.
+
+The map points exist only for 1–7 July. The side panel keeps two labeled blocks. **Demo sample** counts the points on screen. **Verified archive** shows the delivered-row total for the selected July date and the selected satellites. On 7 July it also shows the audited FRP medians. On every other July date it shows counts only, because daily FRP was not published for those dates. The panel states that the archive total is not the points on the globe.
+
+Without a Cesium ion token the basemap is OpenStreetMap imagery on the WGS84 ellipsoid. With a token, the viewer uses Cesium ion imagery and Cesium World Terrain. The legend names whichever basemap is active.
+
+### Historical Fire Explorer
+
+This screen reads the transcribed July 2024 delivery table.
+
+- Choose a date range and a set of satellites. Terra and Aqua stay separate inside MODIS.
+- A calendar of the selected month shades delivered activity. Days with no delivered rows are marked as gaps. Months other than July 2024 have no loaded archive, and those days are not filled with zeros.
+- A trend chart plots delivered rows. Hollow marks are dates the file covered with zero delivered rows. Dates outside the July extract are omitted from the line.
+- Early July (1–15) is set beside late July (16–31), with a gap-day count, so the Suomi-NPP gaps are visible as incomplete delivery.
+- Monthly FRP median and maximum are shown for the full month. They do not change with the date range.
+- Coverage notes quote the tracked Suomi-NPP and NOAA-21 caveats.
+- **Export CSV** writes the filtered delivered-row table: date, satellite, count, status, and note. It does not export raw detections, and it does not export the synthetic globe points.
+
+### Sensor Comparison
+
+The comparison screen is a reading of instrument differences, for the full month or for the 7 July audit.
+
+- A nadir schematic places a 3 km frame beside itself: nine ~1 km MODIS samples, and sixty-four ~375 m VIIRS samples. The caption in the interface says this grid is not a scan-angle footprint.
+- Five platform cards state the sensor, the nominal resolution, and the confidence vocabulary.
+- Delivered-row bars show archive volume. The caption says adding sensors does not count fires.
+- FRP median, 95th percentile, 99th percentile, and maximum sit on a log scale from 0.5 MW to 12,000 MW. The ticks are stored-value summaries, not a histogram and not fire size.
+- MODIS confidence stays an integer from 0 to 100. VIIRS confidence stays the flags low, nominal, and high.
+- Day and night use the stored `daynight` flag. The flag is not recomputed from local solar time.
+
+On 7 July the screen reports MODIS confidence medians and does not repeat the month's counts of confidence 0 and 100, because those single-day tallies are not the figures transcribed onto that control.
+
+### Fire Propagation Preview
+
+The propagation screen is a canvas sketch. Wind direction, wind speed, temperature, and humidity change the illustrated shape over a 0–72 hour control. Three presets (Calm, Dry wind, Humid) set those inputs. Distances are relative units inside the drawing.
+
+A persistent banner reads: **DEMONSTRATION SIMULATION — NOT A VALIDATED FIRE FORECAST.** The screen also states that no forecast model has been trained, validated, or deployed. The sketch does not ingest FIRMS rows, does not use the July experiments, and does not call XGBoost. XGBoost is not a dependency of this repository.
+
+## Architecture overview
+
+FireLens is two codebases that meet only through checked documents.
+
+```text
+Browser                         Repository                         Optional local science
+React + Vite + CesiumJS         Transcribed July statistics        Python fire_data
+Four screens                    Tracked reports and figures        Gitignored FIRMS CSVs
+No NASA requests                No credentials                     No HTTP API
+```
+
+The frontend data layer lives in `src/data/`. `demoHotspots.ts` builds the 1,484-point sample with a fixed random seed. `archiveJuly2024.ts` holds the July delivery counts and the FRP, confidence, and day/night portraits. On load it checks that the daily series sum to the monthly totals, that 7 July sums to 277,259, and that day/night and VIIRS confidence flags sum to each satellite's row count.
+
+There is no server between the website and the Python package. Regenerating a report requires the local CSVs. Reading a report does not.
+
+The full component map, the ingestion path, and the report index are in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+## Technology stack
 
 **Frontend, installed and used**
 
-- React 19 and React DOM
-- TypeScript 7
-- Vite 8
-- Tailwind CSS 4
-- CesiumJS 1, with workers copied to `/cesiumStatic`
-- Lucide React for icons
-- Oxlint for lint
+| Piece | Role |
+| --- | --- |
+| React 19 and React DOM | Interface |
+| TypeScript 7 | Typed source, including the archive transcription |
+| Vite 8 | Development server and production build |
+| Tailwind CSS 4 | Styling |
+| CesiumJS 1 | Globe. Workers and assets are copied to `/cesiumStatic`. |
+| Lucide React | Icons |
+| Oxlint | `npm run lint` |
 
-**Scientific backend, installed and used**
+**Scientific backend, optional**
 
-- Python 3.11 or newer
-- pytest, NumPy, SciPy, and Matplotlib, pinned in `backend/requirements.txt`
+| Piece | Role |
+| --- | --- |
+| Python 3.11 or newer | Local analyses |
+| pytest, NumPy, SciPy, Matplotlib | Pinned in [`backend/requirements.txt`](backend/requirements.txt) |
+| pypdf | Used when a retrieved user's guide is read as a local PDF |
 
-**Declared only as future storage**
+**Not in this repository**
 
-- Parquet or GeoParquet for analytical tables, if a later phase adds them
-- Firebase Firestore for selected application data, if a later phase adds it
+- No Firebase SDK, service account, or Firestore rules.
+- No XGBoost installation and no trained model file.
+- No Parquet or GeoParquet tables.
+- No public HTTP API.
+- Three.js is not a dependency. CesiumJS is the globe.
 
-No Firebase SDK, service account, or Firestore rules are in this repository.
+## Dataset description and provenance
 
-## 8. NASA FIRMS data sources and acquisition
+### July 2024 monthly archive
 
-The analysis reads FIRMS active-fire CSV extracts. It does not call the FIRMS web-service API, and it does not contain a FIRMS `MAP_KEY`.
+Source: four FIRMS ZIP archives ingested into `backend/data/raw/monthly_2024_07/`. The ingestion manifest passed. Each extracted CSV checksum matches that manifest. Exact duplicate rows retained: 0. Extra location-time keys retained: 5 (1 in NOAA-20, 4 in NOAA-21). No row was removed.
 
-Download tables from the [FIRMS archive download tool](https://firms.modaps.eosdis.nasa.gov/download/). The product codes used for this project are:
+| Archive | File | Delivered rows | SHA-256 |
+| --- | --- | ---: | --- |
+| MODIS C6.1 | `fire_archive_M-C61_850319.csv` | 676,636 | `97e1a4312fbe488e63fd06461865b21dd5d01c419f2e80fa6e178c0015f10c81` |
+| VIIRS S-NPP | `fire_archive_SV-C2_850322.csv` | 1,635,020 | `bc5ff311c2df9113baf4eedaf4247d55954e8f4fa2ca052f940a943365314f21` |
+| VIIRS NOAA-20 | `fire_archive_J1V-C2_850320.csv` | 2,902,597 | `9a192db30e307c257955047ca1177e3f2f463b8c8cdfda7b28ceac6b3aa92bd5` |
+| VIIRS NOAA-21 | `fire_archive_J2V-C2_850321.csv` | 2,771,214 | `c86e46d4ca730eea6db448ff928126ddc6b44ba4c4d11dfbc3a2d999f4937007` |
+| **Five platforms** | Terra 195,316 and Aqua 481,320 are the MODIS split | **7,985,467** | Difference from the reference total: 0 |
 
-- MODIS Collection 6.1, Terra and Aqua together in one FIRMS table (`M-C61`)
-- VIIRS 375 m Suomi-NPP (`SV-C2`)
-- VIIRS 375 m NOAA-20 (`J1V-C2`)
-- VIIRS 375 m NOAA-21 (`J2V-C2`)
+Authority: [`backend/reports/temporal_coverage_2024_07.md`](backend/reports/temporal_coverage_2024_07.md) and [`backend/research/SHARED_DATA_CONTRACT.md`](backend/research/SHARED_DATA_CONTRACT.md).
 
-Request the same area and the same dates for every sensor. Keep the provider filename. Record the processing stream in a note beside the download. The filename prefix and the version column are not sufficient, especially for NOAA-20 and NOAA-21, where the FIRMS download readme and the FIRMS API availability catalog disagree. Details and the required manifest fields are in [`backend/reports/data_readiness.md`](backend/reports/data_readiness.md).
+| Satellite | Delivered rows | Dates with rows | Dates with no rows |
+| --- | ---: | ---: | ---: |
+| Terra | 195,316 | 31 | 0 |
+| Aqua | 481,320 | 31 | 0 |
+| NOAA-20 | 2,902,597 | 31 | 0 |
+| NOAA-21 | 2,771,214 | 31 | 0 |
+| Suomi-NPP | 1,635,020 | 21 | 10 |
 
-If a FIRMS `MAP_KEY` is required for a later API client, put it in an untracked environment file. Do not commit it. The current code has no place to put that key because it does not call the API.
+Suomi-NPP dates with no delivered rows: 10–15 July and 25–28 July 2024. Partial delivery, rows present for only part of the UTC day: 16 July (15,643 rows after 17:42 UTC), 24 July (14,621 rows before 05:28 UTC), and 29 July (17,802 rows after 15:24 UTC). NOAA-21 on 20 July delivered 33,039 rows and has no rows in UTC hours 08–13. That hour gap is not labeled an outage.
 
-Place CSVs under `backend/data/raw/` using the paths in [`backend/data/raw/README.md`](backend/data/raw/README.md). Those files are gitignored.
+### 7 July 2024 sample
 
-The July 2024 monthly intake is separate from the 7 July sample. Copy four unmodified FIRMS ZIP archives into `backend/data/incoming/2024-07/`: MODIS C6.1 (`M-C61`), VIIRS S-NPP (`SV-C2`), VIIRS NOAA-20 (`J1V-C2`), and VIIRS NOAA-21 (`J2V-C2`). From `backend/`:
+A separate four-file sample, acquisition date 2024-07-07 only:
 
-```bash
-.venv\Scripts\python -m fire_data.ingest --dry-run
-.venv\Scripts\python -m fire_data.ingest
-```
+| Archive | File | Rows |
+| --- | --- | ---: |
+| MODIS | `fire_archive_M-C61_850118.csv` | 20,410 (Terra 7,044, Aqua 13,366) |
+| VIIRS NOAA-20 | `fire_archive_J1V-C2_850119.csv` | 82,372 |
+| VIIRS NOAA-21 | `fire_archive_J2V-C2_850120.csv` | 87,637 |
+| VIIRS S-NPP | `fire_archive_SV-C2_850121.csv` | 86,840 |
+| **Total** | | **277,259** |
 
-The dry run does not extract files. The second command writes CSVs under `backend/data/raw/monthly_2024_07/` and `backend/reports/ingestion_2024_07.json`. It does not replace the 7 July sample. A date missing from a CSV stays absent and is not counted as zero detections. Those ZIPs have not been ingested in this repository yet.
+The one-day exploratory report, anomaly investigation, temporal audit, and readiness review describe this sample. The monthly files reproduce the same five row counts on 7 July.
 
-## 9. Data provenance and reproducibility
+### What the audit measured
 
-Reproducibility here means another person can rerun the same commands on the same local CSVs and obtain the same report types. It does not mean the processing center of each file has been identified.
+The measurements below are copied from the tracked reports. They describe stored rows.
 
-What is verified from the files:
+- July FRP medians: Terra 19.1 MW, Aqua 21.6 MW, Suomi-NPP 5.06 MW, NOAA-20 5.14 MW, NOAA-21 6.09 MW. Extremes are retained. Aqua's July maximum is 10,950 MW. Zero-FRP rows are kept in the distributions (Terra 393, Aqua 155, NOAA-20 809, NOAA-21 1,710, Suomi-NPP 373).
+- On 7 July, VIIRS brightness reaches exactly 367 K and no higher: NOAA-20 3,190 rows (3.87%), NOAA-21 7,305 (8.34%), Suomi-NPP 5,600 (6.45%). No row falls in the open interval from 360 K to 367 K. The full-month VIIRS archives show the same ceiling. The CSVs have no Level-1 saturation flag, so 367 K is not marked as confirmed saturation of an individual row. The Collection 2 user's guide describes 367 K as the nominal I-4 saturation assignment in the typical case.
+- At 1 km and 30 minutes, NOAA-20 and NOAA-21 have zero candidate pairs. At 5 km and 60 minutes their median time difference falls in the 50–51 minute bin. An empty 30-minute window for that pair is a statement about acquisition time, not a statement that the rows are far apart on the ground.
+- Within-sensor DBSCAN at 1 km, 30 minutes, and `min_samples` 4 leaves most MODIS rows as noise (Terra 98.2%, Aqua 98.9%) and a smaller VIIRS noise share (Suomi-NPP 44.4%, NOAA-20 46.3%, NOAA-21 47.0%). A component is an analytical label. It is not a confirmed fire.
 
-- One acquisition date, 2024-07-07.
-- 277,259 detection rows: Terra 7,044, Aqua 13,366, NOAA-20 82,372, NOAA-21 87,637, Suomi-NPP 86,840.
-- A shared 15-column header: `latitude`, `longitude`, `brightness`, `scan`, `track`, `acq_date`, `acq_time`, `satellite`, `instrument`, `confidence`, `version`, `bright_t31`, `frp`, `daynight`, `type`.
-- MODIS version text `61.03`. VIIRS version text `2`.
-- No processing-stream column, no product short name, no provider checksum, and no area-of-interest field.
+Detail, caveats, and the pair tables are in [docs/DATA_AND_LIMITATIONS.md](docs/DATA_AND_LIMITATIONS.md).
 
-What remains unverified:
+## Real data versus synthetic demonstration data
 
-- Whether each file is near-real-time or standard quality.
-- Whether VIIRS `bright_t31` is I-5, and whether MODIS `bright_t31` is channel 31, beyond the column name.
-- Whether any proximity pair is one physical fire.
+The interface shows both kinds of number, and it labels them.
 
-The readiness matrix in [`backend/reports/data_readiness.md`](backend/reports/data_readiness.md) marks each field verified, unverified, or missing. Reports under `backend/reports/` are committed so the measurements can be read without the raw CSVs. Regenerating them requires the local archives.
+| Surface | Data | Source label in the UI |
+| --- | --- | --- |
+| Globe markers | 1,484 synthetic points, 1–7 July 2024. Every record has `source: 'demo'`. Positions come from a seeded generator and named illustrative clusters. They are not archived latitudes and longitudes. | Demo data |
+| Globe side panel, "Verified archive" | Delivered-row counts for the selected July date, plus 7 July FRP medians | FIRMS |
+| Historical explorer and sensor comparison | July aggregates: daily counts, monthly and 7 July FRP, confidence, day/night, scan note | FIRMS July 2024 |
+| CSV export | The same delivered-row table | Column `source` names the archive, or states that no archive is loaded |
+| Propagation preview | An internal sketch. No satellite rows. | Demonstration simulation |
 
-## 10. Current implementation and scientific findings
+The daily counts inside the synthetic sample, from the generator in `src/data/demoHotspots.ts`, are 205, 208, 210, 223, 216, 215, and 207 for 1–7 July. Those are demo points. The archive delivered hundreds of thousands of rows on each of those dates.
 
-These statements are limited to 2024-07-07. They are not a seasonal result and not a completed harmonization.
+A date with no delivered rows is stored as null in the transcription and rendered as "No rows delivered." A month with no loaded archive is omitted from the trend. Neither case is drawn as zero fires.
 
-**Exploratory analysis.** [`backend/reports/eda_report.md`](backend/reports/eda_report.md) describes detection counts, FRP, confidence, the day/night flag, UTC hour, and geography. Detection counts are archive rows. MODIS and VIIRS confidence stay on separate scales. Extreme FRP values are retained. Figures are in `backend/reports/figures/`.
+## Scientific limitations
 
-**VIIRS brightness.** NOAA-20, NOAA-21, and Suomi-NPP each have a maximum stored brightness of exactly 367 K. The counts are 3,190 (3.87%), 7,305 (8.34%), and 5,600 (6.45%). No row is above 367 K, and no row falls in [360 K, 367 K). The Collection 2 VIIRS 375 m user's guide describes 367 K as the nominal I-4 saturation assignment in the typical saturation case. These CSVs do not carry the Level-1 flag, so the investigation does not mark individual rows as confirmed saturated. Every `h` flag on this date sits on 367 K, and some 367 K rows are `l`. See [`backend/reports/anomaly_investigation.md`](backend/reports/anomaly_investigation.md).
+These limits are part of the result. They are written so a reviewer does not promote a diagnostic into a product claim.
 
-**Extreme MODIS FRP.** Two Aqua rows, 7,956.3 MW and 7,328.1 MW, were acquired at 2232 UTC, 912 m apart, with scan 3.9 km and track 1.8 km. Confidences are 75 and 0. Same-minute neighbors within 5 km are other Aqua rows from that overpass. Closer VIIRS rows are hours earlier. They are not classified as the same fire.
+- The project does not claim a validated historical harmonization coefficient. Experiment manifests store `harmonization_coefficient` as null.
+- The propagation screen is conceptual. It is not a validated wildfire forecast, and it is not an operational prediction.
+- XGBoost is not trained and is not deployed. Training it is rejected by the experiment contract.
+- A missing satellite observation must not be interpreted as zero fire activity. `zero_rows_delivered` means the CSV is present and has no row with that acquisition date.
+- Satellite detections are not unique fires. Pair counts, nearest-neighbor matches, and cluster counts are not fire counts.
+- `same_fire` is `not_assessed` on the experiment configurations and on the July reports that state the field.
+- Processing level remains unresolved for the local NOAA-20 and NOAA-21 files, and the project also declines to infer it for the MODIS and Suomi-NPP files from the filename prefix or the version column.
+- VIIRS rows at 367 K are an observed stored value. They are not individually confirmed saturated pixels.
+- July 2024 is a locked descriptive month. The sampling strategy excludes it from training, calibration, and validation.
+- The globe coordinates are synthetic. They must not be cited as NASA fire locations.
+- FIRMS active-fire products are research and situational-awareness inputs. This demonstration does not turn them into a tactical decision tool.
 
-**Temporal and proximity audit.** [`backend/reports/temporal_validation.md`](backend/reports/temporal_validation.md) is a single-date methodological audit, not a multi-date validation. Across all satellite pairs, the same UTC minute produces zero pairs inside 5 km. Wider windows produce many-to-many pairs. NOAA-20 and NOAA-21, for example, have 2,073,568 pairs inside 5 km and 180 minutes, drawn from 69,345 NOAA-20 rows and 74,359 NOAA-21 rows. That pair count is not a fire count.
+The open questions and the evidence behind each limit are collected in [docs/DATA_AND_LIMITATIONS.md](docs/DATA_AND_LIMITATIONS.md).
 
-**Readiness.** Brightness and confidence are excluded from calibration until further evidence. FRP is the candidate measurement. The 30-date acquisition specification records zero dates acquired beyond the file already on disk. See [`backend/reports/data_readiness.md`](backend/reports/data_readiness.md).
+## Installation and local execution
 
-## 11. Local installation and development
+The website runs from the tracked source and the npm dependencies. It does not need the FIRMS CSVs, a FIRMS map key, or a Cesium ion token.
 
 ### Frontend
 
-Node.js 22 or newer and npm 11. The commands below were run with Node.js 24 and npm 11.
+Vite 8 requires Node.js `^20.19.0` or `>=22.12.0`. These instructions were checked in this workspace with Node.js 23.11.0 and npm 10.9.2.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Vite prints a local URL, usually `http://localhost:5173`.
+Vite prints a local URL, usually `http://localhost:5173`. Open it and use the four screens: Global, Historical, Sensors, and Propagation.
 
-World imagery and world terrain need a Cesium ion token. Without one, the globe uses OpenStreetMap imagery and the WGS84 ellipsoid.
+Optional Cesium ion imagery and terrain:
 
 ```bash
-copy .env.example .env
+cp .env.example .env
 ```
 
-On macOS or Linux, use `cp .env.example .env`. Set `VITE_CESIUM_ION_TOKEN` in `.env` only. Leave it empty to keep OpenStreetMap. `.env` is gitignored. `.env.example` contains an empty placeholder.
+Set `VITE_CESIUM_ION_TOKEN` in `.env` only. Leave it empty to keep OpenStreetMap and the WGS84 ellipsoid. `.env` is gitignored. [`.env.example`](.env.example) contains an empty placeholder. Create a token at [ion.cesium.com/tokens](https://ion.cesium.com/tokens) if you want the ion basemap. Restart the dev server after changing `.env`.
 
 OpenStreetMap tiles used in development must follow the [OpenStreetMap tile usage policy](https://operations.osmfoundation.org/policies/tiles/).
 
-### Backend
-
-From `backend/`, with Python 3.11 or newer:
-
-```bash
-python -m venv .venv
-.venv\Scripts\python -m pip install -r requirements.txt
-```
-
-On macOS or Linux, use `.venv/bin/python`.
-
-Put the FIRMS CSVs in `backend/data/raw/` before the commands that read them. Discovery, validation, EDA, investigation, temporal audit, and readiness all expect those local files.
-
-After the four July 2024 ZIP archives are copied into `backend/data/incoming/2024-07/`:
-
-```bash
-.venv\Scripts\python -m fire_data.ingest --dry-run
-.venv\Scripts\python -m fire_data.ingest
-```
-
-## 12. Testing and validation
-
-Frontend:
+Checks:
 
 ```bash
 npm run lint
@@ -245,76 +324,69 @@ npm run build
 npm run preview
 ```
 
-`npm run build` runs the TypeScript project build, then the Vite production bundle. `npm run preview` serves that bundle.
+`npm run lint` runs Oxlint. `npm run build` runs the TypeScript project build, then the Vite production bundle. `npm run preview` serves that bundle.
 
-Backend, from `backend/`:
+### Optional scientific workflow
+
+From `backend/`, with Python 3.11 or newer:
 
 ```bash
-.venv\Scripts\python -m pytest
-.venv\Scripts\python -m fire_data discover
-.venv\Scripts\python -m fire_data validate
-.venv\Scripts\python -m fire_data eda
-.venv\Scripts\python -m fire_data.investigate
-.venv\Scripts\python -m fire_data.temporal
-.venv\Scripts\python -m fire_data.readiness
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m pytest
 ```
 
-`validate` exits with status 1 when an archive fails the observed contract. `eda` accepts `--thresholds-m 375,1000,5000`. The other commands write only their own report files. They do not modify the raw CSVs.
+On Windows, use `.venv\Scripts\python`.
 
-## 13. Project roadmap
+Discovery, validation, the one-day summaries, ingestion, and the July analyses read CSVs under `backend/data/raw/`. Those files are not in git. Without them, the report generators that open the archives cannot reproduce the committed numbers. The reports themselves can be read immediately.
 
-Done for one day:
+Commands that the backend documents, once the matching local files are present:
 
-- Dashboard scaffold with a Cesium globe and explicit DEMO labeling.
-- Archive discovery, validation, exploratory analysis, anomaly investigation, single-date proximity audit, and a data-readiness review.
-
-Next, in order:
-
-1. Acquire the 30-date, five-sensor bundle with an explicit processing stream in the manifest.
-2. Repeat the 367 K and FRP audits across those dates.
-3. Decide a harmonization design from variables that pass the readiness review.
-4. Connect verified aggregates to the globe, calendar, and export.
-5. Only then consider an anomaly baseline or a predictive model.
-
-## 14. Known limitations and unresolved questions
-
-- The scientific results are one global day, 2024-07-07.
-- The product short name and processing stream are missing for every local archive.
-- The FIRMS download readme says NOAA-20 and NOAA-21 standard-quality data were not available. The FIRMS API catalog lists standard-processing sensor codes for both. Neither identifier is stored in the CSVs.
-- VIIRS rows at 367 K are not confirmed saturated.
-- Proximity pairs are not same-fire matches. `same_fire` is `not_assessed`.
-- The frontend metrics, calendar, and export do not read the backend reports.
-- No harmonization coefficient, anomaly score, or forecast is computed.
-- A license file has not been added. See the acknowledgments for the recommended license and the decision still required.
-
-## 15. Intended impact and target users
-
-The intended result is a fire history that researchers and challenge reviewers can compare across MODIS and VIIRS without confusing sensor differences with changes in burning. The users are:
-
-- NASA Space Apps judges reviewing what is implemented and what is still proposed.
-- Fire-data researchers who need the detection, proximity, and provenance distinctions stated explicitly.
-- Developers extending the dashboard only after the scientific contract is stable.
-
-The FIRMS disclaimer applies to the underlying data: these products are not advised for tactical decisions at local scale. This project does not change that limit.
-
-## 16. Contributors and acknowledgments
-
-The public repository is `larzzondev/nasa-space-apps-2026-fire-modis-viirs-harmonization`. Individual contributor names should be added by the team. This file does not invent a contributor list.
-
-Data and documents used in the audit come from NASA FIRMS and LANCE, the FIRMS download readme, the FIRMS API data-availability page, the FIRMS VIIRS attribute description, LAADS DAAC product pages, and the Collection 2 VIIRS 375 m Active Fire Product User's Guide. Active-fire science products acknowledged there are produced with the University of Maryland and distributed by FIRMS.
-
-Software noted in the reports includes CesiumJS. OpenStreetMap imagery is used only when no Cesium ion token is configured.
-
-**License.** No license file is in the repository yet. Apache-2.0 is the recommended open-source license for this scientific software because it is permissive and includes an explicit patent grant. Do not add it until the copyright holders confirm that choice. Third-party data and Cesium ion services keep their own terms.
-
-## Repository layout
-
-```text
-src/                  React dashboard. DEMO data only.
-backend/fire_data/    Discovery, validation, EDA, investigation, temporal audit, readiness, ingestion.
-backend/tests/        Pytest suite.
-backend/reports/      Committed scientific reports and figures.
-backend/data/raw/     Local FIRMS CSVs, including the untouched 7 July sample. Gitignored.
-backend/data/incoming/2024-07/  Drop folder for the four July 2024 ZIP archives. Gitignored.
-.env.example          Empty Cesium ion placeholder.
+```bash
+.venv/bin/python -m fire_data discover
+.venv/bin/python -m fire_data validate
+.venv/bin/python -m fire_data eda
+.venv/bin/python -m fire_data.investigate
+.venv/bin/python -m fire_data.temporal
+.venv/bin/python -m fire_data.readiness
+.venv/bin/python -m fire_data.ingest --dry-run
 ```
+
+`validate` exits with status 1 when an archive fails the observed column contract. `ingest` reads four unmodified ZIPs from `backend/data/incoming/2024-07/` and does not write into the 7 July sample directories. Later modules (`within_sensor_analysis`, `spatiotemporal_analysis`, `nearest_neighbor_analysis`, `monthly`, and `python -m fire_data.experiments`) are the workflows that produced the July reports and experiments. They are not required to use the website. The package README is [`backend/README.md`](backend/README.md).
+
+## Screenshots
+
+Application screenshots are not in the repository yet. The directory [`docs/screenshots/`](docs/screenshots/README.md) lists the five captures still needed, the screen each one must show, and the labels a reviewer should be able to read.
+
+Plots under `backend/reports/figures/` and `backend/experiments/` are scientific figures from the July analyses. They are not pictures of the FireLens interface.
+
+## Future roadmap
+
+The order below follows the written strategy. A later step waits until the earlier evidence exists.
+
+1. **Name the processing stream before any coefficient.** A stream is assigned only when provider metadata, or a product document that defines that exact file, names it. The filename prefix and the version text stay text.
+2. **Acquire the historical sample as a new order.** The plan in [`backend/research/ACQUISITION_PLAN.md`](backend/research/ACQUISITION_PLAN.md) uses a new directory and does not overwrite the July request ids. No order was submitted for that sample.
+3. **Keep July 2024 descriptive.** The validation calendar in [`backend/research/VALIDATION_SAMPLING_STRATEGY.md`](backend/research/VALIDATION_SAMPLING_STRATEGY.md) excludes the whole month from training, calibration, and validation.
+4. **Leave gaps empty.** Suomi-NPP dates with no rows stay out of denominators. They are not repaired from NOAA-20, NOAA-21, Terra, or Aqua.
+5. **Decide a harmonization design only after that sample exists.** FRP is the candidate measurement. `scan` and `track` are geometry. Day/night and satellite are strata. Brightness and confidence stay on their native scales until the quality metadata supports a shared use.
+6. **Replace the synthetic globe** with verified detection coordinates, still labeled as detections rather than as unique fires.
+7. **Leave forecasting unauthorized** until a model is trained and validated on held-out data. XGBoost is not that model today. The propagation screen remains a sketch.
+
+Also unresolved, and not scheduled as a silent default: an H3 resolution is not selected; Terra and Aqua are not pooled without an explicit pair label; and no license file has been added.
+
+## Acknowledgments and references
+
+The public repository is [larzzondev/nasa-space-apps-2026-fire-modis-viirs-harmonization](https://github.com/Larzzondev/nasa-space-apps-2026-fire-modis-viirs-harmonization). This file does not invent a contributor list. Names belong here when the people who did the work add them.
+
+Data and documents used in the audit:
+
+- NASA FIRMS and LANCE, including the [archive download](https://firms.modaps.eosdis.nasa.gov/download/) and the [download readme](https://firms.modaps.eosdis.nasa.gov/download/Readme.txt).
+- FIRMS attribute descriptions for [VIIRS](https://firms.modaps.eosdis.nasa.gov/content/descriptions/FIRMS_VIIRS_Firehotspots.html) and [MODIS](https://firms.modaps.eosdis.nasa.gov/content/descriptions/FIRMS_MODIS_Firehotspots.html), and the [Earthdata active-fire attribute page](https://www.earthdata.nasa.gov/data/tools/firms/active-fire-data-attributes-modis-viirs).
+- FIRMS [API data-availability](https://firms.modaps.eosdis.nasa.gov/api/data_availability/) catalog, used as a document. It was not queried with a map key for the July science runs.
+- Schroeder, Giglio, and Hall, Collection 2 VIIRS 375 m Active Fire Product User's Guide, version 1.2, June 2025: [VIIRS_C2_AF-375m_User_Guide_1.2.pdf](https://www.earthdata.nasa.gov/s3fs-public/2025-06/VIIRS_C2_AF-375m_User_Guide_1.2.pdf).
+- LP DAAC alerts for the July 2024 Suomi-NPP VIIRS [geolocation anomaly](https://www.earthdata.nasa.gov/data/alerts-outages/suomi-npp-viirs-data-product-geolocation-anomaly-july-2024) and the [24 July anomaly](https://www.earthdata.nasa.gov/data/alerts-outages/suomi-npp-viirs-data-product-anomaly-july-2024).
+- Active-fire science products acknowledged in those guides are produced with the University of Maryland and distributed by FIRMS.
+
+Software: [CesiumJS](https://cesium.com/platform/cesiumjs/) for the globe. [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors for the default development imagery.
+
+**License.** No license file is in the repository yet. Apache-2.0 is a suitable permissive license for this scientific software, including its patent grant, once the copyright holders confirm that choice. Third-party data, Cesium ion services, and OpenStreetMap tiles keep their own terms.
