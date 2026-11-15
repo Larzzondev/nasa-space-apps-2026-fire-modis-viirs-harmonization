@@ -1,0 +1,4 @@
+satellite,acq_date,detection_count,exact_text_367,numeric_equal_367,share_equal_367,above_367,from_360_below_367,from_366_below_367,highest_below_367_text,highest_below_367_count,confirmed_saturated_count,saturation_flag_present
+N20,2024-07-07,82372,3190,3190,0.03872675180886709,0,0,0,357.03,1,0,False
+N21,2024-07-07,87637,7305,7305,0.08335520385225419,0,0,0,356.5,1,0,False
+SNPP,2024-07-07,86840,5600,5600,0.06448641179180101,0,0,0,358.31,1,0,False

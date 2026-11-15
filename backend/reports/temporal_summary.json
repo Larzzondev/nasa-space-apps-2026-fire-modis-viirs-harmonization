@@ -1,0 +1,1544 @@
+{
+  "scope": {
+    "label": "temporal validation of the local FIRMS extracts",
+    "multi_date_validation": "unavailable",
+    "dates": [
+      "2024-07-07"
+    ],
+    "date_counts": {
+      "2024-07-07": 277259
+    },
+    "radii_m": [
+      375.0,
+      1000.0,
+      5000.0
+    ],
+    "windows_min": [
+      0,
+      30,
+      180
+    ],
+    "extreme_quantile": 0.999,
+    "earth_radius_m": 6371008.8
+  },
+  "missing": [
+    "A second acquisition date is absent. Dates present: 2024-07-07. Cross-date counts, proportions, FRP distributions, and geographic persistence were not computed, and no dates were added.",
+    "The local data directory has no FIRMS zip Readme, request manifest, HDF granule, or netCDF granule beside the four CSV files.",
+    "No CSV column identifies NRT versus standard processing, and no column carries an I4 saturation quality flag.",
+    "The FIRMS FAQ page linked from the download readme returned HTTP 403 in this pass, so its NRT-versus-standard comparison is not quoted."
+  ],
+  "archives": [
+    {
+      "source_id": "modis",
+      "relative_path": "modis/fire_archive_M-C61_850118.csv",
+      "filename": "fire_archive_M-C61_850118.csv",
+      "row_count": 20410,
+      "invalid_rows": 0,
+      "columns": [
+        "latitude",
+        "longitude",
+        "brightness",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "instrument",
+        "confidence",
+        "version",
+        "bright_t31",
+        "frp",
+        "daynight",
+        "type"
+      ],
+      "dates": {
+        "2024-07-07": 20410
+      },
+      "versions": {
+        "61.03": 20410
+      },
+      "satellites": {
+        "Aqua": 13366,
+        "Terra": 7044
+      },
+      "instruments": {
+        "MODIS": 20410
+      },
+      "distinct_acq_time": {
+        "Aqua": 215,
+        "Terra": 220
+      },
+      "processing_level": "unresolved",
+      "determined": false,
+      "filename_recorded": "fire_archive_M-C61_850118.csv",
+      "version_values_recorded": [
+        "61.03"
+      ],
+      "processing_level_column_present": false,
+      "reason": "No processing-level column is present, so standard processing and near-real-time processing are not assigned. The filename and the version field are stored as file facts and are not used as that assignment."
+    },
+    {
+      "source_id": "viirs_noaa20",
+      "relative_path": "viirs_noaa20/fire_archive_J1V-C2_850119.csv",
+      "filename": "fire_archive_J1V-C2_850119.csv",
+      "row_count": 82372,
+      "invalid_rows": 0,
+      "columns": [
+        "latitude",
+        "longitude",
+        "brightness",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "instrument",
+        "confidence",
+        "version",
+        "bright_t31",
+        "frp",
+        "daynight",
+        "type"
+      ],
+      "dates": {
+        "2024-07-07": 82372
+      },
+      "versions": {
+        "2": 82372
+      },
+      "satellites": {
+        "N20": 82372
+      },
+      "instruments": {
+        "VIIRS": 82372
+      },
+      "distinct_acq_time": {
+        "N20": 428
+      },
+      "processing_level": "unresolved",
+      "determined": false,
+      "filename_recorded": "fire_archive_J1V-C2_850119.csv",
+      "version_values_recorded": [
+        "2"
+      ],
+      "processing_level_column_present": false,
+      "reason": "No processing-level column is present, so standard processing and near-real-time processing are not assigned. The filename and the version field are stored as file facts and are not used as that assignment."
+    },
+    {
+      "source_id": "viirs_noaa21",
+      "relative_path": "viirs_noaa21/fire_archive_J2V-C2_850120.csv",
+      "filename": "fire_archive_J2V-C2_850120.csv",
+      "row_count": 87637,
+      "invalid_rows": 0,
+      "columns": [
+        "latitude",
+        "longitude",
+        "brightness",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "instrument",
+        "confidence",
+        "version",
+        "bright_t31",
+        "frp",
+        "daynight",
+        "type"
+      ],
+      "dates": {
+        "2024-07-07": 87637
+      },
+      "versions": {
+        "2": 87637
+      },
+      "satellites": {
+        "N21": 87637
+      },
+      "instruments": {
+        "VIIRS": 87637
+      },
+      "distinct_acq_time": {
+        "N21": 448
+      },
+      "processing_level": "unresolved",
+      "determined": false,
+      "filename_recorded": "fire_archive_J2V-C2_850120.csv",
+      "version_values_recorded": [
+        "2"
+      ],
+      "processing_level_column_present": false,
+      "reason": "No processing-level column is present, so standard processing and near-real-time processing are not assigned. The filename and the version field are stored as file facts and are not used as that assignment."
+    },
+    {
+      "source_id": "viirs_snpp",
+      "relative_path": "viirs_snpp/fire_archive_SV-C2_850121.csv",
+      "filename": "fire_archive_SV-C2_850121.csv",
+      "row_count": 86840,
+      "invalid_rows": 0,
+      "columns": [
+        "latitude",
+        "longitude",
+        "brightness",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "instrument",
+        "confidence",
+        "version",
+        "bright_t31",
+        "frp",
+        "daynight",
+        "type"
+      ],
+      "dates": {
+        "2024-07-07": 86840
+      },
+      "versions": {
+        "2": 86840
+      },
+      "satellites": {
+        "SNPP": 86840
+      },
+      "instruments": {
+        "SNPP": 86840
+      },
+      "distinct_acq_time": {
+        "SNPP": 446
+      },
+      "processing_level": "unresolved",
+      "determined": false,
+      "filename_recorded": "fire_archive_SV-C2_850121.csv",
+      "version_values_recorded": [
+        "2"
+      ],
+      "processing_level_column_present": false,
+      "reason": "No processing-level column is present, so standard processing and near-real-time processing are not assigned. The filename and the version field are stored as file facts and are not used as that assignment."
+    }
+  ],
+  "document_statements": [
+    {
+      "source_id": "firms_download_readme",
+      "url": "https://firms.modaps.eosdis.nasa.gov/download/Readme.txt",
+      "retrieved": "2026-11-14",
+      "text": "The FIRMS download readme says a request can return near-real-time files, standard-quality files, or both, and that NRT data are replaced when standard data are available, after approximately three months. It defines fire_nrt_M-C61 as MCD14DL, fire_archive_M-C61 as standard-quality MCD14ML, fire_nrt_SV-C2 as VNP14IMGTDL, and fire_archive_SV-C2 as standard-quality VNP14IMGTML. It defines fire_nrt_J1V-C2 as VJ114IMGDL and fire_nrt_J2V-C2 as VJ214IMGDL. It does not define fire_archive_J1V-C2 or fire_archive_J2V-C2. It states: standard quality data is not yet available from FIRMS for NOAA-20 and NOAA-21. The characters after the product code are the download request id. The Collection / Version field is described as the way to distinguish MODIS from VIIRS when the files are combined, not as an NRT-versus-standard flag."
+    },
+    {
+      "source_id": "firms_api_availability",
+      "url": "https://firms.modaps.eosdis.nasa.gov/api/data_availability/",
+      "retrieved": "2026-11-14",
+      "text": "The FIRMS API data-availability page lists separate sensor codes for near-real-time and standard processing, including VIIRS_NOAA20_NRT, VIIRS_NOAA20_SP, VIIRS_NOAA21_NRT, VIIRS_NOAA21_SP, VIIRS_SNPP_NRT, VIIRS_SNPP_SP, MODIS_NRT, and MODIS_SP. Those codes are catalog labels. They are not columns in the local CSV files."
+    }
+  ],
+  "brightness": [
+    {
+      "satellite": "N20",
+      "acq_date": "2024-07-07",
+      "detection_count": 82372,
+      "invalid_brightness": 0,
+      "numeric_equal_367": 3190,
+      "exact_text_367": 3190,
+      "share_equal_367": 0.03872675180886709,
+      "above_367": 0,
+      "from_360_below_367": 0,
+      "from_366_below_367": 0,
+      "highest_below_367_text": "357.03",
+      "highest_below_367_count": 1,
+      "confirmed_saturated_count": 0,
+      "saturation_flag_present": false
+    },
+    {
+      "satellite": "N21",
+      "acq_date": "2024-07-07",
+      "detection_count": 87637,
+      "invalid_brightness": 0,
+      "numeric_equal_367": 7305,
+      "exact_text_367": 7305,
+      "share_equal_367": 0.08335520385225419,
+      "above_367": 0,
+      "from_360_below_367": 0,
+      "from_366_below_367": 0,
+      "highest_below_367_text": "356.5",
+      "highest_below_367_count": 1,
+      "confirmed_saturated_count": 0,
+      "saturation_flag_present": false
+    },
+    {
+      "satellite": "SNPP",
+      "acq_date": "2024-07-07",
+      "detection_count": 86840,
+      "invalid_brightness": 0,
+      "numeric_equal_367": 5600,
+      "exact_text_367": 5600,
+      "share_equal_367": 0.06448641179180101,
+      "above_367": 0,
+      "from_360_below_367": 0,
+      "from_366_below_367": 0,
+      "highest_below_367_text": "358.31",
+      "highest_below_367_count": 1,
+      "confirmed_saturated_count": 0,
+      "saturation_flag_present": false
+    }
+  ],
+  "modis_frp": [
+    {
+      "satellite": "Terra",
+      "acq_date": "2024-07-07",
+      "daynight": "D",
+      "detection_count": 3177,
+      "minimum": 2.6,
+      "p50": 18.3,
+      "p90": 82.94000000000001,
+      "p99": 540.459999999997,
+      "p999": 1792.9112000000398,
+      "maximum_text": "2901.5",
+      "maximum_row_count": 1,
+      "confidence_at_maximum": [
+        "100"
+      ],
+      "confidence_min": 0,
+      "confidence_median": 66.0,
+      "confidence_max": 100,
+      "extreme_confidence_min": 100,
+      "extreme_confidence_median": 100.0,
+      "extreme_confidence_max": 100,
+      "extreme_threshold": 1792.9112000000398,
+      "extreme_count": 4,
+      "extreme_cell_count": 1,
+      "densest_cell_count": 4,
+      "densest_cell_share": 1.0,
+      "densest_cell_lat_floor": 59,
+      "densest_cell_lon_floor": -119,
+      "extreme_acq_time_count": 1,
+      "extreme_modal_acq_time": "1910",
+      "extreme_modal_acq_time_count": 4
+    },
+    {
+      "satellite": "Terra",
+      "acq_date": "2024-07-07",
+      "daynight": "N",
+      "detection_count": 3867,
+      "minimum": 0.0,
+      "p50": 19.2,
+      "p90": 78.1,
+      "p99": 393.136,
+      "p999": 1178.9476000000006,
+      "maximum_text": "1632.2",
+      "maximum_row_count": 1,
+      "confidence_at_maximum": [
+        "100"
+      ],
+      "confidence_min": 0,
+      "confidence_median": 75.0,
+      "confidence_max": 100,
+      "extreme_confidence_min": 100,
+      "extreme_confidence_median": 100.0,
+      "extreme_confidence_max": 100,
+      "extreme_threshold": 1178.9476000000006,
+      "extreme_count": 4,
+      "extreme_cell_count": 1,
+      "densest_cell_count": 4,
+      "densest_cell_share": 1.0,
+      "densest_cell_lat_floor": 38,
+      "densest_cell_lon_floor": -113,
+      "extreme_acq_time_count": 2,
+      "extreme_modal_acq_time": "0400",
+      "extreme_modal_acq_time_count": 3
+    },
+    {
+      "satellite": "Terra",
+      "acq_date": "2024-07-07",
+      "daynight": "all",
+      "detection_count": 7044,
+      "minimum": 0.0,
+      "p50": 18.9,
+      "p90": 80.83999999999997,
+      "p99": 460.9109999999964,
+      "p999": 1318.5692000000117,
+      "maximum_text": "2901.5",
+      "maximum_row_count": 1,
+      "confidence_at_maximum": [
+        "100"
+      ],
+      "confidence_min": 0,
+      "confidence_median": 69.0,
+      "confidence_max": 100,
+      "extreme_confidence_min": 100,
+      "extreme_confidence_median": 100.0,
+      "extreme_confidence_max": 100,
+      "extreme_threshold": 1318.5692000000117,
+      "extreme_count": 8,
+      "extreme_cell_count": 2,
+      "densest_cell_count": 5,
+      "densest_cell_share": 0.625,
+      "densest_cell_lat_floor": 59,
+      "densest_cell_lon_floor": -119,
+      "extreme_acq_time_count": 3,
+      "extreme_modal_acq_time": "1910",
+      "extreme_modal_acq_time_count": 5
+    },
+    {
+      "satellite": "Aqua",
+      "acq_date": "2024-07-07",
+      "daynight": "D",
+      "detection_count": 12152,
+      "minimum": 0.0,
+      "p50": 19.2,
+      "p90": 95.27999999999993,
+      "p99": 543.3779999999995,
+      "p999": 1923.9186000000275,
+      "maximum_text": "7956.3",
+      "maximum_row_count": 1,
+      "confidence_at_maximum": [
+        "75"
+      ],
+      "confidence_min": 0,
+      "confidence_median": 69.0,
+      "confidence_max": 100,
+      "extreme_confidence_min": 0,
+      "extreme_confidence_median": 100.0,
+      "extreme_confidence_max": 100,
+      "extreme_threshold": 1923.9186000000275,
+      "extreme_count": 13,
+      "extreme_cell_count": 6,
+      "densest_cell_count": 3,
+      "densest_cell_share": 0.23076923076923078,
+      "densest_cell_lat_floor": 37,
+      "densest_cell_lon_floor": -113,
+      "extreme_acq_time_count": 5,
+      "extreme_modal_acq_time": "2051",
+      "extreme_modal_acq_time_count": 6
+    },
+    {
+      "satellite": "Aqua",
+      "acq_date": "2024-07-07",
+      "daynight": "N",
+      "detection_count": 1214,
+      "minimum": 0.0,
+      "p50": 22.45,
+      "p90": 85.67,
+      "p99": 532.696999999992,
+      "p999": 1547.3701000000028,
+      "maximum_text": "1627.1",
+      "maximum_row_count": 1,
+      "confidence_at_maximum": [
+        "100"
+      ],
+      "confidence_min": 0,
+      "confidence_median": 67.0,
+      "confidence_max": 100,
+      "extreme_confidence_min": 100,
+      "extreme_confidence_median": 100.0,
+      "extreme_confidence_max": 100,
+      "extreme_threshold": 1547.3701000000028,
+      "extreme_count": 2,
+      "extreme_cell_count": 2,
+      "densest_cell_count": 1,
+      "densest_cell_share": 0.5,
+      "densest_cell_lat_floor": -26,
+      "densest_cell_lon_floor": 30,
+      "extreme_acq_time_count": 2,
+      "extreme_modal_acq_time": "0948",
+      "extreme_modal_acq_time_count": 1
+    },
+    {
+      "satellite": "Aqua",
+      "acq_date": "2024-07-07",
+      "daynight": "all",
+      "detection_count": 13366,
+      "minimum": 0.0,
+      "p50": 19.5,
+      "p90": 94.05,
+      "p99": 543.0700000000007,
+      "p999": 1773.2535000000032,
+      "maximum_text": "7956.3",
+      "maximum_row_count": 1,
+      "confidence_at_maximum": [
+        "75"
+      ],
+      "confidence_min": 0,
+      "confidence_median": 69.0,
+      "confidence_max": 100,
+      "extreme_confidence_min": 0,
+      "extreme_confidence_median": 100.0,
+      "extreme_confidence_max": 100,
+      "extreme_threshold": 1773.2535000000032,
+      "extreme_count": 14,
+      "extreme_cell_count": 6,
+      "densest_cell_count": 3,
+      "densest_cell_share": 0.21428571428571427,
+      "densest_cell_lat_floor": 37,
+      "densest_cell_lon_floor": -113,
+      "extreme_acq_time_count": 5,
+      "extreme_modal_acq_time": "2051",
+      "extreme_modal_acq_time_count": 6
+    }
+  ],
+  "modis_maxima": [
+    {
+      "line_number": 17222,
+      "latitude": 59.7563,
+      "longitude": -118.5394,
+      "acq_time": "1910",
+      "frp": "2901.5",
+      "confidence": "100",
+      "brightness": "500",
+      "scan": "1.5",
+      "track": "1.2",
+      "daynight": "D",
+      "satellite": "Terra",
+      "acq_date": "2024-07-07"
+    },
+    {
+      "line_number": 1512,
+      "latitude": 38.4555,
+      "longitude": -112.3279,
+      "acq_time": "0400",
+      "frp": "1632.2",
+      "confidence": "100",
+      "brightness": "394.2",
+      "scan": "4",
+      "track": "1.9",
+      "daynight": "N",
+      "satellite": "Terra",
+      "acq_date": "2024-07-07"
+    },
+    {
+      "line_number": 19915,
+      "latitude": 48.1499,
+      "longitude": -120.4706,
+      "acq_time": "2232",
+      "frp": "7956.3",
+      "confidence": "75",
+      "brightness": "475.9",
+      "scan": "3.9",
+      "track": "1.8",
+      "daynight": "D",
+      "satellite": "Aqua",
+      "acq_date": "2024-07-07"
+    },
+    {
+      "line_number": 20209,
+      "latitude": -25.6652,
+      "longitude": 30.5474,
+      "acq_time": "2316",
+      "frp": "1627.1",
+      "confidence": "100",
+      "brightness": "406",
+      "scan": "3.3",
+      "track": "1.7",
+      "daynight": "N",
+      "satellite": "Aqua",
+      "acq_date": "2024-07-07"
+    }
+  ],
+  "proximity": [
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "Aqua",
+      "radius_m": 375.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "Aqua",
+      "radius_m": 375.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 9,
+      "detections_a_with_neighbor": 9,
+      "detections_b_with_neighbor": 9,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "Aqua",
+      "radius_m": 375.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 161,
+      "detections_a_with_neighbor": 158,
+      "detections_b_with_neighbor": 156,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "Aqua",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "Aqua",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 68,
+      "detections_a_with_neighbor": 46,
+      "detections_b_with_neighbor": 54,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "Aqua",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 970,
+      "detections_a_with_neighbor": 640,
+      "detections_b_with_neighbor": 661,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "Aqua",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "Aqua",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 402,
+      "detections_a_with_neighbor": 96,
+      "detections_b_with_neighbor": 120,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "Aqua",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 6258,
+      "detections_a_with_neighbor": 1031,
+      "detections_b_with_neighbor": 1220,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N20",
+      "radius_m": 375.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N20",
+      "radius_m": 375.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 214,
+      "detections_a_with_neighbor": 139,
+      "detections_b_with_neighbor": 199,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N20",
+      "radius_m": 375.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 3158,
+      "detections_a_with_neighbor": 1573,
+      "detections_b_with_neighbor": 3079,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N20",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N20",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 1032,
+      "detections_a_with_neighbor": 296,
+      "detections_b_with_neighbor": 665,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N20",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 15874,
+      "detections_a_with_neighbor": 2578,
+      "detections_b_with_neighbor": 9962,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N20",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N20",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 5402,
+      "detections_a_with_neighbor": 336,
+      "detections_b_with_neighbor": 1013,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N20",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 85634,
+      "detections_a_with_neighbor": 2897,
+      "detections_b_with_neighbor": 16139,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N21",
+      "radius_m": 375.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N21",
+      "radius_m": 375.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 511,
+      "detections_a_with_neighbor": 354,
+      "detections_b_with_neighbor": 496,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N21",
+      "radius_m": 375.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 3006,
+      "detections_a_with_neighbor": 1578,
+      "detections_b_with_neighbor": 2938,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N21",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N21",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 2498,
+      "detections_a_with_neighbor": 724,
+      "detections_b_with_neighbor": 1565,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N21",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 16210,
+      "detections_a_with_neighbor": 2603,
+      "detections_b_with_neighbor": 10158,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N21",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N21",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 11549,
+      "detections_a_with_neighbor": 840,
+      "detections_b_with_neighbor": 2360,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "N21",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 96100,
+      "detections_a_with_neighbor": 2935,
+      "detections_b_with_neighbor": 16968,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "SNPP",
+      "radius_m": 375.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "SNPP",
+      "radius_m": 375.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 54,
+      "detections_a_with_neighbor": 37,
+      "detections_b_with_neighbor": 51,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "SNPP",
+      "radius_m": 375.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 3133,
+      "detections_a_with_neighbor": 1537,
+      "detections_b_with_neighbor": 3053,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "SNPP",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "SNPP",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 310,
+      "detections_a_with_neighbor": 101,
+      "detections_b_with_neighbor": 187,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "SNPP",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 16422,
+      "detections_a_with_neighbor": 2499,
+      "detections_b_with_neighbor": 10238,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "SNPP",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "SNPP",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 1693,
+      "detections_a_with_neighbor": 137,
+      "detections_b_with_neighbor": 292,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Terra",
+      "satellite_b": "SNPP",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 93237,
+      "detections_a_with_neighbor": 2786,
+      "detections_b_with_neighbor": 16740,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N20",
+      "radius_m": 375.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N20",
+      "radius_m": 375.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 4655,
+      "detections_a_with_neighbor": 3170,
+      "detections_b_with_neighbor": 4628,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N20",
+      "radius_m": 375.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 7501,
+      "detections_a_with_neighbor": 4323,
+      "detections_b_with_neighbor": 7313,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N20",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N20",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 23916,
+      "detections_a_with_neighbor": 7293,
+      "detections_b_with_neighbor": 16746,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N20",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 39752,
+      "detections_a_with_neighbor": 9267,
+      "detections_b_with_neighbor": 26288,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N20",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N20",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 111618,
+      "detections_a_with_neighbor": 9443,
+      "detections_b_with_neighbor": 28498,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N20",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 200689,
+      "detections_a_with_neighbor": 11715,
+      "detections_b_with_neighbor": 43802,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N21",
+      "radius_m": 375.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N21",
+      "radius_m": 375.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 1763,
+      "detections_a_with_neighbor": 1213,
+      "detections_b_with_neighbor": 1726,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N21",
+      "radius_m": 375.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 6588,
+      "detections_a_with_neighbor": 3613,
+      "detections_b_with_neighbor": 6407,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N21",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N21",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 10005,
+      "detections_a_with_neighbor": 2847,
+      "detections_b_with_neighbor": 6949,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N21",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 37393,
+      "detections_a_with_neighbor": 7815,
+      "detections_b_with_neighbor": 24812,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N21",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N21",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 54190,
+      "detections_a_with_neighbor": 3874,
+      "detections_b_with_neighbor": 12060,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "N21",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 220512,
+      "detections_a_with_neighbor": 10719,
+      "detections_b_with_neighbor": 44180,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "SNPP",
+      "radius_m": 375.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "SNPP",
+      "radius_m": 375.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 13,
+      "detections_a_with_neighbor": 10,
+      "detections_b_with_neighbor": 13,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "SNPP",
+      "radius_m": 375.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 7031,
+      "detections_a_with_neighbor": 3833,
+      "detections_b_with_neighbor": 6820,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "SNPP",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "SNPP",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 69,
+      "detections_a_with_neighbor": 24,
+      "detections_b_with_neighbor": 53,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "SNPP",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 39149,
+      "detections_a_with_neighbor": 8338,
+      "detections_b_with_neighbor": 26106,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "SNPP",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "SNPP",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 303,
+      "detections_a_with_neighbor": 32,
+      "detections_b_with_neighbor": 113,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "Aqua",
+      "satellite_b": "SNPP",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 218425,
+      "detections_a_with_neighbor": 11390,
+      "detections_b_with_neighbor": 45944,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "N21",
+      "radius_m": 375.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "N21",
+      "radius_m": 375.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "N21",
+      "radius_m": 375.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 100849,
+      "detections_a_with_neighbor": 49357,
+      "detections_b_with_neighbor": 52073,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "N21",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "N21",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "N21",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 395259,
+      "detections_a_with_neighbor": 62200,
+      "detections_b_with_neighbor": 66884,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "N21",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "N21",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "N21",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 2073568,
+      "detections_a_with_neighbor": 69345,
+      "detections_b_with_neighbor": 74359,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "SNPP",
+      "radius_m": 375.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "SNPP",
+      "radius_m": 375.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 77181,
+      "detections_a_with_neighbor": 48320,
+      "detections_b_with_neighbor": 48275,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "SNPP",
+      "radius_m": 375.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 110911,
+      "detections_a_with_neighbor": 54686,
+      "detections_b_with_neighbor": 57007,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "SNPP",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "SNPP",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 275306,
+      "detections_a_with_neighbor": 60860,
+      "detections_b_with_neighbor": 59844,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "SNPP",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 419339,
+      "detections_a_with_neighbor": 65991,
+      "detections_b_with_neighbor": 70103,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "SNPP",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "SNPP",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 1275182,
+      "detections_a_with_neighbor": 67478,
+      "detections_b_with_neighbor": 65817,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N20",
+      "satellite_b": "SNPP",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 2083460,
+      "detections_a_with_neighbor": 72106,
+      "detections_b_with_neighbor": 76638,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N21",
+      "satellite_b": "SNPP",
+      "radius_m": 375.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N21",
+      "satellite_b": "SNPP",
+      "radius_m": 375.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 73884,
+      "detections_a_with_neighbor": 45522,
+      "detections_b_with_neighbor": 46063,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N21",
+      "satellite_b": "SNPP",
+      "radius_m": 375.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 113992,
+      "detections_a_with_neighbor": 55809,
+      "detections_b_with_neighbor": 56034,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N21",
+      "satellite_b": "SNPP",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N21",
+      "satellite_b": "SNPP",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 275918,
+      "detections_a_with_neighbor": 56235,
+      "detections_b_with_neighbor": 59107,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N21",
+      "satellite_b": "SNPP",
+      "radius_m": 1000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 447758,
+      "detections_a_with_neighbor": 68910,
+      "detections_b_with_neighbor": 69735,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N21",
+      "satellite_b": "SNPP",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 0,
+      "proximity_pairs": 0,
+      "detections_a_with_neighbor": 0,
+      "detections_b_with_neighbor": 0,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N21",
+      "satellite_b": "SNPP",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 30,
+      "proximity_pairs": 1379296,
+      "detections_a_with_neighbor": 61395,
+      "detections_b_with_neighbor": 65630,
+      "same_fire": "not_assessed"
+    },
+    {
+      "satellite_a": "N21",
+      "satellite_b": "SNPP",
+      "radius_m": 5000.0,
+      "max_delta_minutes": 180,
+      "proximity_pairs": 2354224,
+      "detections_a_with_neighbor": 75649,
+      "detections_b_with_neighbor": 76190,
+      "same_fire": "not_assessed"
+    }
+  ],
+  "variables": [
+    {
+      "variable": "frp",
+      "disposition": "calibration_candidate",
+      "support": "single_date_only",
+      "rationale": "FRP is stored in MW for Terra, Aqua, NOAA-20, NOAA-21, and S-NPP. It can be stratified by satellite and by the stored day/night flag. A coefficient is not estimated. The retrievals are sensor-specific, and this extract has one acquisition date."
+    },
+    {
+      "variable": "scan",
+      "disposition": "calibration_candidate",
+      "support": "single_date_only",
+      "rationale": "Stored along-scan pixel size in km. Usable as an observation-geometry covariate, not as a fire attribute to rescale."
+    },
+    {
+      "variable": "track",
+      "disposition": "calibration_candidate",
+      "support": "single_date_only",
+      "rationale": "Stored along-track pixel size in km. Usable as an observation-geometry covariate."
+    },
+    {
+      "variable": "daynight",
+      "disposition": "calibration_candidate",
+      "support": "single_date_only",
+      "rationale": "Stored day/night flag. Usable as a stratum. It is not recomputed from solar zenith angle in this pass."
+    },
+    {
+      "variable": "latitude",
+      "disposition": "calibration_candidate",
+      "support": "single_date_only",
+      "rationale": "Match coordinate only. It is not a quantity to harmonize across sensors."
+    },
+    {
+      "variable": "longitude",
+      "disposition": "calibration_candidate",
+      "support": "single_date_only",
+      "rationale": "Match coordinate only. It is not a quantity to harmonize across sensors."
+    },
+    {
+      "variable": "acq_date",
+      "disposition": "calibration_candidate",
+      "support": "single_date_only",
+      "rationale": "Match time key. Only 2024-07-07 is present, so the key cannot yet support a temporal repeat."
+    },
+    {
+      "variable": "acq_time",
+      "disposition": "calibration_candidate",
+      "support": "single_date_only",
+      "rationale": "UTC HHMM match key within the dates that are present. Several minutes occur on 2024-07-07."
+    },
+    {
+      "variable": "satellite",
+      "disposition": "calibration_candidate",
+      "support": "single_date_only",
+      "rationale": "Sensor stratum. Detections from different satellites are not additive fire counts."
+    },
+    {
+      "variable": "brightness",
+      "disposition": "special_treatment",
+      "support": "needs_metadata",
+      "rationale": "VIIRS brightness has an exact stored value at 367 K and no values above it in this extract. The CSV has no Level-1 saturation flag, so those rows are not confirmed saturated. MODIS brightness is a different stored temperature and reaches above 367 K."
+    },
+    {
+      "variable": "confidence",
+      "disposition": "special_treatment",
+      "support": "needs_metadata",
+      "rationale": "MODIS confidence is an integer from 0 through 100. VIIRS confidence is l, n, or h. The scales are not interchangeable. A MODIS value of 0 is a stored confidence, including on large FRP rows."
+    },
+    {
+      "variable": "version",
+      "disposition": "special_treatment",
+      "support": "needs_metadata",
+      "rationale": "The version field records the collection identifier seen in the file. It does not identify NRT versus standard processing."
+    },
+    {
+      "variable": "instrument",
+      "disposition": "special_treatment",
+      "support": "needs_metadata",
+      "rationale": "The S-NPP archive stores instrument as SNPP. The NOAA-20 and NOAA-21 archives store VIIRS. The token is not a processing level."
+    },
+    {
+      "variable": "bright_t31",
+      "disposition": "special_treatment",
+      "support": "needs_metadata",
+      "rationale": "The column is present and numeric. The files do not state whether it is MODIS channel 31 or VIIRS I-5."
+    },
+    {
+      "variable": "type",
+      "disposition": "special_treatment",
+      "support": "needs_metadata",
+      "rationale": "Stored codes include 0, 1, 2, and 3. This pass does not drop a class and does not treat every row as the same fire type."
+    },
+    {
+      "variable": "processing_level",
+      "disposition": "special_treatment",
+      "support": "needs_metadata",
+      "rationale": "Absent from every local archive. NOAA-20 and NOAA-21 in particular cannot be pooled under a standard-product assumption."
+    },
+    {
+      "variable": "proximity_pairs",
+      "disposition": "special_treatment",
+      "support": "single_date_only",
+      "rationale": "A pair inside a distance and time window is a proximity match. It is not a confirmed same-fire match and the pairs are not summed across sensors as fires."
+    }
+  ]
+}

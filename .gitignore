@@ -1,0 +1,70 @@
+# Dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+.vite/
+
+# Python environments and caches
+backend/.venv/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.py[cod]
+*.egg-info/
+.coverage
+htmlcov/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+**/google-services.json
+**/GoogleService-Info.plist
+**/*serviceAccount*.json
+**/*firebase-adminsdk*.json
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# NASA FIRMS raw archives and bulky local extracts.
+# Scientific reports under backend/reports/ stay tracked.
+backend/data/raw/**/*.csv
+backend/data/raw/**/*.zip
+backend/data/raw/**/*.txt
+backend/data/**/*.parquet
+backend/data/**/*.geoparquet
+backend/data/**/*.nc
+backend/data/**/*.hdf
+backend/data/**/*.h5
+backend/data/manifest/*.csv
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor and OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.local

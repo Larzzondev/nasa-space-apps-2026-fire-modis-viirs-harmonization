@@ -1,0 +1,18 @@
+variable,disposition,support,rationale
+frp,calibration_candidate,single_date_only,"FRP is stored in MW for Terra, Aqua, NOAA-20, NOAA-21, and S-NPP. It can be stratified by satellite and by the stored day/night flag. A coefficient is not estimated. The retrievals are sensor-specific, and this extract has one acquisition date."
+scan,calibration_candidate,single_date_only,"Stored along-scan pixel size in km. Usable as an observation-geometry covariate, not as a fire attribute to rescale."
+track,calibration_candidate,single_date_only,Stored along-track pixel size in km. Usable as an observation-geometry covariate.
+daynight,calibration_candidate,single_date_only,Stored day/night flag. Usable as a stratum. It is not recomputed from solar zenith angle in this pass.
+latitude,calibration_candidate,single_date_only,Match coordinate only. It is not a quantity to harmonize across sensors.
+longitude,calibration_candidate,single_date_only,Match coordinate only. It is not a quantity to harmonize across sensors.
+acq_date,calibration_candidate,single_date_only,"Match time key. Only 2024-07-07 is present, so the key cannot yet support a temporal repeat."
+acq_time,calibration_candidate,single_date_only,UTC HHMM match key within the dates that are present. Several minutes occur on 2024-07-07.
+satellite,calibration_candidate,single_date_only,Sensor stratum. Detections from different satellites are not additive fire counts.
+brightness,special_treatment,needs_metadata,"VIIRS brightness has an exact stored value at 367 K and no values above it in this extract. The CSV has no Level-1 saturation flag, so those rows are not confirmed saturated. MODIS brightness is a different stored temperature and reaches above 367 K."
+confidence,special_treatment,needs_metadata,"MODIS confidence is an integer from 0 through 100. VIIRS confidence is l, n, or h. The scales are not interchangeable. A MODIS value of 0 is a stored confidence, including on large FRP rows."
+version,special_treatment,needs_metadata,The version field records the collection identifier seen in the file. It does not identify NRT versus standard processing.
+instrument,special_treatment,needs_metadata,The S-NPP archive stores instrument as SNPP. The NOAA-20 and NOAA-21 archives store VIIRS. The token is not a processing level.
+bright_t31,special_treatment,needs_metadata,The column is present and numeric. The files do not state whether it is MODIS channel 31 or VIIRS I-5.
+type,special_treatment,needs_metadata,"Stored codes include 0, 1, 2, and 3. This pass does not drop a class and does not treat every row as the same fire type."
+processing_level,special_treatment,needs_metadata,Absent from every local archive. NOAA-20 and NOAA-21 in particular cannot be pooled under a standard-product assumption.
+proximity_pairs,special_treatment,single_date_only,A pair inside a distance and time window is a proximity match. It is not a confirmed same-fire match and the pairs are not summed across sensors as fires.

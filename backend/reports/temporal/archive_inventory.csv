@@ -1,0 +1,5 @@
+source_id,relative_path,filename,row_count,invalid_rows,processing_level,determined,processing_level_column_present,dates,versions,satellites
+modis,modis/fire_archive_M-C61_850118.csv,fire_archive_M-C61_850118.csv,20410,0,unresolved,False,False,"{""2024-07-07"": 20410}","{""61.03"": 20410}","{""Aqua"": 13366, ""Terra"": 7044}"
+viirs_noaa20,viirs_noaa20/fire_archive_J1V-C2_850119.csv,fire_archive_J1V-C2_850119.csv,82372,0,unresolved,False,False,"{""2024-07-07"": 82372}","{""2"": 82372}","{""N20"": 82372}"
+viirs_noaa21,viirs_noaa21/fire_archive_J2V-C2_850120.csv,fire_archive_J2V-C2_850120.csv,87637,0,unresolved,False,False,"{""2024-07-07"": 87637}","{""2"": 87637}","{""N21"": 87637}"
+viirs_snpp,viirs_snpp/fire_archive_SV-C2_850121.csv,fire_archive_SV-C2_850121.csv,86840,0,unresolved,False,False,"{""2024-07-07"": 86840}","{""2"": 86840}","{""SNPP"": 86840}"

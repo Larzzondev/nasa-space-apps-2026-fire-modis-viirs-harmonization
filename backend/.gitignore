@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Raw FIRMS extracts stay local. Reports under ../reports are tracked from the repository root.
+data/raw/**/*.csv
+data/raw/**/*.zip
+data/**/*.parquet
+data/**/*.nc
+data/**/*.hdf
