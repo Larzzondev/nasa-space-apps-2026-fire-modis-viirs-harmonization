@@ -8,6 +8,8 @@ data/raw/**/*.csv
 data/raw/**/*.zip
 data/incoming/**/*.zip
 data/incoming/**/*.csv
+data/verification/**/*.csv
+data/verification/**/*.zip
 data/**/*.parquet
 data/**/*.nc
 data/**/*.hdf

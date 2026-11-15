@@ -42,6 +42,8 @@ backend/data/raw/**/*.zip
 backend/data/raw/**/*.txt
 backend/data/incoming/**/*.zip
 backend/data/incoming/**/*.csv
+backend/data/verification/**/*.csv
+backend/data/verification/**/*.zip
 backend/data/**/*.parquet
 backend/data/**/*.geoparquet
 backend/data/**/*.nc
