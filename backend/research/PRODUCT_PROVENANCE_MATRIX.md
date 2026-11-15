@@ -107,6 +107,23 @@ The download readme says that if NRT and standard files are combined, the Collec
 
 The July values `61.03` and `2` are not those examples. They are recorded. They are not mapped.
 
+## Milestone 13 area API check
+
+Retrieved 2026-11-15T15:23:03Z through 2026-11-15T15:23:08Z. The log is `backend/reports/firms_api_provenance_2024_07_07.json`. Timing is `backend/reports/milestones/milestone_13_timing.json`.
+
+The process environment and `backend/.env` did not contain `FIRMS_MAP_KEY`. No authenticated area URL and no authenticated data-availability URL was opened. `VIIRS_NOAA20_SP` and `VIIRS_NOAA21_SP` were confirmed again as labels on the area page and the data-availability page. They were not returned as a table for 2024-07-07. The local files stay unresolved. `same_fire` stays `not_assessed`. No coefficient was calculated.
+
+The area page from that retrieval links "Attribute table for VIIRS NOAA-20" to `https://www.earthdata.nasa.gov/learn/find-data/near-real-time/firms/vj114imgtdlnrt` and "Attribute table for VIIRS NOAA-21" to `https://www.earthdata.nasa.gov/learn/find-data/near-real-time/firms/vj214imgtdlnrt`. Those are the NRT attribute paths. The page also lists the `SP` source codes. It does not say that an `SP` response is `fire_archive_J1V-C2` or `fire_archive_J2V-C2`. The link is not used as the stream of either local CSV.
+
+The day files were read and hashed and not written.
+
+| File | Rows | SHA-256 | Version text | Observed extent, west south east north |
+| --- | ---: | --- | --- | --- |
+| `fire_archive_J1V-C2_850119.csv` | 82,372 | `b2febdffbf7ad9dcaf7066ed913b8e0028eebff94bb79a9dd4e2e346dd4f9907` | `2` on every row | `-175.0715,-50.57444,175.63397,71.25928` |
+| `fire_archive_J2V-C2_850120.csv` | 87,637 | `5be3094edf2dc4461b9eadc82c97657b730550aaa92000d88fc2b1fbe4b46917` | `2` on every row | `-137.77524,-44.13126,175.6368,71.42756` |
+
+Each extent is the range of stored points. It is not the original order area. Full-row duplicates in each file: 0. The monthly NOAA checksums matched `ingestion_2024_07.json`. An API comparison was not performed, so the area service and the archive download remain uncompared. Equivalence stays `not_assessed`.
+
 ## Sources
 
 The source list and retrieval window are the same as in `HISTORICAL_DATA_STRATEGY.md`. The July coverage investigation cited for the S-NPP gaps was retrieved earlier the same day, at 2026-11-15T04:20:00Z, and is not re-fetched here.

@@ -1,0 +1,517 @@
+{
+  "created_at": "2026-11-15T15:23:03Z",
+  "question": "Does an authenticated FIRMS area response for VIIRS_NOAA20_SP and VIIRS_NOAA21_SP on 2024-07-07 identify the processing stream of the local July 7 archive CSVs?",
+  "result": "not_requested",
+  "authenticated_requests_sent": false,
+  "processing_stream": "unresolved",
+  "same_fire": "not_assessed",
+  "harmonization_coefficient_calculated": false,
+  "missing_observations_filled": false,
+  "product_equivalence": "not_assessed",
+  "original_request_area_reproduced": false,
+  "level2_swath_equated_to_firms_csv": false,
+  "credential": {
+    "variables": [
+      "FIRMS_MAP_KEY",
+      "MAP_KEY"
+    ],
+    "env_file": "C:\\Users\\Administrator\\Documents\\Personal\\Code\\NASA Hackathon - Space Apps Challenge 2026\\nasa-fire-harmonization\\backend\\.env",
+    "env_file_exists": false,
+    "present": false,
+    "selected_source": null,
+    "value_recorded": false
+  },
+  "configuration_needed": {
+    "variable": "FIRMS_MAP_KEY",
+    "also_accepted": "MAP_KEY",
+    "precedence": "The process environment is read first. backend/.env is read only when the environment variable is absent.",
+    "file": "backend/.env",
+    "file_is_gitignored": true,
+    "line": "FIRMS_MAP_KEY=<MAP_KEY issued by FIRMS>",
+    "issuer": "https://firms.modaps.eosdis.nasa.gov/api/map_key",
+    "do_not": [
+      "Commit backend/.env.",
+      "Print the key.",
+      "Put the key in a URL that is written to a log or a report."
+    ]
+  },
+  "documentation": {
+    "pages": [
+      {
+        "url": "https://firms.modaps.eosdis.nasa.gov/api/",
+        "http_status": 200,
+        "retrieved_at": "2026-11-15T15:23:05Z",
+        "elapsed_seconds": 0.952886,
+        "network_wait_seconds": 0.952928,
+        "body_bytes": 5966,
+        "sha256": "b64c927eac537148afdfb3b0f2bd26077a7a59b36e0d9887ee998e7b95c1eacf",
+        "retries": 0,
+        "headers": {
+          "Server": "nginx",
+          "Date": "Sun, 15 Nov 2026 15:23:05 GMT",
+          "Content-Type": "text/html; charset=UTF-8",
+          "Transfer-Encoding": "chunked",
+          "Connection": "close",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Cache-Control": "no-cache",
+          "Access-Control-Allow-Origin": "*",
+          "X-Content-Type-Options": "nosniff",
+          "Request-ID": "e85fd985f176f0d899ff88c0a719c0d6",
+          "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "url": "https://firms.modaps.eosdis.nasa.gov/api/",
+            "http_status": 200,
+            "elapsed_seconds": 0.952886,
+            "body_bytes": 5966,
+            "sha256": "b64c927eac537148afdfb3b0f2bd26077a7a59b36e0d9887ee998e7b95c1eacf",
+            "headers": {
+              "Server": "nginx",
+              "Date": "Sun, 15 Nov 2026 15:23:05 GMT",
+              "Content-Type": "text/html; charset=UTF-8",
+              "Transfer-Encoding": "chunked",
+              "Connection": "close",
+              "X-Frame-Options": "SAMEORIGIN",
+              "Cache-Control": "no-cache",
+              "Access-Control-Allow-Origin": "*",
+              "X-Content-Type-Options": "nosniff",
+              "Request-ID": "e85fd985f176f0d899ff88c0a719c0d6",
+              "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+            },
+            "retrieved_at": "2026-11-15T15:23:05Z"
+          }
+        ]
+      },
+      {
+        "url": "https://firms.modaps.eosdis.nasa.gov/api/area/",
+        "http_status": 200,
+        "retrieved_at": "2026-11-15T15:23:06Z",
+        "elapsed_seconds": 0.717009,
+        "network_wait_seconds": 0.717051,
+        "body_bytes": 25596,
+        "sha256": "cf7e8c1a26561bd42f4829ae6b45c697195d4ff24798f3be6aa2242ad14fcb64",
+        "retries": 0,
+        "headers": {
+          "Server": "nginx",
+          "Date": "Sun, 15 Nov 2026 15:23:06 GMT",
+          "Content-Type": "text/html; charset=UTF-8",
+          "Transfer-Encoding": "chunked",
+          "Connection": "close",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Cache-Control": "no-cache",
+          "Access-Control-Allow-Origin": "*",
+          "X-Content-Type-Options": "nosniff",
+          "Request-ID": "7c4383e2f521cee5c46e536749749cdd",
+          "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "url": "https://firms.modaps.eosdis.nasa.gov/api/area/",
+            "http_status": 200,
+            "elapsed_seconds": 0.717009,
+            "body_bytes": 25596,
+            "sha256": "cf7e8c1a26561bd42f4829ae6b45c697195d4ff24798f3be6aa2242ad14fcb64",
+            "headers": {
+              "Server": "nginx",
+              "Date": "Sun, 15 Nov 2026 15:23:06 GMT",
+              "Content-Type": "text/html; charset=UTF-8",
+              "Transfer-Encoding": "chunked",
+              "Connection": "close",
+              "X-Frame-Options": "SAMEORIGIN",
+              "Cache-Control": "no-cache",
+              "Access-Control-Allow-Origin": "*",
+              "X-Content-Type-Options": "nosniff",
+              "Request-ID": "7c4383e2f521cee5c46e536749749cdd",
+              "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+            },
+            "retrieved_at": "2026-11-15T15:23:06Z"
+          }
+        ]
+      },
+      {
+        "url": "https://firms.modaps.eosdis.nasa.gov/api/data_availability/",
+        "http_status": 200,
+        "retrieved_at": "2026-11-15T15:23:06Z",
+        "elapsed_seconds": 0.8462,
+        "network_wait_seconds": 0.846236,
+        "body_bytes": 17834,
+        "sha256": "fc1145f6c4e0a0e2042334a5ffd4b5db9d068701a82ddfbc692b485e65c757f5",
+        "retries": 0,
+        "headers": {
+          "Server": "nginx",
+          "Date": "Sun, 15 Nov 2026 15:23:06 GMT",
+          "Content-Type": "text/html; charset=UTF-8",
+          "Transfer-Encoding": "chunked",
+          "Connection": "close",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Cache-Control": "no-cache",
+          "Access-Control-Allow-Origin": "*",
+          "X-Content-Type-Options": "nosniff",
+          "Request-ID": "88bdc940c01b3ba4068ab4e7814ee853",
+          "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "url": "https://firms.modaps.eosdis.nasa.gov/api/data_availability/",
+            "http_status": 200,
+            "elapsed_seconds": 0.8462,
+            "body_bytes": 17834,
+            "sha256": "fc1145f6c4e0a0e2042334a5ffd4b5db9d068701a82ddfbc692b485e65c757f5",
+            "headers": {
+              "Server": "nginx",
+              "Date": "Sun, 15 Nov 2026 15:23:06 GMT",
+              "Content-Type": "text/html; charset=UTF-8",
+              "Transfer-Encoding": "chunked",
+              "Connection": "close",
+              "X-Frame-Options": "SAMEORIGIN",
+              "Cache-Control": "no-cache",
+              "Access-Control-Allow-Origin": "*",
+              "X-Content-Type-Options": "nosniff",
+              "Request-ID": "88bdc940c01b3ba4068ab4e7814ee853",
+              "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+            },
+            "retrieved_at": "2026-11-15T15:23:06Z"
+          }
+        ]
+      },
+      {
+        "url": "https://firms.modaps.eosdis.nasa.gov/content/academy/data_api/firms_api_use.html",
+        "http_status": 200,
+        "retrieved_at": "2026-11-15T15:23:08Z",
+        "elapsed_seconds": 1.375614,
+        "network_wait_seconds": 1.375983,
+        "body_bytes": 369354,
+        "sha256": "8de6484933cbc63e974c299f2aa09ad2cde86489d341a9d729255a2b295490f0",
+        "retries": 0,
+        "headers": {
+          "Server": "nginx",
+          "Date": "Sun, 15 Nov 2026 15:23:07 GMT",
+          "Content-Type": "text/html",
+          "Content-Length": "369354",
+          "Connection": "close",
+          "Last-Modified": "Mon, 09 Nov 2026 21:30:34 GMT",
+          "ETag": "\"6af23b7a-5a2ca\"",
+          "Cache-Control": "no-cache",
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff",
+          "Accept-Ranges": "bytes",
+          "Request-ID": "cac59059518a7381e5a7ed3cae24ccbe",
+          "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "url": "https://firms.modaps.eosdis.nasa.gov/content/academy/data_api/firms_api_use.html",
+            "http_status": 200,
+            "elapsed_seconds": 1.375614,
+            "body_bytes": 369354,
+            "sha256": "8de6484933cbc63e974c299f2aa09ad2cde86489d341a9d729255a2b295490f0",
+            "headers": {
+              "Server": "nginx",
+              "Date": "Sun, 15 Nov 2026 15:23:07 GMT",
+              "Content-Type": "text/html",
+              "Content-Length": "369354",
+              "Connection": "close",
+              "Last-Modified": "Mon, 09 Nov 2026 21:30:34 GMT",
+              "ETag": "\"6af23b7a-5a2ca\"",
+              "Cache-Control": "no-cache",
+              "Access-Control-Allow-Origin": "*",
+              "X-Frame-Options": "SAMEORIGIN",
+              "X-Content-Type-Options": "nosniff",
+              "Accept-Ranges": "bytes",
+              "Request-ID": "cac59059518a7381e5a7ed3cae24ccbe",
+              "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+            },
+            "retrieved_at": "2026-11-15T15:23:08Z"
+          }
+        ]
+      }
+    ],
+    "facts": {
+      "area_template_present": true,
+      "historical_date_syntax": "YYYY-MM-DD",
+      "day_range_text": "1 .. 5",
+      "world_token_present": true,
+      "output_format_in_area_template": "csv",
+      "transaction_limit_text": "5000 transactions",
+      "sources_on_area_page": [
+        "LANDSAT_NRT",
+        "MODIS_NRT",
+        "MODIS_SP",
+        "VIIRS_NOAA20_NRT",
+        "VIIRS_NOAA20_SP",
+        "VIIRS_NOAA21_NRT",
+        "VIIRS_NOAA21_SP",
+        "VIIRS_SNPP_NRT",
+        "VIIRS_SNPP_SP"
+      ],
+      "sources_on_availability_page": [
+        "LANDSAT_NRT",
+        "MODIS_NRT",
+        "MODIS_SP",
+        "VIIRS_NOAA20_NRT",
+        "VIIRS_NOAA20_SP",
+        "VIIRS_NOAA21_NRT",
+        "VIIRS_NOAA21_SP",
+        "VIIRS_SNPP_NRT",
+        "VIIRS_SNPP_SP"
+      ],
+      "target_sources_on_area_page": [
+        "VIIRS_NOAA20_SP",
+        "VIIRS_NOAA21_SP"
+      ],
+      "api_index_describes_area_as": "CSV format",
+      "country_service_marked_unavailable": true,
+      "archive_download_equated_to_area_csv": false,
+      "attribute_links": [
+        {
+          "label": "LANDSAT",
+          "href": "https://www.earthdata.nasa.gov/data/tools/firms/faq"
+        },
+        {
+          "label": "MODIS",
+          "href": "https://go.nasa.gov/3JSgbdb"
+        },
+        {
+          "label": "VIIRS S-NPP",
+          "href": "https://go.nasa.gov/3sf3ALb"
+        },
+        {
+          "label": "VIIRS NOAA-20",
+          "href": "https://www.earthdata.nasa.gov/learn/find-data/near-real-time/firms/vj114imgtdlnrt"
+        },
+        {
+          "label": "VIIRS NOAA-21",
+          "href": "https://www.earthdata.nasa.gov/learn/find-data/near-real-time/firms/vj214imgtdlnrt"
+        }
+      ],
+      "academy_documents_availability_csv": true,
+      "academy_documents_area_csv": true,
+      "academy_documents_status_query": true,
+      "academy_nrt_example_uses_bright_ti4": true,
+      "academy_nrt_example_is_not_a_july_2024_response": true,
+      "column_name_note": "bright_ti4 and bright_ti5 occur in the code-examples VIIRS NRT sample. brightness and bright_t31 occur in the MODIS sample on the same page. Neither pair was returned for 2024-07-07.",
+      "phrases_present": {
+        "VIIRS_NOAA20_SP": true,
+        "VIIRS_NOAA21_SP": true,
+        "VJ114IMG": false,
+        "VJ114IMGDL": false,
+        "VJ114IMGML": false,
+        "VJ214IMG": false,
+        "VJ214IMGDL": false,
+        "VJ214IMGML": false,
+        "fire_archive_J1V-C2": false,
+        "fire_archive_J2V-C2": false,
+        "fire_nrt_J1V-C2": false,
+        "fire_nrt_J2V-C2": false,
+        "not yet available": false,
+        "Standard Processing": true,
+        "bright_ti4": true,
+        "bright_ti5": true,
+        "brightness": true,
+        "bright_t31": true
+      }
+    },
+    "same_product_as_archive_download": "The retrieved area page names a CSV query for a source code. It does not say that the response is the archive-download file fire_archive_J1V-C2 or fire_archive_J2V-C2. Equivalence stays not_assessed."
+  },
+  "local_archives": [
+    {
+      "platform": "NOAA-20",
+      "api_source": "VIIRS_NOAA20_SP",
+      "monthly_sensor": "viirs_noaa20",
+      "filename": "fire_archive_J1V-C2_850119.csv",
+      "bytes": 6691837,
+      "sha256": "b2febdffbf7ad9dcaf7066ed913b8e0028eebff94bb79a9dd4e2e346dd4f9907",
+      "header": [
+        "latitude",
+        "longitude",
+        "brightness",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "instrument",
+        "confidence",
+        "version",
+        "bright_t31",
+        "frp",
+        "daynight",
+        "type"
+      ],
+      "rows": 82372,
+      "duplicate_full_rows": 0,
+      "acq_dates": [
+        "2024-07-07"
+      ],
+      "acq_time_min": "0031",
+      "acq_time_max": "2357",
+      "latitude_min": "-50.57444",
+      "latitude_max": "71.25928",
+      "longitude_min": "-175.0715",
+      "longitude_max": "175.63397",
+      "satellites": {
+        "N20": 82372
+      },
+      "instruments": {
+        "VIIRS": 82372
+      },
+      "versions": {
+        "2": 82372
+      },
+      "confidences": {
+        "n": 72727,
+        "h": 2708,
+        "l": 6937
+      },
+      "observed_bbox": "-175.0715,-50.57444,175.63397,71.25928",
+      "bbox_meaning": "Axis-aligned extent of stored detection coordinates. This is not the original archive-download request area.",
+      "api_source_requested_beside_this_file": "VIIRS_NOAA20_SP",
+      "api_source_is_not_a_processing_stream_assignment": true
+    },
+    {
+      "platform": "NOAA-21",
+      "api_source": "VIIRS_NOAA21_SP",
+      "monthly_sensor": "viirs_noaa21",
+      "filename": "fire_archive_J2V-C2_850120.csv",
+      "bytes": 7113989,
+      "sha256": "5be3094edf2dc4461b9eadc82c97657b730550aaa92000d88fc2b1fbe4b46917",
+      "header": [
+        "latitude",
+        "longitude",
+        "brightness",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "instrument",
+        "confidence",
+        "version",
+        "bright_t31",
+        "frp",
+        "daynight",
+        "type"
+      ],
+      "rows": 87637,
+      "duplicate_full_rows": 0,
+      "acq_dates": [
+        "2024-07-07"
+      ],
+      "acq_time_min": "0000",
+      "acq_time_max": "2359",
+      "latitude_min": "-44.13126",
+      "latitude_max": "71.42756",
+      "longitude_min": "-137.77524",
+      "longitude_max": "175.6368",
+      "satellites": {
+        "N21": 87637
+      },
+      "instruments": {
+        "VIIRS": 87637
+      },
+      "versions": {
+        "2": 87637
+      },
+      "confidences": {
+        "n": 74845,
+        "h": 6879,
+        "l": 5913
+      },
+      "observed_bbox": "-137.77524,-44.13126,175.6368,71.42756",
+      "bbox_meaning": "Axis-aligned extent of stored detection coordinates. This is not the original archive-download request area.",
+      "api_source_requested_beside_this_file": "VIIRS_NOAA21_SP",
+      "api_source_is_not_a_processing_stream_assignment": true
+    }
+  ],
+  "monthly_checksums": [
+    {
+      "sensor": "viirs_noaa20",
+      "filename": "fire_archive_J1V-C2_850320.csv",
+      "bytes": 235770840,
+      "sha256": "9a192db30e307c257955047ca1177e3f2f463b8c8cdfda7b28ceac6b3aa92bd5",
+      "ingestion_sha256": "9a192db30e307c257955047ca1177e3f2f463b8c8cdfda7b28ceac6b3aa92bd5",
+      "matches_ingestion_manifest": true,
+      "processing_stream_left_unchanged": true
+    },
+    {
+      "sensor": "viirs_noaa21",
+      "filename": "fire_archive_J2V-C2_850321.csv",
+      "bytes": 225148614,
+      "sha256": "c86e46d4ca730eea6db448ff928126ddc6b44ba4c4d11dfbc3a2d999f4937007",
+      "ingestion_sha256": "c86e46d4ca730eea6db448ff928126ddc6b44ba4c4d11dfbc3a2d999f4937007",
+      "matches_ingestion_manifest": true,
+      "processing_stream_left_unchanged": true
+    }
+  ],
+  "requests": [
+    {
+      "platform": "NOAA-20",
+      "source": "VIIRS_NOAA20_SP",
+      "date": "2024-07-07",
+      "day_range": 1,
+      "area": "-175.0715,-50.57444,175.63397,71.25928",
+      "area_meaning": "Axis-aligned extent of stored detection coordinates. This is not the original archive-download request area.",
+      "output_format": "csv",
+      "url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/[MAP_KEY]/VIIRS_NOAA20_SP/-175.0715,-50.57444,175.63397,71.25928/1/2024-07-07",
+      "availability_url": "https://firms.modaps.eosdis.nasa.gov/api/data_availability/csv/[MAP_KEY]/VIIRS_NOAA20_SP",
+      "authenticated": true,
+      "sent": false,
+      "http_status": null,
+      "headers": null,
+      "body_bytes": null,
+      "sha256": null,
+      "rows": null,
+      "elapsed_seconds": null,
+      "network_wait_seconds": null,
+      "retries": 0,
+      "attempts": [],
+      "reason": "FIRMS_MAP_KEY is not configured. The authenticated URL was not opened.",
+      "zero_fire_activity": false
+    },
+    {
+      "platform": "NOAA-21",
+      "source": "VIIRS_NOAA21_SP",
+      "date": "2024-07-07",
+      "day_range": 1,
+      "area": "-137.77524,-44.13126,175.6368,71.42756",
+      "area_meaning": "Axis-aligned extent of stored detection coordinates. This is not the original archive-download request area.",
+      "output_format": "csv",
+      "url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/[MAP_KEY]/VIIRS_NOAA21_SP/-137.77524,-44.13126,175.6368,71.42756/1/2024-07-07",
+      "availability_url": "https://firms.modaps.eosdis.nasa.gov/api/data_availability/csv/[MAP_KEY]/VIIRS_NOAA21_SP",
+      "authenticated": true,
+      "sent": false,
+      "http_status": null,
+      "headers": null,
+      "body_bytes": null,
+      "sha256": null,
+      "rows": null,
+      "elapsed_seconds": null,
+      "network_wait_seconds": null,
+      "retries": 0,
+      "attempts": [],
+      "reason": "FIRMS_MAP_KEY is not configured. The authenticated URL was not opened.",
+      "zero_fire_activity": false
+    }
+  ],
+  "comparison": null,
+  "comparison_status": "not_performed",
+  "does_not_prove": [
+    "An absent API response is not zero fire activity.",
+    "The observed coordinate extent is not the original order polygon.",
+    "A catalog label Standard Processing does not assign the local file's stream.",
+    "A Level-2 swath identifier is not a FIRMS location CSV.",
+    "same_fire remains not_assessed."
+  ],
+  "documentation_fetch_errors": [],
+  "original_day_files_unchanged": true,
+  "checksums_after_run": {
+    "fire_archive_J1V-C2_850119.csv": "b2febdffbf7ad9dcaf7066ed913b8e0028eebff94bb79a9dd4e2e346dd4f9907",
+    "fire_archive_J2V-C2_850120.csv": "5be3094edf2dc4461b9eadc82c97657b730550aaa92000d88fc2b1fbe4b46917"
+  }
+}
