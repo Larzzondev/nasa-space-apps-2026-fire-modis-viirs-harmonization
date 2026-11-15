@@ -1,0 +1,10 @@
+{
+  "wall_clock_seconds": 29.242507299990393,
+  "cpu_seconds": 28.65625,
+  "source_rows_read": 7985467,
+  "source_bytes_read": 647934174,
+  "records_processed": 7985467,
+  "records_per_second": 273077.2939147957,
+  "retries": 0,
+  "cancelled": false
+}

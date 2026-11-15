@@ -1,0 +1,4337 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "experiment_run",
+  "experiment_id": "D",
+  "run_id": "m11",
+  "status": "completed",
+  "science_executed": true,
+  "results": {
+    "experiment_id": "D",
+    "title": "Spatial resolution and aggregation candidates for July 2024",
+    "same_fire": "not_assessed",
+    "harmonization_coefficient": null,
+    "xgboost_trained": false,
+    "missing_dates_filled": false,
+    "processing_level": "unresolved",
+    "clusters_are_confirmed_fires": false,
+    "candidate_pairs_are_confirmed_fires": false,
+    "proximity_establishes_same_fire": false,
+    "h3_selected": false,
+    "source_checksums": {
+      "checksum_cache": "checksums.json",
+      "measured_utc": "2026-11-15T13:34:45.008347+00:00",
+      "measurement_seconds": 0.49507659999653697,
+      "archives": [
+        {
+          "sensor": "modis",
+          "relative_csv": "modis/fire_archive_M-C61_850319.csv",
+          "sha256": "97e1a4312fbe488e63fd06461865b21dd5d01c419f2e80fa6e178c0015f10c81",
+          "bytes": 54196122,
+          "sha256_matches_configuration": true
+        },
+        {
+          "sensor": "viirs_snpp",
+          "relative_csv": "viirs_snpp/fire_archive_SV-C2_850322.csv",
+          "sha256": "bc5ff311c2df9113baf4eedaf4247d55954e8f4fa2ca052f940a943365314f21",
+          "bytes": 132818598,
+          "sha256_matches_configuration": true
+        },
+        {
+          "sensor": "viirs_noaa20",
+          "relative_csv": "viirs_noaa20/fire_archive_J1V-C2_850320.csv",
+          "sha256": "9a192db30e307c257955047ca1177e3f2f463b8c8cdfda7b28ceac6b3aa92bd5",
+          "bytes": 235770840,
+          "sha256_matches_configuration": true
+        },
+        {
+          "sensor": "viirs_noaa21",
+          "relative_csv": "viirs_noaa21/fire_archive_J2V-C2_850321.csv",
+          "sha256": "c86e46d4ca730eea6db448ff928126ddc6b44ba4c4d11dfbc3a2d999f4937007",
+          "bytes": 225148614,
+          "sha256_matches_configuration": true
+        }
+      ]
+    },
+    "scientific_locks": {
+      "same_fire": "not_assessed",
+      "missing_dates_filled": false,
+      "harmonization_coefficient": null,
+      "xgboost_trained": false,
+      "processing_level": "unresolved",
+      "modify_source_rows": false,
+      "clusters_are_confirmed_fires": false,
+      "candidate_pairs_are_confirmed_fires": false,
+      "proximity_establishes_same_fire": false,
+      "h3_selected": false
+    },
+    "earth_radius_m": 6371008.8,
+    "footprint_proxy": "scan_times_track_km2_distribution",
+    "footprint_limitation": "scan and track are stored lengths in kilometres. Their product treats those lengths as the sides of a rectangle. The archive does not include the pixel polygon, the scan angle, or the ground orientation. Adjacent-scan overlap and Earth curvature inside the pixel are not corrected. scan multiplied by track is a stored-size proxy, not an exact physical pixel area.",
+    "thresholds_are_sensor_footprints": false,
+    "equal_degree_cells_are_equal_area": false,
+    "product_of_medians_is_median_of_products": false,
+    "h3_library_required": false,
+    "candidate_methods": [
+      "equal_degree_1",
+      "equal_degree_2",
+      "spherical_zone_area",
+      "h3_unselected"
+    ],
+    "selected_method": null,
+    "satellites": [
+      {
+        "satellite": "Terra",
+        "display": "Terra",
+        "rows": 195316,
+        "scan": {
+          "count": 195316,
+          "method": "numpy.quantile method=linear",
+          "p00": 1.0,
+          "p10": 1.0,
+          "p25": 1.0,
+          "p50": 1.2,
+          "p75": 1.8,
+          "p90": 2.7,
+          "p95": 3.4,
+          "p99": 4.4,
+          "p100": 4.8,
+          "mean": 1.56051475557558,
+          "minimum": 1.0,
+          "maximum": 4.8
+        },
+        "track": {
+          "count": 195316,
+          "method": "numpy.quantile method=linear",
+          "p00": 1.0,
+          "p10": 1.0,
+          "p25": 1.0,
+          "p50": 1.1,
+          "p75": 1.3,
+          "p90": 1.6,
+          "p95": 1.7,
+          "p99": 1.9,
+          "p100": 2.0,
+          "mean": 1.1952942923262815,
+          "minimum": 1.0,
+          "maximum": 2.0
+        },
+        "scan_times_track": {
+          "count": 195316,
+          "method": "numpy.quantile method=linear",
+          "p00": 1.0,
+          "p10": 1.0,
+          "p25": 1.0,
+          "p50": 1.32,
+          "p75": 2.3400000000000003,
+          "p90": 4.32,
+          "p95": 5.779999999999999,
+          "p99": 8.36,
+          "p100": 9.6,
+          "mean": 2.047972874726085,
+          "minimum": 1.0,
+          "maximum": 9.6
+        },
+        "product_of_medians_km2": 1.32,
+        "median_of_products_km2": 1.32,
+        "product_of_medians_is_median_of_products": false,
+        "product_of_medians_equals_median_of_products_numerically": true,
+        "footprint_proxy": "scan_times_track_km2_distribution",
+        "footprint_limitation": "scan and track are stored lengths in kilometres. Their product treats those lengths as the sides of a rectangle. The archive does not include the pixel polygon, the scan angle, or the ground orientation. Adjacent-scan overlap and Earth curvature inside the pixel are not corrected. scan multiplied by track is a stored-size proxy, not an exact physical pixel area.",
+        "thresholds_are_sensor_footprints": false,
+        "growth_with_scan": [
+          {
+            "scan_bin_start_km": 1.0,
+            "scan_bin_end_km": 1.1,
+            "rows": 83828,
+            "scan": {
+              "count": 83828,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.0,
+              "p10": 1.0,
+              "p25": 1.0,
+              "p50": 1.0,
+              "p75": 1.1,
+              "p90": 1.1,
+              "p95": 1.1,
+              "p99": 1.1,
+              "p100": 1.1,
+              "mean": 1.0395202080450445,
+              "minimum": 1.0,
+              "maximum": 1.1
+            },
+            "track": {
+              "count": 83828,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.0,
+              "p10": 1.0,
+              "p25": 1.0,
+              "p50": 1.0,
+              "p75": 1.0,
+              "p90": 1.1,
+              "p95": 1.1,
+              "p99": 1.1,
+              "p100": 1.1,
+              "mean": 1.0126747626091521,
+              "minimum": 1.0,
+              "maximum": 1.1
+            },
+            "scan_times_track": {
+              "count": 83828,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.0,
+              "p10": 1.0,
+              "p25": 1.0,
+              "p50": 1.0,
+              "p75": 1.1,
+              "p90": 1.2100000000000002,
+              "p95": 1.2100000000000002,
+              "p99": 1.2100000000000002,
+              "p100": 1.2100000000000002,
+              "mean": 1.053462446915112,
+              "minimum": 1.0,
+              "maximum": 1.2100000000000002
+            }
+          },
+          {
+            "scan_bin_start_km": 1.1,
+            "scan_bin_end_km": 1.2,
+            "rows": 17869,
+            "scan": {
+              "count": 17869,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.2,
+              "p10": 1.2,
+              "p25": 1.2,
+              "p50": 1.2,
+              "p75": 1.2,
+              "p90": 1.2,
+              "p95": 1.2,
+              "p99": 1.2,
+              "p100": 1.2,
+              "mean": 1.2000000000000002,
+              "minimum": 1.2,
+              "maximum": 1.2
+            },
+            "track": {
+              "count": 17869,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.1,
+              "p10": 1.1,
+              "p25": 1.1,
+              "p50": 1.1,
+              "p75": 1.1,
+              "p90": 1.1,
+              "p95": 1.1,
+              "p99": 1.1,
+              "p100": 1.1,
+              "mean": 1.0999999999999999,
+              "minimum": 1.1,
+              "maximum": 1.1
+            },
+            "scan_times_track": {
+              "count": 17869,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.32,
+              "p10": 1.32,
+              "p25": 1.32,
+              "p50": 1.32,
+              "p75": 1.32,
+              "p90": 1.32,
+              "p95": 1.32,
+              "p99": 1.32,
+              "p100": 1.32,
+              "mean": 1.32,
+              "minimum": 1.32,
+              "maximum": 1.32
+            }
+          },
+          {
+            "scan_bin_start_km": 1.2,
+            "scan_bin_end_km": 1.4,
+            "rows": 23959,
+            "scan": {
+              "count": 23959,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.3,
+              "p10": 1.3,
+              "p25": 1.3,
+              "p50": 1.3,
+              "p75": 1.4,
+              "p90": 1.4,
+              "p95": 1.4,
+              "p99": 1.4,
+              "p100": 1.4,
+              "mean": 1.344960140239576,
+              "minimum": 1.3,
+              "maximum": 1.4
+            },
+            "track": {
+              "count": 23959,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.1,
+              "p10": 1.1,
+              "p25": 1.1,
+              "p50": 1.1,
+              "p75": 1.2,
+              "p90": 1.2,
+              "p95": 1.2,
+              "p99": 1.2,
+              "p100": 1.2,
+              "mean": 1.1461454985600397,
+              "minimum": 1.1,
+              "maximum": 1.2
+            },
+            "scan_times_track": {
+              "count": 23959,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.4300000000000002,
+              "p10": 1.4300000000000002,
+              "p25": 1.4300000000000002,
+              "p50": 1.4300000000000002,
+              "p75": 1.68,
+              "p90": 1.68,
+              "p95": 1.68,
+              "p99": 1.68,
+              "p100": 1.68,
+              "mean": 1.5439413164155436,
+              "minimum": 1.4300000000000002,
+              "maximum": 1.68
+            }
+          },
+          {
+            "scan_bin_start_km": 1.4,
+            "scan_bin_end_km": 1.6,
+            "rows": 15260,
+            "scan": {
+              "count": 15260,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.5,
+              "p10": 1.5,
+              "p25": 1.5,
+              "p50": 1.5,
+              "p75": 1.6,
+              "p90": 1.6,
+              "p95": 1.6,
+              "p99": 1.6,
+              "p100": 1.6,
+              "mean": 1.5454062909567499,
+              "minimum": 1.5,
+              "maximum": 1.6
+            },
+            "track": {
+              "count": 15260,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.2,
+              "p10": 1.2,
+              "p25": 1.2,
+              "p50": 1.2,
+              "p75": 1.2,
+              "p90": 1.3,
+              "p95": 1.3,
+              "p99": 1.3,
+              "p100": 1.3,
+              "mean": 1.2154128440366971,
+              "minimum": 1.2,
+              "maximum": 1.3
+            },
+            "scan_times_track": {
+              "count": 15260,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.7999999999999998,
+              "p10": 1.7999999999999998,
+              "p25": 1.7999999999999998,
+              "p50": 1.7999999999999998,
+              "p75": 1.92,
+              "p90": 2.08,
+              "p95": 2.08,
+              "p99": 2.08,
+              "p100": 2.08,
+              "mean": 1.8791480996068155,
+              "minimum": 1.7999999999999998,
+              "maximum": 2.08
+            }
+          },
+          {
+            "scan_bin_start_km": 1.6,
+            "scan_bin_end_km": 2.0,
+            "rows": 18214,
+            "scan": {
+              "count": 18214,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.7,
+              "p10": 1.7,
+              "p25": 1.7,
+              "p50": 1.8,
+              "p75": 1.9,
+              "p90": 2.0,
+              "p95": 2.0,
+              "p99": 2.0,
+              "p100": 2.0,
+              "mean": 1.838058636213901,
+              "minimum": 1.7,
+              "maximum": 2.0
+            },
+            "track": {
+              "count": 18214,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.3,
+              "p10": 1.3,
+              "p25": 1.3,
+              "p50": 1.3,
+              "p75": 1.4,
+              "p90": 1.4,
+              "p95": 1.4,
+              "p99": 1.4,
+              "p100": 1.4,
+              "mean": 1.3294828154167126,
+              "minimum": 1.3,
+              "maximum": 1.4
+            },
+            "scan_times_track": {
+              "count": 18214,
+              "method": "numpy.quantile method=linear",
+              "p00": 2.21,
+              "p10": 2.21,
+              "p25": 2.21,
+              "p50": 2.3400000000000003,
+              "p75": 2.6599999999999997,
+              "p90": 2.8,
+              "p95": 2.8,
+              "p99": 2.8,
+              "p100": 2.8,
+              "mean": 2.4476666300647856,
+              "minimum": 2.21,
+              "maximum": 2.8
+            }
+          },
+          {
+            "scan_bin_start_km": 2.0,
+            "scan_bin_end_km": 2.7,
+            "rows": 17866,
+            "scan": {
+              "count": 17866,
+              "method": "numpy.quantile method=linear",
+              "p00": 2.1,
+              "p10": 2.1,
+              "p25": 2.2,
+              "p50": 2.3,
+              "p75": 2.5,
+              "p90": 2.7,
+              "p95": 2.7,
+              "p99": 2.7,
+              "p100": 2.7,
+              "mean": 2.358390238441733,
+              "minimum": 2.1,
+              "maximum": 2.7
+            },
+            "track": {
+              "count": 17866,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.4,
+              "p10": 1.4,
+              "p25": 1.4,
+              "p50": 1.5,
+              "p75": 1.5,
+              "p90": 1.6,
+              "p95": 1.6,
+              "p99": 1.6,
+              "p100": 1.6,
+              "mean": 1.4818314116198366,
+              "minimum": 1.4,
+              "maximum": 1.6
+            },
+            "scan_times_track": {
+              "count": 17866,
+              "method": "numpy.quantile method=linear",
+              "p00": 2.94,
+              "p10": 2.94,
+              "p25": 3.08,
+              "p50": 3.4499999999999997,
+              "p75": 3.75,
+              "p90": 4.32,
+              "p95": 4.32,
+              "p99": 4.32,
+              "p100": 4.32,
+              "mean": 3.5069730213813948,
+              "minimum": 2.94,
+              "maximum": 4.32
+            }
+          },
+          {
+            "scan_bin_start_km": 2.7,
+            "scan_bin_end_km": 4.8,
+            "rows": 18320,
+            "scan": {
+              "count": 18320,
+              "method": "numpy.quantile method=linear",
+              "p00": 2.8,
+              "p10": 2.8,
+              "p25": 3.0,
+              "p50": 3.4,
+              "p75": 3.9,
+              "p90": 4.4,
+              "p95": 4.6,
+              "p99": 4.8,
+              "p100": 4.8,
+              "mean": 3.5365502183406115,
+              "minimum": 2.8,
+              "maximum": 4.8
+            },
+            "track": {
+              "count": 18320,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.6,
+              "p10": 1.6,
+              "p25": 1.7,
+              "p50": 1.7,
+              "p75": 1.8,
+              "p90": 1.9,
+              "p95": 2.0,
+              "p99": 2.0,
+              "p100": 2.0,
+              "mean": 1.7585371179039302,
+              "minimum": 1.6,
+              "maximum": 2.0
+            },
+            "scan_times_track": {
+              "count": 18320,
+              "method": "numpy.quantile method=linear",
+              "p00": 4.4799999999999995,
+              "p10": 4.4799999999999995,
+              "p25": 5.1,
+              "p50": 5.779999999999999,
+              "p75": 7.02,
+              "p90": 8.36,
+              "p95": 9.2,
+              "p99": 9.6,
+              "p100": 9.6,
+              "mean": 6.288246179039301,
+              "minimum": 4.4799999999999995,
+              "maximum": 9.6
+            }
+          }
+        ],
+        "grid_1_degree": {
+          "bin_degrees": 1.0,
+          "equal_degree_cells_are_equal_area": false,
+          "occupied_cells": 5424,
+          "rows": 195316,
+          "count_maximum_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -115,
+            "rows": 1977,
+            "cell_area_km2": 6460.270972732336,
+            "rows_per_1000_km2": 306.02431513237883
+          },
+          "rate_maximum_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -115,
+            "rows": 1977,
+            "cell_area_km2": 6460.270972732336,
+            "rows_per_1000_km2": 306.02431513237883
+          },
+          "count_and_rate_maxima_are_the_same_cell": true,
+          "top_cells_by_row_count": [
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -115,
+              "rows": 1977,
+              "cell_area_km2": 6460.270972732336,
+              "rows_per_1000_km2": 306.02431513237883
+            },
+            {
+              "latitude_floor": 59,
+              "longitude_floor": -122,
+              "rows": 1918,
+              "cell_area_km2": 6275.300211715634,
+              "rows_per_1000_km2": 305.64274780339616
+            },
+            {
+              "latitude_floor": 61,
+              "longitude_floor": 120,
+              "rows": 1775,
+              "cell_area_km2": 5899.681064130621,
+              "rows_per_1000_km2": 300.86372139534706
+            },
+            {
+              "latitude_floor": 59,
+              "longitude_floor": 121,
+              "rows": 1553,
+              "cell_area_km2": 6275.300211715634,
+              "rows_per_1000_km2": 247.47819986375092
+            },
+            {
+              "latitude_floor": 59,
+              "longitude_floor": 119,
+              "rows": 1477,
+              "cell_area_km2": 6275.300211715634,
+              "rows_per_1000_km2": 235.3672254982357
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -122,
+              "rows": 1448,
+              "cell_area_km2": 6460.270972732336,
+              "rows_per_1000_km2": 224.1392050134975
+            },
+            {
+              "latitude_floor": 60,
+              "longitude_floor": 120,
+              "rows": 1307,
+              "cell_area_km2": 6088.417933464338,
+              "rows_per_1000_km2": 214.6698886776833
+            },
+            {
+              "latitude_floor": 53,
+              "longitude_floor": 116,
+              "rows": 1297,
+              "cell_area_km2": 7354.501318598911,
+              "rows_per_1000_km2": 176.35458120321454
+            }
+          ],
+          "latitude_bands": [
+            {
+              "latitude_start": -90,
+              "latitude_end": -60,
+              "rows": 0,
+              "row_share": 0.0,
+              "spherical_area_km2": 34167935.223337546,
+              "area_share": 0.06698729810778072
+            },
+            {
+              "latitude_start": -60,
+              "latitude_end": -30,
+              "rows": 1117,
+              "row_share": 0.005718937516639702,
+              "spherical_area_km2": 93348535.01988043,
+              "area_share": 0.1830127018922194
+            },
+            {
+              "latitude_start": -30,
+              "latitude_end": 0,
+              "rows": 76354,
+              "row_share": 0.3909254746154949,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.25
+            },
+            {
+              "latitude_start": 0,
+              "latitude_end": 30,
+              "rows": 5169,
+              "row_share": 0.02646480575068095,
+              "spherical_area_km2": 127516470.24321795,
+              "area_share": 0.25000000000000006
+            },
+            {
+              "latitude_start": 30,
+              "latitude_end": 60,
+              "rows": 84258,
+              "row_share": 0.43139322943332853,
+              "spherical_area_km2": 93348535.0198804,
+              "area_share": 0.18301270189221935
+            },
+            {
+              "latitude_start": 60,
+              "latitude_end": 90,
+              "rows": 28418,
+              "row_share": 0.14549755268385592,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.06698729810778073
+            }
+          ],
+          "high_latitude_abs_at_least_60": {
+            "rows": 28418,
+            "row_share": 0.14549755268385592,
+            "area_share": 0.13397459621556146,
+            "meaning": "Cells whose latitude centers are at least 60 degrees from the equator. Row share above the area share means equal-degree counts overweight that latitude relative to ground area."
+          },
+          "rows_are_archived_detections": true,
+          "cells_are_not_fires": true,
+          "cells_are_not_analytical_clusters": true
+        },
+        "grid_2_degree": {
+          "bin_degrees": 2.0,
+          "equal_degree_cells_are_equal_area": false,
+          "occupied_cells": 2364,
+          "rows": 195316,
+          "count_maximum_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -122,
+            "rows": 4576,
+            "cell_area_km2": 25471.14236889594,
+            "rows_per_1000_km2": 179.6542900874355
+          },
+          "rate_maximum_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -122,
+            "rows": 4576,
+            "cell_area_km2": 25471.14236889594,
+            "rows_per_1000_km2": 179.6542900874355
+          },
+          "count_and_rate_maxima_are_the_same_cell": true,
+          "top_cells_by_row_count": [
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -122,
+              "rows": 4576,
+              "cell_area_km2": 25471.14236889594,
+              "rows_per_1000_km2": 179.6542900874355
+            },
+            {
+              "latitude_floor": 60,
+              "longitude_floor": 120,
+              "rows": 3506,
+              "cell_area_km2": 23976.19799518992,
+              "rows_per_1000_km2": 146.22835533404296
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": 120,
+              "rows": 3187,
+              "cell_area_km2": 25471.14236889594,
+              "rows_per_1000_km2": 125.12198918458411
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -116,
+              "rows": 2597,
+              "cell_area_km2": 25471.14236889594,
+              "rows_per_1000_km2": 101.95852083852053
+            },
+            {
+              "latitude_floor": 54,
+              "longitude_floor": 116,
+              "rows": 2581,
+              "cell_area_km2": 28366.14957504457,
+              "rows_per_1000_km2": 90.98873265022416
+            },
+            {
+              "latitude_floor": 54,
+              "longitude_floor": 118,
+              "rows": 2468,
+              "cell_area_km2": 28366.14957504457,
+              "rows_per_1000_km2": 87.00511126724263
+            },
+            {
+              "latitude_floor": 52,
+              "longitude_floor": 128,
+              "rows": 2314,
+              "cell_area_km2": 29762.685287147673,
+              "rows_per_1000_km2": 77.74836099883929
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": 118,
+              "rows": 2284,
+              "cell_area_km2": 25471.14236889594,
+              "rows_per_1000_km2": 89.6701045803546
+            }
+          ],
+          "latitude_bands": [
+            {
+              "latitude_start": -90,
+              "latitude_end": -60,
+              "rows": 0,
+              "row_share": 0.0,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.0669872981077807
+            },
+            {
+              "latitude_start": -60,
+              "latitude_end": -30,
+              "rows": 1117,
+              "row_share": 0.005718937516639702,
+              "spherical_area_km2": 93348535.01988041,
+              "area_share": 0.18301270189221933
+            },
+            {
+              "latitude_start": -30,
+              "latitude_end": 0,
+              "rows": 76354,
+              "row_share": 0.3909254746154949,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.24999999999999994
+            },
+            {
+              "latitude_start": 0,
+              "latitude_end": 30,
+              "rows": 5169,
+              "row_share": 0.02646480575068095,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.24999999999999994
+            },
+            {
+              "latitude_start": 30,
+              "latitude_end": 60,
+              "rows": 84258,
+              "row_share": 0.43139322943332853,
+              "spherical_area_km2": 93348535.0198804,
+              "area_share": 0.1830127018922193
+            },
+            {
+              "latitude_start": 60,
+              "latitude_end": 90,
+              "rows": 28418,
+              "row_share": 0.14549755268385592,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.0669872981077807
+            }
+          ],
+          "high_latitude_abs_at_least_60": {
+            "rows": 28418,
+            "row_share": 0.14549755268385592,
+            "area_share": 0.13397459621556138,
+            "meaning": "Cells whose latitude centers are at least 60 degrees from the equator. Row share above the area share means equal-degree counts overweight that latitude relative to ground area."
+          },
+          "rows_are_archived_detections": true,
+          "cells_are_not_fires": true,
+          "cells_are_not_analytical_clusters": true
+        },
+        "published_monthly_1_degree": {
+          "recomputed": false,
+          "occupied_cells": 5424,
+          "rows_in_cells": 195316,
+          "top_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -115,
+            "delivered_rows": 1977
+          }
+        },
+        "published_within_sensor_scan_track": {
+          "recomputed": false,
+          "scan_p50_km": 1.2,
+          "track_p50_km": 1.1
+        },
+        "one_degree_occupied_cells_match_published_floor_count": true,
+        "same_fire": "not_assessed",
+        "cells_are_not_analytical_clusters": true
+      },
+      {
+        "satellite": "Aqua",
+        "display": "Aqua",
+        "rows": 481320,
+        "scan": {
+          "count": 481320,
+          "method": "numpy.quantile method=linear",
+          "p00": 1.0,
+          "p10": 1.0,
+          "p25": 1.1,
+          "p50": 1.3,
+          "p75": 1.8,
+          "p90": 2.8,
+          "p95": 3.5,
+          "p99": 4.5,
+          "p100": 4.8,
+          "mean": 1.61360342391756,
+          "minimum": 1.0,
+          "maximum": 4.8
+        },
+        "track": {
+          "count": 481320,
+          "method": "numpy.quantile method=linear",
+          "p00": 1.0,
+          "p10": 1.0,
+          "p25": 1.0,
+          "p50": 1.1,
+          "p75": 1.3,
+          "p90": 1.6,
+          "p95": 1.8,
+          "p99": 1.9,
+          "p100": 2.0,
+          "mean": 1.2133950386437298,
+          "minimum": 1.0,
+          "maximum": 2.0
+        },
+        "scan_times_track": {
+          "count": 481320,
+          "method": "numpy.quantile method=linear",
+          "p00": 1.0,
+          "p10": 1.0,
+          "p25": 1.1,
+          "p50": 1.4300000000000002,
+          "p75": 2.3400000000000003,
+          "p90": 4.4799999999999995,
+          "p95": 6.3,
+          "p99": 8.549999999999999,
+          "p100": 9.6,
+          "mean": 2.1528740546829552,
+          "minimum": 1.0,
+          "maximum": 9.6
+        },
+        "product_of_medians_km2": 1.4300000000000002,
+        "median_of_products_km2": 1.4300000000000002,
+        "product_of_medians_is_median_of_products": false,
+        "product_of_medians_equals_median_of_products_numerically": true,
+        "footprint_proxy": "scan_times_track_km2_distribution",
+        "footprint_limitation": "scan and track are stored lengths in kilometres. Their product treats those lengths as the sides of a rectangle. The archive does not include the pixel polygon, the scan angle, or the ground orientation. Adjacent-scan overlap and Earth curvature inside the pixel are not corrected. scan multiplied by track is a stored-size proxy, not an exact physical pixel area.",
+        "thresholds_are_sensor_footprints": false,
+        "growth_with_scan": [
+          {
+            "scan_bin_start_km": 1.0,
+            "scan_bin_end_km": 1.1,
+            "rows": 185465,
+            "scan": {
+              "count": 185465,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.0,
+              "p10": 1.0,
+              "p25": 1.0,
+              "p50": 1.0,
+              "p75": 1.1,
+              "p90": 1.1,
+              "p95": 1.1,
+              "p99": 1.1,
+              "p100": 1.1,
+              "mean": 1.0404852667619227,
+              "minimum": 1.0,
+              "maximum": 1.1
+            },
+            "track": {
+              "count": 185465,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.0,
+              "p10": 1.0,
+              "p25": 1.0,
+              "p50": 1.0,
+              "p75": 1.0,
+              "p90": 1.1,
+              "p95": 1.1,
+              "p99": 1.1,
+              "p100": 1.1,
+              "mean": 1.0140759712075054,
+              "minimum": 1.0,
+              "maximum": 1.1
+            },
+            "scan_times_track": {
+              "count": 185465,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.0,
+              "p10": 1.0,
+              "p25": 1.0,
+              "p50": 1.0,
+              "p75": 1.1,
+              "p90": 1.2100000000000002,
+              "p95": 1.2100000000000002,
+              "p99": 1.2100000000000002,
+              "p100": 1.2100000000000002,
+              "mean": 1.0559688350901788,
+              "minimum": 1.0,
+              "maximum": 1.2100000000000002
+            }
+          },
+          {
+            "scan_bin_start_km": 1.1,
+            "scan_bin_end_km": 1.2,
+            "rows": 46095,
+            "scan": {
+              "count": 46095,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.2,
+              "p10": 1.2,
+              "p25": 1.2,
+              "p50": 1.2,
+              "p75": 1.2,
+              "p90": 1.2,
+              "p95": 1.2,
+              "p99": 1.2,
+              "p100": 1.2,
+              "mean": 1.1999999999999997,
+              "minimum": 1.2,
+              "maximum": 1.2
+            },
+            "track": {
+              "count": 46095,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.1,
+              "p10": 1.1,
+              "p25": 1.1,
+              "p50": 1.1,
+              "p75": 1.1,
+              "p90": 1.1,
+              "p95": 1.1,
+              "p99": 1.1,
+              "p100": 1.1,
+              "mean": 1.0999999999999996,
+              "minimum": 1.1,
+              "maximum": 1.1
+            },
+            "scan_times_track": {
+              "count": 46095,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.32,
+              "p10": 1.32,
+              "p25": 1.32,
+              "p50": 1.32,
+              "p75": 1.32,
+              "p90": 1.32,
+              "p95": 1.32,
+              "p99": 1.32,
+              "p100": 1.32,
+              "mean": 1.3200000000000003,
+              "minimum": 1.32,
+              "maximum": 1.32
+            }
+          },
+          {
+            "scan_bin_start_km": 1.2,
+            "scan_bin_end_km": 1.3,
+            "rows": 34323,
+            "scan": {
+              "count": 34323,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.3,
+              "p10": 1.3,
+              "p25": 1.3,
+              "p50": 1.3,
+              "p75": 1.3,
+              "p90": 1.3,
+              "p95": 1.3,
+              "p99": 1.3,
+              "p100": 1.3,
+              "mean": 1.3,
+              "minimum": 1.3,
+              "maximum": 1.3
+            },
+            "track": {
+              "count": 34323,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.1,
+              "p10": 1.1,
+              "p25": 1.1,
+              "p50": 1.1,
+              "p75": 1.1,
+              "p90": 1.1,
+              "p95": 1.1,
+              "p99": 1.2,
+              "p100": 1.2,
+              "mean": 1.1020132272819974,
+              "minimum": 1.1,
+              "maximum": 1.2
+            },
+            "scan_times_track": {
+              "count": 34323,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.4300000000000002,
+              "p10": 1.4300000000000002,
+              "p25": 1.4300000000000002,
+              "p50": 1.4300000000000002,
+              "p75": 1.4300000000000002,
+              "p90": 1.4300000000000002,
+              "p95": 1.4300000000000002,
+              "p99": 1.56,
+              "p100": 1.56,
+              "mean": 1.4326171954665967,
+              "minimum": 1.4300000000000002,
+              "maximum": 1.56
+            }
+          },
+          {
+            "scan_bin_start_km": 1.3,
+            "scan_bin_end_km": 1.4,
+            "rows": 27300,
+            "scan": {
+              "count": 27300,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.4,
+              "p10": 1.4,
+              "p25": 1.4,
+              "p50": 1.4,
+              "p75": 1.4,
+              "p90": 1.4,
+              "p95": 1.4,
+              "p99": 1.4,
+              "p100": 1.4,
+              "mean": 1.3999999999999997,
+              "minimum": 1.4,
+              "maximum": 1.4
+            },
+            "track": {
+              "count": 27300,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.2,
+              "p10": 1.2,
+              "p25": 1.2,
+              "p50": 1.2,
+              "p75": 1.2,
+              "p90": 1.2,
+              "p95": 1.2,
+              "p99": 1.2,
+              "p100": 1.2,
+              "mean": 1.1999999999999997,
+              "minimum": 1.2,
+              "maximum": 1.2
+            },
+            "scan_times_track": {
+              "count": 27300,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.68,
+              "p10": 1.68,
+              "p25": 1.68,
+              "p50": 1.68,
+              "p75": 1.68,
+              "p90": 1.68,
+              "p95": 1.68,
+              "p99": 1.68,
+              "p100": 1.68,
+              "mean": 1.68,
+              "minimum": 1.68,
+              "maximum": 1.68
+            }
+          },
+          {
+            "scan_bin_start_km": 1.4,
+            "scan_bin_end_km": 1.7,
+            "rows": 55141,
+            "scan": {
+              "count": 55141,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.5,
+              "p10": 1.5,
+              "p25": 1.5,
+              "p50": 1.6,
+              "p75": 1.7,
+              "p90": 1.7,
+              "p95": 1.7,
+              "p99": 1.7,
+              "p100": 1.7,
+              "mean": 1.5858072940280372,
+              "minimum": 1.5,
+              "maximum": 1.7
+            },
+            "track": {
+              "count": 55141,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.2,
+              "p10": 1.2,
+              "p25": 1.2,
+              "p50": 1.2,
+              "p75": 1.3,
+              "p90": 1.3,
+              "p95": 1.3,
+              "p99": 1.3,
+              "p100": 1.3,
+              "mean": 1.2380841841823684,
+              "minimum": 1.2,
+              "maximum": 1.3
+            },
+            "scan_times_track": {
+              "count": 55141,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.7999999999999998,
+              "p10": 1.7999999999999998,
+              "p25": 1.7999999999999998,
+              "p50": 1.92,
+              "p75": 2.21,
+              "p90": 2.21,
+              "p95": 2.21,
+              "p99": 2.21,
+              "p100": 2.21,
+              "mean": 1.966509131136541,
+              "minimum": 1.7999999999999998,
+              "maximum": 2.21
+            }
+          },
+          {
+            "scan_bin_start_km": 1.7,
+            "scan_bin_end_km": 2.1,
+            "rows": 43804,
+            "scan": {
+              "count": 43804,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.8,
+              "p10": 1.8,
+              "p25": 1.8,
+              "p50": 1.9,
+              "p75": 2.0,
+              "p90": 2.1,
+              "p95": 2.1,
+              "p99": 2.1,
+              "p100": 2.1,
+              "mean": 1.9358506072504793,
+              "minimum": 1.8,
+              "maximum": 2.1
+            },
+            "track": {
+              "count": 43804,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.3,
+              "p10": 1.3,
+              "p25": 1.3,
+              "p50": 1.4,
+              "p75": 1.4,
+              "p90": 1.4,
+              "p95": 1.4,
+              "p99": 1.4,
+              "p100": 1.4,
+              "mean": 1.3532828052232675,
+              "minimum": 1.3,
+              "maximum": 1.4
+            },
+            "scan_times_track": {
+              "count": 43804,
+              "method": "numpy.quantile method=linear",
+              "p00": 2.3400000000000003,
+              "p10": 2.3400000000000003,
+              "p25": 2.3400000000000003,
+              "p50": 2.6599999999999997,
+              "p75": 2.8,
+              "p90": 2.94,
+              "p95": 2.94,
+              "p99": 2.94,
+              "p100": 2.94,
+              "mean": 2.6244201442790613,
+              "minimum": 2.3400000000000003,
+              "maximum": 2.94
+            }
+          },
+          {
+            "scan_bin_start_km": 2.1,
+            "scan_bin_end_km": 2.8,
+            "rows": 43459,
+            "scan": {
+              "count": 43459,
+              "method": "numpy.quantile method=linear",
+              "p00": 2.2,
+              "p10": 2.2,
+              "p25": 2.3,
+              "p50": 2.4,
+              "p75": 2.6,
+              "p90": 2.8,
+              "p95": 2.8,
+              "p99": 2.8,
+              "p100": 2.8,
+              "mean": 2.4664603419314757,
+              "minimum": 2.2,
+              "maximum": 2.8
+            },
+            "track": {
+              "count": 43459,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.4,
+              "p10": 1.4,
+              "p25": 1.5,
+              "p50": 1.5,
+              "p75": 1.6,
+              "p90": 1.6,
+              "p95": 1.6,
+              "p99": 1.6,
+              "p100": 1.6,
+              "mean": 1.5131066062265581,
+              "minimum": 1.4,
+              "maximum": 1.6
+            },
+            "scan_times_track": {
+              "count": 43459,
+              "method": "numpy.quantile method=linear",
+              "p00": 3.08,
+              "p10": 3.08,
+              "p25": 3.4499999999999997,
+              "p50": 3.5999999999999996,
+              "p75": 4.16,
+              "p90": 4.4799999999999995,
+              "p95": 4.4799999999999995,
+              "p99": 4.4799999999999995,
+              "p100": 4.4799999999999995,
+              "mean": 3.743743068179203,
+              "minimum": 3.08,
+              "maximum": 4.4799999999999995
+            }
+          },
+          {
+            "scan_bin_start_km": 2.8,
+            "scan_bin_end_km": 4.8,
+            "rows": 45733,
+            "scan": {
+              "count": 45733,
+              "method": "numpy.quantile method=linear",
+              "p00": 2.9,
+              "p10": 3.0,
+              "p25": 3.2,
+              "p50": 3.5,
+              "p75": 4.1,
+              "p90": 4.5,
+              "p95": 4.6,
+              "p99": 4.8,
+              "p100": 4.8,
+              "mean": 3.631976909452693,
+              "minimum": 2.9,
+              "maximum": 4.8
+            },
+            "track": {
+              "count": 45733,
+              "method": "numpy.quantile method=linear",
+              "p00": 1.6,
+              "p10": 1.6,
+              "p25": 1.7,
+              "p50": 1.8,
+              "p75": 1.9,
+              "p90": 1.9,
+              "p95": 2.0,
+              "p99": 2.0,
+              "p100": 2.0,
+              "mean": 1.779028272800822,
+              "minimum": 1.6,
+              "maximum": 2.0
+            },
+            "scan_times_track": {
+              "count": 45733,
+              "method": "numpy.quantile method=linear",
+              "p00": 4.64,
+              "p10": 4.800000000000001,
+              "p25": 5.44,
+              "p50": 6.3,
+              "p75": 7.789999999999999,
+              "p90": 8.549999999999999,
+              "p95": 9.2,
+              "p99": 9.6,
+              "p100": 9.6,
+              "mean": 6.524834364681959,
+              "minimum": 4.64,
+              "maximum": 9.6
+            }
+          }
+        ],
+        "grid_1_degree": {
+          "bin_degrees": 1.0,
+          "equal_degree_cells_are_equal_area": false,
+          "occupied_cells": 5880,
+          "rows": 481320,
+          "count_maximum_cell": {
+            "latitude_floor": -11,
+            "longitude_floor": 15,
+            "rows": 2912,
+            "cell_area_km2": 12157.14944898523,
+            "rows_per_1000_km2": 239.52983486956046
+          },
+          "rate_maximum_cell": {
+            "latitude_floor": 59,
+            "longitude_floor": -122,
+            "rows": 1929,
+            "cell_area_km2": 6275.300211715634,
+            "rows_per_1000_km2": 307.3956519878786
+          },
+          "count_and_rate_maxima_are_the_same_cell": false,
+          "top_cells_by_row_count": [
+            {
+              "latitude_floor": -11,
+              "longitude_floor": 15,
+              "rows": 2912,
+              "cell_area_km2": 12157.14944898523,
+              "rows_per_1000_km2": 239.52983486956046
+            },
+            {
+              "latitude_floor": -11,
+              "longitude_floor": 17,
+              "rows": 2909,
+              "cell_area_km2": 12157.14944898523,
+              "rows_per_1000_km2": 239.28306649572505
+            },
+            {
+              "latitude_floor": -12,
+              "longitude_floor": 26,
+              "rows": 2890,
+              "cell_area_km2": 12115.974190602516,
+              "rows_per_1000_km2": 238.52807496417117
+            },
+            {
+              "latitude_floor": -13,
+              "longitude_floor": 26,
+              "rows": 2783,
+              "cell_area_km2": 12071.108289111253,
+              "rows_per_1000_km2": 230.550495724606
+            },
+            {
+              "latitude_floor": -11,
+              "longitude_floor": 16,
+              "rows": 2712,
+              "cell_area_km2": 12157.14944898523,
+              "rows_per_1000_km2": 223.07860994720053
+            },
+            {
+              "latitude_floor": -10,
+              "longitude_floor": 18,
+              "rows": 2502,
+              "cell_area_km2": 12194.621521876816,
+              "rows_per_1000_km2": 205.17241929251193
+            },
+            {
+              "latitude_floor": -12,
+              "longitude_floor": 25,
+              "rows": 2280,
+              "cell_area_km2": 12115.974190602516,
+              "rows_per_1000_km2": 188.18131865685478
+            },
+            {
+              "latitude_floor": -13,
+              "longitude_floor": 27,
+              "rows": 2209,
+              "cell_area_km2": 12071.108289111253,
+              "rows_per_1000_km2": 182.99893821618923
+            }
+          ],
+          "latitude_bands": [
+            {
+              "latitude_start": -90,
+              "latitude_end": -60,
+              "rows": 0,
+              "row_share": 0.0,
+              "spherical_area_km2": 34167935.223337546,
+              "area_share": 0.06698729810778072
+            },
+            {
+              "latitude_start": -60,
+              "latitude_end": -30,
+              "rows": 3247,
+              "row_share": 0.006746031746031746,
+              "spherical_area_km2": 93348535.01988043,
+              "area_share": 0.1830127018922194
+            },
+            {
+              "latitude_start": -30,
+              "latitude_end": 0,
+              "rows": 375045,
+              "row_share": 0.7792009473946647,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.25
+            },
+            {
+              "latitude_start": 0,
+              "latitude_end": 30,
+              "rows": 6896,
+              "row_share": 0.014327266683287626,
+              "spherical_area_km2": 127516470.24321795,
+              "area_share": 0.25000000000000006
+            },
+            {
+              "latitude_start": 30,
+              "latitude_end": 60,
+              "rows": 71066,
+              "row_share": 0.14764813429734897,
+              "spherical_area_km2": 93348535.0198804,
+              "area_share": 0.18301270189221935
+            },
+            {
+              "latitude_start": 60,
+              "latitude_end": 90,
+              "rows": 25066,
+              "row_share": 0.052077619878667,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.06698729810778073
+            }
+          ],
+          "high_latitude_abs_at_least_60": {
+            "rows": 25066,
+            "row_share": 0.052077619878667,
+            "area_share": 0.13397459621556146,
+            "meaning": "Cells whose latitude centers are at least 60 degrees from the equator. Row share above the area share means equal-degree counts overweight that latitude relative to ground area."
+          },
+          "rows_are_archived_detections": true,
+          "cells_are_not_fires": true,
+          "cells_are_not_analytical_clusters": true
+        },
+        "grid_2_degree": {
+          "bin_degrees": 2.0,
+          "equal_degree_cells_are_equal_area": false,
+          "occupied_cells": 2489,
+          "rows": 481320,
+          "count_maximum_cell": {
+            "latitude_floor": -12,
+            "longitude_floor": 16,
+            "rows": 9642,
+            "cell_area_km2": 48546.24727917549,
+            "rows_per_1000_km2": 198.61473420492493
+          },
+          "rate_maximum_cell": {
+            "latitude_floor": -12,
+            "longitude_floor": 16,
+            "rows": 9642,
+            "cell_area_km2": 48546.24727917549,
+            "rows_per_1000_km2": 198.61473420492493
+          },
+          "count_and_rate_maxima_are_the_same_cell": true,
+          "top_cells_by_row_count": [
+            {
+              "latitude_floor": -12,
+              "longitude_floor": 16,
+              "rows": 9642,
+              "cell_area_km2": 48546.24727917549,
+              "rows_per_1000_km2": 198.61473420492493
+            },
+            {
+              "latitude_floor": -14,
+              "longitude_floor": 26,
+              "rows": 8680,
+              "cell_area_km2": 48187.34740042188,
+              "rows_per_1000_km2": 180.13027212043647
+            },
+            {
+              "latitude_floor": -12,
+              "longitude_floor": 26,
+              "rows": 7678,
+              "cell_area_km2": 48546.24727917549,
+              "rows_per_1000_km2": 158.15846600553968
+            },
+            {
+              "latitude_floor": -10,
+              "longitude_floor": 18,
+              "rows": 6819,
+              "cell_area_km2": 48846.00103359548,
+              "rows_per_1000_km2": 139.60201154051492
+            },
+            {
+              "latitude_floor": -12,
+              "longitude_floor": 14,
+              "rows": 6507,
+              "cell_area_km2": 48546.24727917549,
+              "rows_per_1000_km2": 134.03713705366587
+            },
+            {
+              "latitude_floor": -12,
+              "longitude_floor": 24,
+              "rows": 6372,
+              "cell_area_km2": 48546.24727917549,
+              "rows_per_1000_km2": 131.2562835878222
+            },
+            {
+              "latitude_floor": -14,
+              "longitude_floor": 16,
+              "rows": 6222,
+              "cell_area_km2": 48187.34740042188,
+              "rows_per_1000_km2": 129.12103146697646
+            },
+            {
+              "latitude_floor": -10,
+              "longitude_floor": 16,
+              "rows": 5968,
+              "cell_area_km2": 48846.00103359548,
+              "rows_per_1000_km2": 122.17990979231458
+            }
+          ],
+          "latitude_bands": [
+            {
+              "latitude_start": -90,
+              "latitude_end": -60,
+              "rows": 0,
+              "row_share": 0.0,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.0669872981077807
+            },
+            {
+              "latitude_start": -60,
+              "latitude_end": -30,
+              "rows": 3247,
+              "row_share": 0.006746031746031746,
+              "spherical_area_km2": 93348535.01988041,
+              "area_share": 0.18301270189221933
+            },
+            {
+              "latitude_start": -30,
+              "latitude_end": 0,
+              "rows": 375045,
+              "row_share": 0.7792009473946647,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.24999999999999994
+            },
+            {
+              "latitude_start": 0,
+              "latitude_end": 30,
+              "rows": 6896,
+              "row_share": 0.014327266683287626,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.24999999999999994
+            },
+            {
+              "latitude_start": 30,
+              "latitude_end": 60,
+              "rows": 71066,
+              "row_share": 0.14764813429734897,
+              "spherical_area_km2": 93348535.0198804,
+              "area_share": 0.1830127018922193
+            },
+            {
+              "latitude_start": 60,
+              "latitude_end": 90,
+              "rows": 25066,
+              "row_share": 0.052077619878667,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.0669872981077807
+            }
+          ],
+          "high_latitude_abs_at_least_60": {
+            "rows": 25066,
+            "row_share": 0.052077619878667,
+            "area_share": 0.13397459621556138,
+            "meaning": "Cells whose latitude centers are at least 60 degrees from the equator. Row share above the area share means equal-degree counts overweight that latitude relative to ground area."
+          },
+          "rows_are_archived_detections": true,
+          "cells_are_not_fires": true,
+          "cells_are_not_analytical_clusters": true
+        },
+        "published_monthly_1_degree": {
+          "recomputed": false,
+          "occupied_cells": 5880,
+          "rows_in_cells": 481320,
+          "top_cell": {
+            "latitude_floor": -11,
+            "longitude_floor": 15,
+            "delivered_rows": 2912
+          }
+        },
+        "published_within_sensor_scan_track": {
+          "recomputed": false,
+          "scan_p50_km": 1.3,
+          "track_p50_km": 1.1
+        },
+        "one_degree_occupied_cells_match_published_floor_count": true,
+        "same_fire": "not_assessed",
+        "cells_are_not_analytical_clusters": true
+      },
+      {
+        "satellite": "SNPP",
+        "display": "S-NPP",
+        "rows": 1635020,
+        "scan": {
+          "count": 1635020,
+          "method": "numpy.quantile method=linear",
+          "p00": 0.32,
+          "p10": 0.38,
+          "p25": 0.39,
+          "p50": 0.44,
+          "p75": 0.51,
+          "p90": 0.58,
+          "p95": 0.63,
+          "p99": 0.75,
+          "p100": 0.8,
+          "mean": 0.46075773385035046,
+          "minimum": 0.32,
+          "maximum": 0.8
+        },
+        "track": {
+          "count": 1635020,
+          "method": "numpy.quantile method=linear",
+          "p00": 0.36,
+          "p10": 0.36,
+          "p25": 0.38,
+          "p50": 0.44,
+          "p75": 0.56,
+          "p90": 0.66,
+          "p95": 0.71,
+          "p99": 0.77,
+          "p100": 0.78,
+          "mean": 0.4807445168866436,
+          "minimum": 0.36,
+          "maximum": 0.78
+        },
+        "scan_times_track": {
+          "count": 1635020,
+          "method": "numpy.quantile method=linear",
+          "p00": 0.1368,
+          "p10": 0.1404,
+          "p25": 0.1634,
+          "p50": 0.1978,
+          "p75": 0.2562,
+          "p90": 0.3402,
+          "p95": 0.4402,
+          "p99": 0.5775,
+          "p100": 0.6240000000000001,
+          "mean": 0.22680869169796086,
+          "minimum": 0.1368,
+          "maximum": 0.6240000000000001
+        },
+        "product_of_medians_km2": 0.1936,
+        "median_of_products_km2": 0.1978,
+        "product_of_medians_is_median_of_products": false,
+        "product_of_medians_equals_median_of_products_numerically": false,
+        "footprint_proxy": "scan_times_track_km2_distribution",
+        "footprint_limitation": "scan and track are stored lengths in kilometres. Their product treats those lengths as the sides of a rectangle. The archive does not include the pixel polygon, the scan angle, or the ground orientation. Adjacent-scan overlap and Earth curvature inside the pixel are not corrected. scan multiplied by track is a stored-size proxy, not an exact physical pixel area.",
+        "thresholds_are_sensor_footprints": false,
+        "growth_with_scan": [
+          {
+            "scan_bin_start_km": 0.32,
+            "scan_bin_end_km": 0.38,
+            "rows": 222493,
+            "scan": {
+              "count": 222493,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.32,
+              "p10": 0.33,
+              "p25": 0.34,
+              "p50": 0.36,
+              "p75": 0.38,
+              "p90": 0.38,
+              "p95": 0.38,
+              "p99": 0.38,
+              "p100": 0.38,
+              "mean": 0.35895466374223006,
+              "minimum": 0.32,
+              "maximum": 0.38
+            },
+            "track": {
+              "count": 222493,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.36,
+              "p10": 0.36,
+              "p25": 0.36,
+              "p50": 0.56,
+              "p75": 0.57,
+              "p90": 0.58,
+              "p95": 0.59,
+              "p99": 0.59,
+              "p100": 0.59,
+              "mean": 0.5034551199363576,
+              "minimum": 0.36,
+              "maximum": 0.59
+            },
+            "scan_times_track": {
+              "count": 222493,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1368,
+              "p10": 0.1368,
+              "p25": 0.1368,
+              "p50": 0.18480000000000002,
+              "p75": 0.20519999999999997,
+              "p90": 0.21459999999999999,
+              "p95": 0.22419999999999998,
+              "p99": 0.22419999999999998,
+              "p100": 0.22419999999999998,
+              "mean": 0.17956932397873193,
+              "minimum": 0.1368,
+              "maximum": 0.22419999999999998
+            }
+          },
+          {
+            "scan_bin_start_km": 0.38,
+            "scan_bin_end_km": 0.39,
+            "rows": 193439,
+            "scan": {
+              "count": 193439,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.39,
+              "p10": 0.39,
+              "p25": 0.39,
+              "p50": 0.39,
+              "p75": 0.39,
+              "p90": 0.39,
+              "p95": 0.39,
+              "p99": 0.39,
+              "p100": 0.39,
+              "mean": 0.3900000000000001,
+              "minimum": 0.39,
+              "maximum": 0.39
+            },
+            "track": {
+              "count": 193439,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.36,
+              "p10": 0.36,
+              "p25": 0.36,
+              "p50": 0.36,
+              "p75": 0.37,
+              "p90": 0.44,
+              "p95": 0.59,
+              "p99": 0.6,
+              "p100": 0.6,
+              "mean": 0.3925060096464519,
+              "minimum": 0.36,
+              "maximum": 0.6
+            },
+            "scan_times_track": {
+              "count": 193439,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1404,
+              "p10": 0.1404,
+              "p25": 0.1404,
+              "p50": 0.1404,
+              "p75": 0.1443,
+              "p90": 0.1716,
+              "p95": 0.2301,
+              "p99": 0.23399999999999999,
+              "p100": 0.23399999999999999,
+              "mean": 0.15307734376211624,
+              "minimum": 0.1404,
+              "maximum": 0.23399999999999999
+            }
+          },
+          {
+            "scan_bin_start_km": 0.39,
+            "scan_bin_end_km": 0.4,
+            "rows": 125420,
+            "scan": {
+              "count": 125420,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.4,
+              "p10": 0.4,
+              "p25": 0.4,
+              "p50": 0.4,
+              "p75": 0.4,
+              "p90": 0.4,
+              "p95": 0.4,
+              "p99": 0.4,
+              "p100": 0.4,
+              "mean": 0.40000000000000013,
+              "minimum": 0.4,
+              "maximum": 0.4
+            },
+            "track": {
+              "count": 125420,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.37,
+              "p10": 0.37,
+              "p25": 0.37,
+              "p50": 0.37,
+              "p75": 0.44,
+              "p90": 0.6,
+              "p95": 0.6,
+              "p99": 0.6,
+              "p100": 0.6,
+              "mean": 0.4123234731302823,
+              "minimum": 0.37,
+              "maximum": 0.6
+            },
+            "scan_times_track": {
+              "count": 125420,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.148,
+              "p10": 0.148,
+              "p25": 0.148,
+              "p50": 0.148,
+              "p75": 0.17600000000000002,
+              "p90": 0.24,
+              "p95": 0.24,
+              "p99": 0.24,
+              "p100": 0.24,
+              "mean": 0.16492938925211292,
+              "minimum": 0.148,
+              "maximum": 0.24
+            }
+          },
+          {
+            "scan_bin_start_km": 0.4,
+            "scan_bin_end_km": 0.42,
+            "rows": 181703,
+            "scan": {
+              "count": 181703,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.41,
+              "p10": 0.41,
+              "p25": 0.41,
+              "p50": 0.41,
+              "p75": 0.42,
+              "p90": 0.42,
+              "p95": 0.42,
+              "p99": 0.42,
+              "p100": 0.42,
+              "mean": 0.4147323379360826,
+              "minimum": 0.41,
+              "maximum": 0.42
+            },
+            "track": {
+              "count": 181703,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.37,
+              "p10": 0.37,
+              "p25": 0.37,
+              "p50": 0.38,
+              "p75": 0.45,
+              "p90": 0.61,
+              "p95": 0.61,
+              "p99": 0.61,
+              "p100": 0.61,
+              "mean": 0.43113140674617373,
+              "minimum": 0.37,
+              "maximum": 0.61
+            },
+            "scan_times_track": {
+              "count": 181703,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1517,
+              "p10": 0.1517,
+              "p25": 0.1517,
+              "p50": 0.1596,
+              "p75": 0.189,
+              "p90": 0.2501,
+              "p95": 0.2562,
+              "p99": 0.2562,
+              "p100": 0.2562,
+              "mean": 0.17883641051606192,
+              "minimum": 0.1517,
+              "maximum": 0.2562
+            }
+          },
+          {
+            "scan_bin_start_km": 0.42,
+            "scan_bin_end_km": 0.44,
+            "rows": 147961,
+            "scan": {
+              "count": 147961,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.43,
+              "p10": 0.43,
+              "p25": 0.43,
+              "p50": 0.43,
+              "p75": 0.44,
+              "p90": 0.44,
+              "p95": 0.44,
+              "p99": 0.44,
+              "p100": 0.44,
+              "mean": 0.4347471968964795,
+              "minimum": 0.43,
+              "maximum": 0.44
+            },
+            "track": {
+              "count": 147961,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.38,
+              "p10": 0.38,
+              "p25": 0.38,
+              "p50": 0.39,
+              "p75": 0.46,
+              "p90": 0.62,
+              "p95": 0.62,
+              "p99": 0.63,
+              "p100": 0.63,
+              "mean": 0.4469993444218409,
+              "minimum": 0.38,
+              "maximum": 0.63
+            },
+            "scan_times_track": {
+              "count": 147961,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1634,
+              "p10": 0.1634,
+              "p25": 0.1634,
+              "p50": 0.1716,
+              "p75": 0.2024,
+              "p90": 0.2666,
+              "p95": 0.2728,
+              "p99": 0.2772,
+              "p100": 0.2772,
+              "mean": 0.19435242394955426,
+              "minimum": 0.1634,
+              "maximum": 0.2772
+            }
+          },
+          {
+            "scan_bin_start_km": 0.44,
+            "scan_bin_end_km": 0.46,
+            "rows": 124398,
+            "scan": {
+              "count": 124398,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.45,
+              "p10": 0.45,
+              "p25": 0.45,
+              "p50": 0.45,
+              "p75": 0.46,
+              "p90": 0.46,
+              "p95": 0.46,
+              "p99": 0.46,
+              "p100": 0.46,
+              "mean": 0.4547963793630123,
+              "minimum": 0.45,
+              "maximum": 0.46
+            },
+            "track": {
+              "count": 124398,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.39,
+              "p10": 0.39,
+              "p25": 0.39,
+              "p50": 0.39,
+              "p75": 0.47,
+              "p90": 0.63,
+              "p95": 0.64,
+              "p99": 0.64,
+              "p100": 0.64,
+              "mean": 0.4607777456229199,
+              "minimum": 0.39,
+              "maximum": 0.64
+            },
+            "scan_times_track": {
+              "count": 124398,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.17550000000000002,
+              "p10": 0.17550000000000002,
+              "p25": 0.17550000000000002,
+              "p50": 0.1794,
+              "p75": 0.2162,
+              "p90": 0.2898,
+              "p95": 0.2944,
+              "p99": 0.2944,
+              "p100": 0.2944,
+              "mean": 0.20958016527596907,
+              "minimum": 0.17550000000000002,
+              "maximum": 0.2944
+            }
+          },
+          {
+            "scan_bin_start_km": 0.46,
+            "scan_bin_end_km": 0.49,
+            "rows": 160918,
+            "scan": {
+              "count": 160918,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.47,
+              "p10": 0.47,
+              "p25": 0.47,
+              "p50": 0.48,
+              "p75": 0.49,
+              "p90": 0.49,
+              "p95": 0.49,
+              "p99": 0.49,
+              "p100": 0.49,
+              "mean": 0.47965423383338096,
+              "minimum": 0.47,
+              "maximum": 0.49
+            },
+            "track": {
+              "count": 160918,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.39,
+              "p10": 0.4,
+              "p25": 0.4,
+              "p50": 0.41,
+              "p75": 0.49,
+              "p90": 0.65,
+              "p95": 0.65,
+              "p99": 0.65,
+              "p100": 0.65,
+              "mean": 0.4736680172510222,
+              "minimum": 0.39,
+              "maximum": 0.65
+            },
+            "scan_times_track": {
+              "count": 160918,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1833,
+              "p10": 0.188,
+              "p25": 0.192,
+              "p50": 0.2009,
+              "p75": 0.24009999999999998,
+              "p90": 0.312,
+              "p95": 0.3185,
+              "p99": 0.3185,
+              "p100": 0.3185,
+              "mean": 0.22720492362569758,
+              "minimum": 0.1833,
+              "maximum": 0.3185
+            }
+          },
+          {
+            "scan_bin_start_km": 0.49,
+            "scan_bin_end_km": 0.53,
+            "rows": 171708,
+            "scan": {
+              "count": 171708,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.5,
+              "p10": 0.5,
+              "p25": 0.5,
+              "p50": 0.51,
+              "p75": 0.52,
+              "p90": 0.53,
+              "p95": 0.53,
+              "p99": 0.53,
+              "p100": 0.53,
+              "mean": 0.5144145875556176,
+              "minimum": 0.5,
+              "maximum": 0.53
+            },
+            "track": {
+              "count": 171708,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.41,
+              "p10": 0.41,
+              "p25": 0.41,
+              "p50": 0.49,
+              "p75": 0.5,
+              "p90": 0.67,
+              "p95": 0.67,
+              "p99": 0.67,
+              "p100": 0.67,
+              "mean": 0.49410406038157806,
+              "minimum": 0.41,
+              "maximum": 0.67
+            },
+            "scan_times_track": {
+              "count": 171708,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.205,
+              "p10": 0.205,
+              "p25": 0.2132,
+              "p50": 0.245,
+              "p75": 0.265,
+              "p90": 0.34840000000000004,
+              "p95": 0.3551,
+              "p99": 0.3551,
+              "p100": 0.3551,
+              "mean": 0.25423334614578236,
+              "minimum": 0.205,
+              "maximum": 0.3551
+            }
+          },
+          {
+            "scan_bin_start_km": 0.53,
+            "scan_bin_end_km": 0.58,
+            "rows": 155551,
+            "scan": {
+              "count": 155551,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.54,
+              "p10": 0.54,
+              "p25": 0.55,
+              "p50": 0.56,
+              "p75": 0.57,
+              "p90": 0.58,
+              "p95": 0.58,
+              "p99": 0.58,
+              "p100": 0.58,
+              "mean": 0.5572526695424652,
+              "minimum": 0.54,
+              "maximum": 0.58
+            },
+            "track": {
+              "count": 155551,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.42,
+              "p10": 0.42,
+              "p25": 0.43,
+              "p50": 0.51,
+              "p75": 0.52,
+              "p90": 0.69,
+              "p95": 0.69,
+              "p99": 0.7,
+              "p100": 0.7,
+              "mean": 0.523199593702387,
+              "minimum": 0.42,
+              "maximum": 0.7
+            },
+            "scan_times_track": {
+              "count": 155551,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.2268,
+              "p10": 0.2268,
+              "p25": 0.24080000000000001,
+              "p50": 0.2805,
+              "p75": 0.3016,
+              "p90": 0.3864,
+              "p95": 0.3932999999999999,
+              "p99": 0.40599999999999997,
+              "p100": 0.40599999999999997,
+              "mean": 0.2917978142217022,
+              "minimum": 0.2268,
+              "maximum": 0.40599999999999997
+            }
+          },
+          {
+            "scan_bin_start_km": 0.58,
+            "scan_bin_end_km": 0.8,
+            "rows": 151429,
+            "scan": {
+              "count": 151429,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.59,
+              "p10": 0.59,
+              "p25": 0.61,
+              "p50": 0.63,
+              "p75": 0.7,
+              "p90": 0.75,
+              "p95": 0.77,
+              "p99": 0.79,
+              "p100": 0.8,
+              "mean": 0.6565399626227472,
+              "minimum": 0.59,
+              "maximum": 0.8
+            },
+            "track": {
+              "count": 151429,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.52,
+              "p10": 0.53,
+              "p25": 0.54,
+              "p50": 0.72,
+              "p75": 0.75,
+              "p90": 0.77,
+              "p95": 0.78,
+              "p99": 0.78,
+              "p100": 0.78,
+              "mean": 0.6744306572717248,
+              "minimum": 0.52,
+              "maximum": 0.78
+            },
+            "scan_times_track": {
+              "count": 151429,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.3068,
+              "p10": 0.318,
+              "p25": 0.3402,
+              "p50": 0.4536,
+              "p75": 0.5249999999999999,
+              "p90": 0.5775,
+              "p95": 0.6006,
+              "p99": 0.6162000000000001,
+              "p100": 0.6240000000000001,
+              "mean": 0.4468068163958027,
+              "minimum": 0.3068,
+              "maximum": 0.6240000000000001
+            }
+          }
+        ],
+        "grid_1_degree": {
+          "bin_degrees": 1.0,
+          "equal_degree_cells_are_equal_area": false,
+          "occupied_cells": 7934,
+          "rows": 1635020,
+          "count_maximum_cell": {
+            "latitude_floor": 59,
+            "longitude_floor": -122,
+            "rows": 15124,
+            "cell_area_km2": 6275.300211715634,
+            "rows_per_1000_km2": 2410.08389873752
+          },
+          "rate_maximum_cell": {
+            "latitude_floor": 59,
+            "longitude_floor": -122,
+            "rows": 15124,
+            "cell_area_km2": 6275.300211715634,
+            "rows_per_1000_km2": 2410.08389873752
+          },
+          "count_and_rate_maxima_are_the_same_cell": true,
+          "top_cells_by_row_count": [
+            {
+              "latitude_floor": 59,
+              "longitude_floor": -122,
+              "rows": 15124,
+              "cell_area_km2": 6275.300211715634,
+              "rows_per_1000_km2": 2410.08389873752
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -115,
+              "rows": 13820,
+              "cell_area_km2": 6460.270972732336,
+              "rows_per_1000_km2": 2139.229152822193
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -122,
+              "rows": 12585,
+              "cell_area_km2": 6460.270972732336,
+              "rows_per_1000_km2": 1948.060701032366
+            },
+            {
+              "latitude_floor": 54,
+              "longitude_floor": 118,
+              "rows": 12069,
+              "cell_area_km2": 7179.92105987647,
+              "rows_per_1000_km2": 1680.9377010347864
+            },
+            {
+              "latitude_floor": 55,
+              "longitude_floor": 116,
+              "rows": 9566,
+              "cell_area_km2": 7003.153727645815,
+              "rows_per_1000_km2": 1365.9560209619608
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -121,
+              "rows": 8353,
+              "cell_area_km2": 6460.270972732336,
+              "rows_per_1000_km2": 1292.9798200813154
+            },
+            {
+              "latitude_floor": 61,
+              "longitude_floor": 120,
+              "rows": 8143,
+              "cell_area_km2": 5899.681064130621,
+              "rows_per_1000_km2": 1380.2441032801753
+            },
+            {
+              "latitude_floor": 53,
+              "longitude_floor": 116,
+              "rows": 6648,
+              "cell_area_km2": 7354.501318598911,
+              "rows_per_1000_km2": 903.9362034224905
+            }
+          ],
+          "latitude_bands": [
+            {
+              "latitude_start": -90,
+              "latitude_end": -60,
+              "rows": 64,
+              "row_share": 3.9143252070311064e-05,
+              "spherical_area_km2": 34167935.223337546,
+              "area_share": 0.06698729810778072
+            },
+            {
+              "latitude_start": -60,
+              "latitude_end": -30,
+              "rows": 11834,
+              "row_share": 0.007237831953125956,
+              "spherical_area_km2": 93348535.01988043,
+              "area_share": 0.1830127018922194
+            },
+            {
+              "latitude_start": -30,
+              "latitude_end": 0,
+              "rows": 984862,
+              "row_share": 0.6023547112573546,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.25
+            },
+            {
+              "latitude_start": 0,
+              "latitude_end": 30,
+              "rows": 37960,
+              "row_share": 0.02321684138420325,
+              "spherical_area_km2": 127516470.24321795,
+              "area_share": 0.25000000000000006
+            },
+            {
+              "latitude_start": 30,
+              "latitude_end": 60,
+              "rows": 482297,
+              "row_share": 0.294979266308669,
+              "spherical_area_km2": 93348535.0198804,
+              "area_share": 0.18301270189221935
+            },
+            {
+              "latitude_start": 60,
+              "latitude_end": 90,
+              "rows": 118003,
+              "row_share": 0.07217220584457683,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.06698729810778073
+            }
+          ],
+          "high_latitude_abs_at_least_60": {
+            "rows": 118067,
+            "row_share": 0.07221134909664714,
+            "area_share": 0.13397459621556146,
+            "meaning": "Cells whose latitude centers are at least 60 degrees from the equator. Row share above the area share means equal-degree counts overweight that latitude relative to ground area."
+          },
+          "rows_are_archived_detections": true,
+          "cells_are_not_fires": true,
+          "cells_are_not_analytical_clusters": true
+        },
+        "grid_2_degree": {
+          "bin_degrees": 2.0,
+          "equal_degree_cells_are_equal_area": false,
+          "occupied_cells": 3032,
+          "rows": 1635020,
+          "count_maximum_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -122,
+            "rows": 39042,
+            "cell_area_km2": 25471.14236889594,
+            "rows_per_1000_km2": 1532.7934426559564
+          },
+          "rate_maximum_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -122,
+            "rows": 39042,
+            "cell_area_km2": 25471.14236889594,
+            "rows_per_1000_km2": 1532.7934426559564
+          },
+          "count_and_rate_maxima_are_the_same_cell": true,
+          "top_cells_by_row_count": [
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -122,
+              "rows": 39042,
+              "cell_area_km2": 25471.14236889594,
+              "rows_per_1000_km2": 1532.7934426559564
+            },
+            {
+              "latitude_floor": 54,
+              "longitude_floor": 118,
+              "rows": 25205,
+              "cell_area_km2": 28366.14957504457,
+              "rows_per_1000_km2": 888.5590881243318
+            },
+            {
+              "latitude_floor": -14,
+              "longitude_floor": 26,
+              "rows": 20073,
+              "cell_area_km2": 48187.34740042188,
+              "rows_per_1000_km2": 416.5616304462582
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -116,
+              "rows": 20016,
+              "cell_area_km2": 25471.14236889594,
+              "rows_per_1000_km2": 785.8304786691671
+            },
+            {
+              "latitude_floor": 54,
+              "longitude_floor": 116,
+              "rows": 18890,
+              "cell_area_km2": 28366.14957504457,
+              "rows_per_1000_km2": 665.9345834028418
+            },
+            {
+              "latitude_floor": -12,
+              "longitude_floor": 16,
+              "rows": 18536,
+              "cell_area_km2": 48546.24727917549,
+              "rows_per_1000_km2": 381.82148031761966
+            },
+            {
+              "latitude_floor": -12,
+              "longitude_floor": 26,
+              "rows": 17961,
+              "cell_area_km2": 48546.24727917549,
+              "rows_per_1000_km2": 369.97710444458164
+            },
+            {
+              "latitude_floor": -10,
+              "longitude_floor": 18,
+              "rows": 15886,
+              "cell_area_km2": 48846.00103359548,
+              "rows_per_1000_km2": 325.22621430306793
+            }
+          ],
+          "latitude_bands": [
+            {
+              "latitude_start": -90,
+              "latitude_end": -60,
+              "rows": 64,
+              "row_share": 3.9143252070311064e-05,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.0669872981077807
+            },
+            {
+              "latitude_start": -60,
+              "latitude_end": -30,
+              "rows": 11834,
+              "row_share": 0.007237831953125956,
+              "spherical_area_km2": 93348535.01988041,
+              "area_share": 0.18301270189221933
+            },
+            {
+              "latitude_start": -30,
+              "latitude_end": 0,
+              "rows": 984862,
+              "row_share": 0.6023547112573546,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.24999999999999994
+            },
+            {
+              "latitude_start": 0,
+              "latitude_end": 30,
+              "rows": 37960,
+              "row_share": 0.02321684138420325,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.24999999999999994
+            },
+            {
+              "latitude_start": 30,
+              "latitude_end": 60,
+              "rows": 482297,
+              "row_share": 0.294979266308669,
+              "spherical_area_km2": 93348535.0198804,
+              "area_share": 0.1830127018922193
+            },
+            {
+              "latitude_start": 60,
+              "latitude_end": 90,
+              "rows": 118003,
+              "row_share": 0.07217220584457683,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.0669872981077807
+            }
+          ],
+          "high_latitude_abs_at_least_60": {
+            "rows": 118067,
+            "row_share": 0.07221134909664714,
+            "area_share": 0.13397459621556138,
+            "meaning": "Cells whose latitude centers are at least 60 degrees from the equator. Row share above the area share means equal-degree counts overweight that latitude relative to ground area."
+          },
+          "rows_are_archived_detections": true,
+          "cells_are_not_fires": true,
+          "cells_are_not_analytical_clusters": true
+        },
+        "published_monthly_1_degree": {
+          "recomputed": false,
+          "occupied_cells": 7934,
+          "rows_in_cells": 1635020,
+          "top_cell": {
+            "latitude_floor": 59,
+            "longitude_floor": -122,
+            "delivered_rows": 15124
+          }
+        },
+        "published_within_sensor_scan_track": {
+          "recomputed": false,
+          "scan_p50_km": 0.44,
+          "track_p50_km": 0.44
+        },
+        "one_degree_occupied_cells_match_published_floor_count": true,
+        "same_fire": "not_assessed",
+        "cells_are_not_analytical_clusters": true
+      },
+      {
+        "satellite": "N20",
+        "display": "NOAA-20",
+        "rows": 2902597,
+        "scan": {
+          "count": 2902597,
+          "method": "numpy.quantile method=linear",
+          "p00": 0.32,
+          "p10": 0.38,
+          "p25": 0.39,
+          "p50": 0.44,
+          "p75": 0.51,
+          "p90": 0.58,
+          "p95": 0.63,
+          "p99": 0.75,
+          "p100": 0.8,
+          "mean": 0.46101516331753944,
+          "minimum": 0.32,
+          "maximum": 0.8
+        },
+        "track": {
+          "count": 2902597,
+          "method": "numpy.quantile method=linear",
+          "p00": 0.36,
+          "p10": 0.36,
+          "p25": 0.38,
+          "p50": 0.44,
+          "p75": 0.57,
+          "p90": 0.66,
+          "p95": 0.71,
+          "p99": 0.77,
+          "p100": 0.78,
+          "mean": 0.4813129552604099,
+          "minimum": 0.36,
+          "maximum": 0.78
+        },
+        "scan_times_track": {
+          "count": 2902597,
+          "method": "numpy.quantile method=linear",
+          "p00": 0.1368,
+          "p10": 0.1404,
+          "p25": 0.1634,
+          "p50": 0.1978,
+          "p75": 0.2562,
+          "p90": 0.3402,
+          "p95": 0.4402,
+          "p99": 0.5775,
+          "p100": 0.6240000000000001,
+          "mean": 0.2272160938979817,
+          "minimum": 0.1368,
+          "maximum": 0.6240000000000001
+        },
+        "product_of_medians_km2": 0.1936,
+        "median_of_products_km2": 0.1978,
+        "product_of_medians_is_median_of_products": false,
+        "product_of_medians_equals_median_of_products_numerically": false,
+        "footprint_proxy": "scan_times_track_km2_distribution",
+        "footprint_limitation": "scan and track are stored lengths in kilometres. Their product treats those lengths as the sides of a rectangle. The archive does not include the pixel polygon, the scan angle, or the ground orientation. Adjacent-scan overlap and Earth curvature inside the pixel are not corrected. scan multiplied by track is a stored-size proxy, not an exact physical pixel area.",
+        "thresholds_are_sensor_footprints": false,
+        "growth_with_scan": [
+          {
+            "scan_bin_start_km": 0.32,
+            "scan_bin_end_km": 0.38,
+            "rows": 393036,
+            "scan": {
+              "count": 393036,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.32,
+              "p10": 0.33,
+              "p25": 0.34,
+              "p50": 0.37,
+              "p75": 0.38,
+              "p90": 0.38,
+              "p95": 0.38,
+              "p99": 0.38,
+              "p100": 0.38,
+              "mean": 0.3591588811203045,
+              "minimum": 0.32,
+              "maximum": 0.38
+            },
+            "track": {
+              "count": 393036,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.36,
+              "p10": 0.36,
+              "p25": 0.36,
+              "p50": 0.55,
+              "p75": 0.57,
+              "p90": 0.58,
+              "p95": 0.59,
+              "p99": 0.59,
+              "p100": 0.59,
+              "mean": 0.5001136028251866,
+              "minimum": 0.36,
+              "maximum": 0.59
+            },
+            "scan_times_track": {
+              "count": 393036,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1368,
+              "p10": 0.1368,
+              "p25": 0.1368,
+              "p50": 0.18150000000000002,
+              "p75": 0.20519999999999997,
+              "p90": 0.21459999999999999,
+              "p95": 0.22419999999999998,
+              "p99": 0.22419999999999998,
+              "p100": 0.22419999999999998,
+              "mean": 0.17841437705451915,
+              "minimum": 0.1368,
+              "maximum": 0.22419999999999998
+            }
+          },
+          {
+            "scan_bin_start_km": 0.38,
+            "scan_bin_end_km": 0.39,
+            "rows": 345526,
+            "scan": {
+              "count": 345526,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.39,
+              "p10": 0.39,
+              "p25": 0.39,
+              "p50": 0.39,
+              "p75": 0.39,
+              "p90": 0.39,
+              "p95": 0.39,
+              "p99": 0.39,
+              "p100": 0.39,
+              "mean": 0.39,
+              "minimum": 0.39,
+              "maximum": 0.39
+            },
+            "track": {
+              "count": 345526,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.36,
+              "p10": 0.36,
+              "p25": 0.36,
+              "p50": 0.36,
+              "p75": 0.37,
+              "p90": 0.44,
+              "p95": 0.59,
+              "p99": 0.6,
+              "p100": 0.6,
+              "mean": 0.39183942742369604,
+              "minimum": 0.36,
+              "maximum": 0.6
+            },
+            "scan_times_track": {
+              "count": 345526,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1404,
+              "p10": 0.1404,
+              "p25": 0.1404,
+              "p50": 0.1404,
+              "p75": 0.1443,
+              "p90": 0.1716,
+              "p95": 0.2301,
+              "p99": 0.23399999999999999,
+              "p100": 0.23399999999999999,
+              "mean": 0.15281737669524148,
+              "minimum": 0.1404,
+              "maximum": 0.23399999999999999
+            }
+          },
+          {
+            "scan_bin_start_km": 0.39,
+            "scan_bin_end_km": 0.4,
+            "rows": 214340,
+            "scan": {
+              "count": 214340,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.4,
+              "p10": 0.4,
+              "p25": 0.4,
+              "p50": 0.4,
+              "p75": 0.4,
+              "p90": 0.4,
+              "p95": 0.4,
+              "p99": 0.4,
+              "p100": 0.4,
+              "mean": 0.4,
+              "minimum": 0.4,
+              "maximum": 0.4
+            },
+            "track": {
+              "count": 214340,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.37,
+              "p10": 0.37,
+              "p25": 0.37,
+              "p50": 0.37,
+              "p75": 0.44,
+              "p90": 0.6,
+              "p95": 0.6,
+              "p99": 0.6,
+              "p100": 0.6,
+              "mean": 0.4181170570122236,
+              "minimum": 0.37,
+              "maximum": 0.6
+            },
+            "scan_times_track": {
+              "count": 214340,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.148,
+              "p10": 0.148,
+              "p25": 0.148,
+              "p50": 0.148,
+              "p75": 0.17600000000000002,
+              "p90": 0.24,
+              "p95": 0.24,
+              "p99": 0.24,
+              "p100": 0.24,
+              "mean": 0.1672468228048894,
+              "minimum": 0.148,
+              "maximum": 0.24
+            }
+          },
+          {
+            "scan_bin_start_km": 0.4,
+            "scan_bin_end_km": 0.42,
+            "rows": 328147,
+            "scan": {
+              "count": 328147,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.41,
+              "p10": 0.41,
+              "p25": 0.41,
+              "p50": 0.41,
+              "p75": 0.42,
+              "p90": 0.42,
+              "p95": 0.42,
+              "p99": 0.42,
+              "p100": 0.42,
+              "mean": 0.4146917082892729,
+              "minimum": 0.41,
+              "maximum": 0.42
+            },
+            "track": {
+              "count": 328147,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.37,
+              "p10": 0.37,
+              "p25": 0.37,
+              "p50": 0.38,
+              "p75": 0.45,
+              "p90": 0.61,
+              "p95": 0.61,
+              "p99": 0.61,
+              "p100": 0.61,
+              "mean": 0.43339744078111336,
+              "minimum": 0.37,
+              "maximum": 0.61
+            },
+            "scan_times_track": {
+              "count": 328147,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1517,
+              "p10": 0.1517,
+              "p25": 0.1517,
+              "p50": 0.1596,
+              "p75": 0.189,
+              "p90": 0.2501,
+              "p95": 0.2562,
+              "p99": 0.2562,
+              "p100": 0.2562,
+              "mean": 0.17975845002392218,
+              "minimum": 0.1517,
+              "maximum": 0.2562
+            }
+          },
+          {
+            "scan_bin_start_km": 0.42,
+            "scan_bin_end_km": 0.44,
+            "rows": 261081,
+            "scan": {
+              "count": 261081,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.43,
+              "p10": 0.43,
+              "p25": 0.43,
+              "p50": 0.43,
+              "p75": 0.44,
+              "p90": 0.44,
+              "p95": 0.44,
+              "p99": 0.44,
+              "p100": 0.44,
+              "mean": 0.4348108824464439,
+              "minimum": 0.43,
+              "maximum": 0.44
+            },
+            "track": {
+              "count": 261081,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.38,
+              "p10": 0.38,
+              "p25": 0.38,
+              "p50": 0.39,
+              "p75": 0.46,
+              "p90": 0.62,
+              "p95": 0.62,
+              "p99": 0.63,
+              "p100": 0.63,
+              "mean": 0.44807730168032145,
+              "minimum": 0.38,
+              "maximum": 0.63
+            },
+            "scan_times_track": {
+              "count": 261081,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1634,
+              "p10": 0.1634,
+              "p25": 0.1634,
+              "p50": 0.1716,
+              "p75": 0.2024,
+              "p90": 0.2666,
+              "p95": 0.2728,
+              "p99": 0.2772,
+              "p100": 0.2772,
+              "mean": 0.19483898100589472,
+              "minimum": 0.1634,
+              "maximum": 0.2772
+            }
+          },
+          {
+            "scan_bin_start_km": 0.44,
+            "scan_bin_end_km": 0.46,
+            "rows": 221989,
+            "scan": {
+              "count": 221989,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.45,
+              "p10": 0.45,
+              "p25": 0.45,
+              "p50": 0.45,
+              "p75": 0.46,
+              "p90": 0.46,
+              "p95": 0.46,
+              "p99": 0.46,
+              "p100": 0.46,
+              "mean": 0.45481839190230156,
+              "minimum": 0.45,
+              "maximum": 0.46
+            },
+            "track": {
+              "count": 221989,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.39,
+              "p10": 0.39,
+              "p25": 0.39,
+              "p50": 0.39,
+              "p75": 0.47,
+              "p90": 0.63,
+              "p95": 0.64,
+              "p99": 0.64,
+              "p100": 0.64,
+              "mean": 0.46144151286775464,
+              "minimum": 0.39,
+              "maximum": 0.64
+            },
+            "scan_times_track": {
+              "count": 221989,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.17550000000000002,
+              "p10": 0.17550000000000002,
+              "p25": 0.17550000000000002,
+              "p50": 0.1794,
+              "p75": 0.2162,
+              "p90": 0.28350000000000003,
+              "p95": 0.2944,
+              "p99": 0.2944,
+              "p100": 0.2944,
+              "mean": 0.20987675155075255,
+              "minimum": 0.17550000000000002,
+              "maximum": 0.2944
+            }
+          },
+          {
+            "scan_bin_start_km": 0.46,
+            "scan_bin_end_km": 0.49,
+            "rows": 286126,
+            "scan": {
+              "count": 286126,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.47,
+              "p10": 0.47,
+              "p25": 0.47,
+              "p50": 0.48,
+              "p75": 0.49,
+              "p90": 0.49,
+              "p95": 0.49,
+              "p99": 0.49,
+              "p100": 0.49,
+              "mean": 0.47972630938817157,
+              "minimum": 0.47,
+              "maximum": 0.49
+            },
+            "track": {
+              "count": 286126,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.39,
+              "p10": 0.4,
+              "p25": 0.4,
+              "p50": 0.47,
+              "p75": 0.49,
+              "p90": 0.65,
+              "p95": 0.65,
+              "p99": 0.65,
+              "p100": 0.65,
+              "mean": 0.47575008912157574,
+              "minimum": 0.39,
+              "maximum": 0.65
+            },
+            "scan_times_track": {
+              "count": 286126,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1833,
+              "p10": 0.188,
+              "p25": 0.192,
+              "p50": 0.22089999999999999,
+              "p75": 0.24009999999999998,
+              "p90": 0.312,
+              "p95": 0.3185,
+              "p99": 0.3185,
+              "p100": 0.3185,
+              "mean": 0.22825426071031643,
+              "minimum": 0.1833,
+              "maximum": 0.3185
+            }
+          },
+          {
+            "scan_bin_start_km": 0.49,
+            "scan_bin_end_km": 0.53,
+            "rows": 302333,
+            "scan": {
+              "count": 302333,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.5,
+              "p10": 0.5,
+              "p25": 0.5,
+              "p50": 0.51,
+              "p75": 0.52,
+              "p90": 0.53,
+              "p95": 0.53,
+              "p99": 0.53,
+              "p100": 0.53,
+              "mean": 0.5144051426738067,
+              "minimum": 0.5,
+              "maximum": 0.53
+            },
+            "track": {
+              "count": 302333,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.41,
+              "p10": 0.41,
+              "p25": 0.41,
+              "p50": 0.49,
+              "p75": 0.5,
+              "p90": 0.66,
+              "p95": 0.67,
+              "p99": 0.67,
+              "p100": 0.67,
+              "mean": 0.49278963923885255,
+              "minimum": 0.41,
+              "maximum": 0.67
+            },
+            "scan_times_track": {
+              "count": 302333,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.205,
+              "p10": 0.205,
+              "p25": 0.2132,
+              "p50": 0.245,
+              "p75": 0.265,
+              "p90": 0.3432,
+              "p95": 0.3551,
+              "p99": 0.3551,
+              "p100": 0.3551,
+              "mean": 0.25355028263537227,
+              "minimum": 0.205,
+              "maximum": 0.3551
+            }
+          },
+          {
+            "scan_bin_start_km": 0.53,
+            "scan_bin_end_km": 0.58,
+            "rows": 282224,
+            "scan": {
+              "count": 282224,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.54,
+              "p10": 0.54,
+              "p25": 0.55,
+              "p50": 0.56,
+              "p75": 0.57,
+              "p90": 0.58,
+              "p95": 0.58,
+              "p99": 0.58,
+              "p100": 0.58,
+              "mean": 0.5571702973524577,
+              "minimum": 0.54,
+              "maximum": 0.58
+            },
+            "track": {
+              "count": 282224,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.42,
+              "p10": 0.42,
+              "p25": 0.43,
+              "p50": 0.51,
+              "p75": 0.67,
+              "p90": 0.69,
+              "p95": 0.69,
+              "p99": 0.7,
+              "p100": 0.7,
+              "mean": 0.52405163983219,
+              "minimum": 0.42,
+              "maximum": 0.7
+            },
+            "scan_times_track": {
+              "count": 282224,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.2268,
+              "p10": 0.2268,
+              "p25": 0.24080000000000001,
+              "p50": 0.2805,
+              "p75": 0.36180000000000007,
+              "p90": 0.3864,
+              "p95": 0.3932999999999999,
+              "p99": 0.40599999999999997,
+              "p100": 0.40599999999999997,
+              "mean": 0.2922489026447077,
+              "minimum": 0.2268,
+              "maximum": 0.40599999999999997
+            }
+          },
+          {
+            "scan_bin_start_km": 0.58,
+            "scan_bin_end_km": 0.8,
+            "rows": 267795,
+            "scan": {
+              "count": 267795,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.59,
+              "p10": 0.59,
+              "p25": 0.61,
+              "p50": 0.63,
+              "p75": 0.7,
+              "p90": 0.76,
+              "p95": 0.78,
+              "p99": 0.79,
+              "p100": 0.8,
+              "mean": 0.6568146903414925,
+              "minimum": 0.59,
+              "maximum": 0.8
+            },
+            "track": {
+              "count": 267795,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.52,
+              "p10": 0.53,
+              "p25": 0.54,
+              "p50": 0.72,
+              "p75": 0.75,
+              "p90": 0.77,
+              "p95": 0.78,
+              "p99": 0.78,
+              "p100": 0.78,
+              "mean": 0.6752795982001157,
+              "minimum": 0.52,
+              "maximum": 0.78
+            },
+            "scan_times_track": {
+              "count": 267795,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.3068,
+              "p10": 0.318,
+              "p25": 0.3402,
+              "p50": 0.4536,
+              "p75": 0.5249999999999999,
+              "p90": 0.5852,
+              "p95": 0.6084,
+              "p99": 0.6162000000000001,
+              "p100": 0.6240000000000001,
+              "mean": 0.4475490046490786,
+              "minimum": 0.3068,
+              "maximum": 0.6240000000000001
+            }
+          }
+        ],
+        "grid_1_degree": {
+          "bin_degrees": 1.0,
+          "equal_degree_cells_are_equal_area": false,
+          "occupied_cells": 8777,
+          "rows": 2902597,
+          "count_maximum_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -115,
+            "rows": 20092,
+            "cell_area_km2": 6460.270972732336,
+            "rows_per_1000_km2": 3110.0862618309334
+          },
+          "rate_maximum_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -115,
+            "rows": 20092,
+            "cell_area_km2": 6460.270972732336,
+            "rows_per_1000_km2": 3110.0862618309334
+          },
+          "count_and_rate_maxima_are_the_same_cell": true,
+          "top_cells_by_row_count": [
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -115,
+              "rows": 20092,
+              "cell_area_km2": 6460.270972732336,
+              "rows_per_1000_km2": 3110.0862618309334
+            },
+            {
+              "latitude_floor": 59,
+              "longitude_floor": -122,
+              "rows": 17887,
+              "cell_area_km2": 6275.300211715634,
+              "rows_per_1000_km2": 2850.3815588943417
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -122,
+              "rows": 15274,
+              "cell_area_km2": 6460.270972732336,
+              "rows_per_1000_km2": 2364.297111447625
+            },
+            {
+              "latitude_floor": 59,
+              "longitude_floor": 121,
+              "rows": 14826,
+              "cell_area_km2": 6275.300211715634,
+              "rows_per_1000_km2": 2362.5961308306314
+            },
+            {
+              "latitude_floor": 53,
+              "longitude_floor": 116,
+              "rows": 14727,
+              "cell_area_km2": 7354.501318598911,
+              "rows_per_1000_km2": 2002.4471221123674
+            },
+            {
+              "latitude_floor": 54,
+              "longitude_floor": 118,
+              "rows": 13879,
+              "cell_area_km2": 7179.92105987647,
+              "rows_per_1000_km2": 1933.0296091359517
+            },
+            {
+              "latitude_floor": 61,
+              "longitude_floor": 120,
+              "rows": 13347,
+              "cell_area_km2": 5899.681064130621,
+              "rows_per_1000_km2": 2262.3256842049
+            },
+            {
+              "latitude_floor": 55,
+              "longitude_floor": 116,
+              "rows": 13303,
+              "cell_area_km2": 7003.153727645815,
+              "rows_per_1000_km2": 1899.572752128054
+            }
+          ],
+          "latitude_bands": [
+            {
+              "latitude_start": -90,
+              "latitude_end": -60,
+              "rows": 136,
+              "row_share": 4.685459262860122e-05,
+              "spherical_area_km2": 34167935.223337546,
+              "area_share": 0.06698729810778072
+            },
+            {
+              "latitude_start": -60,
+              "latitude_end": -30,
+              "rows": 22870,
+              "row_share": 0.007879150981000808,
+              "spherical_area_km2": 93348535.01988043,
+              "area_share": 0.1830127018922194
+            },
+            {
+              "latitude_start": -30,
+              "latitude_end": 0,
+              "rows": 1801434,
+              "row_share": 0.6206283545390558,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.25
+            },
+            {
+              "latitude_start": 0,
+              "latitude_end": 30,
+              "rows": 63788,
+              "row_share": 0.02197618201906775,
+              "spherical_area_km2": 127516470.24321795,
+              "area_share": 0.25000000000000006
+            },
+            {
+              "latitude_start": 30,
+              "latitude_end": 60,
+              "rows": 782047,
+              "row_share": 0.26943010001043893,
+              "spherical_area_km2": 93348535.0198804,
+              "area_share": 0.18301270189221935
+            },
+            {
+              "latitude_start": 60,
+              "latitude_end": 90,
+              "rows": 232322,
+              "row_share": 0.08003935785780802,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.06698729810778073
+            }
+          ],
+          "high_latitude_abs_at_least_60": {
+            "rows": 232458,
+            "row_share": 0.08008621245043662,
+            "area_share": 0.13397459621556146,
+            "meaning": "Cells whose latitude centers are at least 60 degrees from the equator. Row share above the area share means equal-degree counts overweight that latitude relative to ground area."
+          },
+          "rows_are_archived_detections": true,
+          "cells_are_not_fires": true,
+          "cells_are_not_analytical_clusters": true
+        },
+        "grid_2_degree": {
+          "bin_degrees": 2.0,
+          "equal_degree_cells_are_equal_area": false,
+          "occupied_cells": 3226,
+          "rows": 2902597,
+          "count_maximum_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -122,
+            "rows": 47104,
+            "cell_area_km2": 25471.14236889594,
+            "rows_per_1000_km2": 1849.308496564371
+          },
+          "rate_maximum_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -122,
+            "rows": 47104,
+            "cell_area_km2": 25471.14236889594,
+            "rows_per_1000_km2": 1849.308496564371
+          },
+          "count_and_rate_maxima_are_the_same_cell": true,
+          "top_cells_by_row_count": [
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -122,
+              "rows": 47104,
+              "cell_area_km2": 25471.14236889594,
+              "rows_per_1000_km2": 1849.308496564371
+            },
+            {
+              "latitude_floor": -12,
+              "longitude_floor": 16,
+              "rows": 37167,
+              "cell_area_km2": 48546.24727917549,
+              "rows_per_1000_km2": 765.5998575186107
+            },
+            {
+              "latitude_floor": -14,
+              "longitude_floor": 26,
+              "rows": 34961,
+              "cell_area_km2": 48187.34740042188,
+              "rows_per_1000_km2": 725.5224013367026
+            },
+            {
+              "latitude_floor": -12,
+              "longitude_floor": 26,
+              "rows": 32582,
+              "cell_area_km2": 48546.24727917549,
+              "rows_per_1000_km2": 671.1538342527342
+            },
+            {
+              "latitude_floor": -10,
+              "longitude_floor": 18,
+              "rows": 31480,
+              "cell_area_km2": 48846.00103359548,
+              "rows_per_1000_km2": 644.474457148469
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": 120,
+              "rows": 28937,
+              "cell_area_km2": 25471.14236889594,
+              "rows_per_1000_km2": 1136.0699720848165
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -116,
+              "rows": 28326,
+              "cell_area_km2": 25471.14236889594,
+              "rows_per_1000_km2": 1112.0820413060965
+            },
+            {
+              "latitude_floor": 54,
+              "longitude_floor": 116,
+              "rows": 27751,
+              "cell_area_km2": 28366.14957504457,
+              "rows_per_1000_km2": 978.3139557444288
+            }
+          ],
+          "latitude_bands": [
+            {
+              "latitude_start": -90,
+              "latitude_end": -60,
+              "rows": 136,
+              "row_share": 4.685459262860122e-05,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.0669872981077807
+            },
+            {
+              "latitude_start": -60,
+              "latitude_end": -30,
+              "rows": 22870,
+              "row_share": 0.007879150981000808,
+              "spherical_area_km2": 93348535.01988041,
+              "area_share": 0.18301270189221933
+            },
+            {
+              "latitude_start": -30,
+              "latitude_end": 0,
+              "rows": 1801434,
+              "row_share": 0.6206283545390558,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.24999999999999994
+            },
+            {
+              "latitude_start": 0,
+              "latitude_end": 30,
+              "rows": 63788,
+              "row_share": 0.02197618201906775,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.24999999999999994
+            },
+            {
+              "latitude_start": 30,
+              "latitude_end": 60,
+              "rows": 782047,
+              "row_share": 0.26943010001043893,
+              "spherical_area_km2": 93348535.0198804,
+              "area_share": 0.1830127018922193
+            },
+            {
+              "latitude_start": 60,
+              "latitude_end": 90,
+              "rows": 232322,
+              "row_share": 0.08003935785780802,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.0669872981077807
+            }
+          ],
+          "high_latitude_abs_at_least_60": {
+            "rows": 232458,
+            "row_share": 0.08008621245043662,
+            "area_share": 0.13397459621556138,
+            "meaning": "Cells whose latitude centers are at least 60 degrees from the equator. Row share above the area share means equal-degree counts overweight that latitude relative to ground area."
+          },
+          "rows_are_archived_detections": true,
+          "cells_are_not_fires": true,
+          "cells_are_not_analytical_clusters": true
+        },
+        "published_monthly_1_degree": {
+          "recomputed": false,
+          "occupied_cells": 8777,
+          "rows_in_cells": 2902597,
+          "top_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -115,
+            "delivered_rows": 20092
+          }
+        },
+        "published_within_sensor_scan_track": {
+          "recomputed": false,
+          "scan_p50_km": 0.44,
+          "track_p50_km": 0.44
+        },
+        "one_degree_occupied_cells_match_published_floor_count": true,
+        "same_fire": "not_assessed",
+        "cells_are_not_analytical_clusters": true
+      },
+      {
+        "satellite": "N21",
+        "display": "NOAA-21",
+        "rows": 2771214,
+        "scan": {
+          "count": 2771214,
+          "method": "numpy.quantile method=linear",
+          "p00": 0.32,
+          "p10": 0.38,
+          "p25": 0.39,
+          "p50": 0.44,
+          "p75": 0.51,
+          "p90": 0.58,
+          "p95": 0.63,
+          "p99": 0.75,
+          "p100": 0.8,
+          "mean": 0.4613661088605933,
+          "minimum": 0.32,
+          "maximum": 0.8
+        },
+        "track": {
+          "count": 2771214,
+          "method": "numpy.quantile method=linear",
+          "p00": 0.36,
+          "p10": 0.36,
+          "p25": 0.38,
+          "p50": 0.45,
+          "p75": 0.57,
+          "p90": 0.67,
+          "p95": 0.72,
+          "p99": 0.77,
+          "p100": 0.78,
+          "mean": 0.4850789726091165,
+          "minimum": 0.36,
+          "maximum": 0.78
+        },
+        "scan_times_track": {
+          "count": 2771214,
+          "method": "numpy.quantile method=linear",
+          "p00": 0.1368,
+          "p10": 0.1404,
+          "p25": 0.1634,
+          "p50": 0.19949999999999998,
+          "p75": 0.26,
+          "p90": 0.34840000000000004,
+          "p95": 0.44639999999999996,
+          "p99": 0.5775,
+          "p100": 0.6240000000000001,
+          "mean": 0.2291062379520311,
+          "minimum": 0.1368,
+          "maximum": 0.6240000000000001
+        },
+        "product_of_medians_km2": 0.198,
+        "median_of_products_km2": 0.19949999999999998,
+        "product_of_medians_is_median_of_products": false,
+        "product_of_medians_equals_median_of_products_numerically": false,
+        "footprint_proxy": "scan_times_track_km2_distribution",
+        "footprint_limitation": "scan and track are stored lengths in kilometres. Their product treats those lengths as the sides of a rectangle. The archive does not include the pixel polygon, the scan angle, or the ground orientation. Adjacent-scan overlap and Earth curvature inside the pixel are not corrected. scan multiplied by track is a stored-size proxy, not an exact physical pixel area.",
+        "thresholds_are_sensor_footprints": false,
+        "growth_with_scan": [
+          {
+            "scan_bin_start_km": 0.32,
+            "scan_bin_end_km": 0.38,
+            "rows": 383054,
+            "scan": {
+              "count": 383054,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.32,
+              "p10": 0.33,
+              "p25": 0.34,
+              "p50": 0.36,
+              "p75": 0.38,
+              "p90": 0.38,
+              "p95": 0.38,
+              "p99": 0.38,
+              "p100": 0.38,
+              "mean": 0.35809126128430974,
+              "minimum": 0.32,
+              "maximum": 0.38
+            },
+            "track": {
+              "count": 383054,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.36,
+              "p10": 0.36,
+              "p25": 0.36,
+              "p50": 0.56,
+              "p75": 0.57,
+              "p90": 0.58,
+              "p95": 0.59,
+              "p99": 0.59,
+              "p100": 0.59,
+              "mean": 0.5072640672072345,
+              "minimum": 0.36,
+              "maximum": 0.59
+            },
+            "scan_times_track": {
+              "count": 383054,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1368,
+              "p10": 0.1368,
+              "p25": 0.1368,
+              "p50": 0.18480000000000002,
+              "p75": 0.20519999999999997,
+              "p90": 0.21459999999999999,
+              "p95": 0.22419999999999998,
+              "p99": 0.22419999999999998,
+              "p100": 0.22419999999999998,
+              "mean": 0.1805406919128896,
+              "minimum": 0.1368,
+              "maximum": 0.22419999999999998
+            }
+          },
+          {
+            "scan_bin_start_km": 0.38,
+            "scan_bin_end_km": 0.39,
+            "rows": 319268,
+            "scan": {
+              "count": 319268,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.39,
+              "p10": 0.39,
+              "p25": 0.39,
+              "p50": 0.39,
+              "p75": 0.39,
+              "p90": 0.39,
+              "p95": 0.39,
+              "p99": 0.39,
+              "p100": 0.39,
+              "mean": 0.3900000000000001,
+              "minimum": 0.39,
+              "maximum": 0.39
+            },
+            "track": {
+              "count": 319268,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.36,
+              "p10": 0.36,
+              "p25": 0.36,
+              "p50": 0.36,
+              "p75": 0.37,
+              "p90": 0.44,
+              "p95": 0.59,
+              "p99": 0.6,
+              "p100": 0.6,
+              "mean": 0.39324626959169096,
+              "minimum": 0.36,
+              "maximum": 0.6
+            },
+            "scan_times_track": {
+              "count": 319268,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1404,
+              "p10": 0.1404,
+              "p25": 0.1404,
+              "p50": 0.1404,
+              "p75": 0.1443,
+              "p90": 0.1716,
+              "p95": 0.2301,
+              "p99": 0.23399999999999999,
+              "p100": 0.23399999999999999,
+              "mean": 0.1533660451407595,
+              "minimum": 0.1404,
+              "maximum": 0.23399999999999999
+            }
+          },
+          {
+            "scan_bin_start_km": 0.39,
+            "scan_bin_end_km": 0.4,
+            "rows": 202348,
+            "scan": {
+              "count": 202348,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.4,
+              "p10": 0.4,
+              "p25": 0.4,
+              "p50": 0.4,
+              "p75": 0.4,
+              "p90": 0.4,
+              "p95": 0.4,
+              "p99": 0.4,
+              "p100": 0.4,
+              "mean": 0.39999999999999997,
+              "minimum": 0.4,
+              "maximum": 0.4
+            },
+            "track": {
+              "count": 202348,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.37,
+              "p10": 0.37,
+              "p25": 0.37,
+              "p50": 0.37,
+              "p75": 0.44,
+              "p90": 0.6,
+              "p95": 0.6,
+              "p99": 0.6,
+              "p100": 0.6,
+              "mean": 0.4186704093937178,
+              "minimum": 0.37,
+              "maximum": 0.6
+            },
+            "scan_times_track": {
+              "count": 202348,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.148,
+              "p10": 0.148,
+              "p25": 0.148,
+              "p50": 0.148,
+              "p75": 0.17600000000000002,
+              "p90": 0.24,
+              "p95": 0.24,
+              "p99": 0.24,
+              "p100": 0.24,
+              "mean": 0.1674681637574871,
+              "minimum": 0.148,
+              "maximum": 0.24
+            }
+          },
+          {
+            "scan_bin_start_km": 0.4,
+            "scan_bin_end_km": 0.42,
+            "rows": 316050,
+            "scan": {
+              "count": 316050,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.41,
+              "p10": 0.41,
+              "p25": 0.41,
+              "p50": 0.41,
+              "p75": 0.42,
+              "p90": 0.42,
+              "p95": 0.42,
+              "p99": 0.42,
+              "p100": 0.42,
+              "mean": 0.4147720613826927,
+              "minimum": 0.41,
+              "maximum": 0.42
+            },
+            "track": {
+              "count": 316050,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.37,
+              "p10": 0.37,
+              "p25": 0.37,
+              "p50": 0.38,
+              "p75": 0.45,
+              "p90": 0.61,
+              "p95": 0.61,
+              "p99": 0.61,
+              "p100": 0.61,
+              "mean": 0.4338479038126879,
+              "minimum": 0.37,
+              "maximum": 0.61
+            },
+            "scan_times_track": {
+              "count": 316050,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1517,
+              "p10": 0.1517,
+              "p25": 0.1517,
+              "p50": 0.1596,
+              "p75": 0.189,
+              "p90": 0.2501,
+              "p95": 0.2562,
+              "p99": 0.2562,
+              "p100": 0.2562,
+              "mean": 0.1799732165796551,
+              "minimum": 0.1517,
+              "maximum": 0.2562
+            }
+          },
+          {
+            "scan_bin_start_km": 0.42,
+            "scan_bin_end_km": 0.44,
+            "rows": 248169,
+            "scan": {
+              "count": 248169,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.43,
+              "p10": 0.43,
+              "p25": 0.43,
+              "p50": 0.43,
+              "p75": 0.44,
+              "p90": 0.44,
+              "p95": 0.44,
+              "p99": 0.44,
+              "p100": 0.44,
+              "mean": 0.4349415922214298,
+              "minimum": 0.43,
+              "maximum": 0.44
+            },
+            "track": {
+              "count": 248169,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.38,
+              "p10": 0.38,
+              "p25": 0.38,
+              "p50": 0.39,
+              "p75": 0.46,
+              "p90": 0.62,
+              "p95": 0.62,
+              "p99": 0.63,
+              "p100": 0.63,
+              "mean": 0.4521206113575829,
+              "minimum": 0.38,
+              "maximum": 0.63
+            },
+            "scan_times_track": {
+              "count": 248169,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1634,
+              "p10": 0.1634,
+              "p25": 0.1634,
+              "p50": 0.1716,
+              "p75": 0.2024,
+              "p90": 0.2728,
+              "p95": 0.2728,
+              "p99": 0.2772,
+              "p100": 0.2772,
+              "mean": 0.19666030970830362,
+              "minimum": 0.1634,
+              "maximum": 0.2772
+            }
+          },
+          {
+            "scan_bin_start_km": 0.44,
+            "scan_bin_end_km": 0.46,
+            "rows": 208632,
+            "scan": {
+              "count": 208632,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.45,
+              "p10": 0.45,
+              "p25": 0.45,
+              "p50": 0.45,
+              "p75": 0.46,
+              "p90": 0.46,
+              "p95": 0.46,
+              "p99": 0.46,
+              "p100": 0.46,
+              "mean": 0.454789821312167,
+              "minimum": 0.45,
+              "maximum": 0.46
+            },
+            "track": {
+              "count": 208632,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.39,
+              "p10": 0.39,
+              "p25": 0.39,
+              "p50": 0.47,
+              "p75": 0.47,
+              "p90": 0.63,
+              "p95": 0.64,
+              "p99": 0.64,
+              "p100": 0.64,
+              "mean": 0.466104480616588,
+              "minimum": 0.39,
+              "maximum": 0.64
+            },
+            "scan_times_track": {
+              "count": 208632,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.17550000000000002,
+              "p10": 0.17550000000000002,
+              "p25": 0.1794,
+              "p50": 0.2115,
+              "p75": 0.2162,
+              "p90": 0.2898,
+              "p95": 0.2944,
+              "p99": 0.2944,
+              "p100": 0.2944,
+              "mean": 0.2119828554584148,
+              "minimum": 0.17550000000000002,
+              "maximum": 0.2944
+            }
+          },
+          {
+            "scan_bin_start_km": 0.46,
+            "scan_bin_end_km": 0.49,
+            "rows": 273440,
+            "scan": {
+              "count": 273440,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.47,
+              "p10": 0.47,
+              "p25": 0.47,
+              "p50": 0.48,
+              "p75": 0.49,
+              "p90": 0.49,
+              "p95": 0.49,
+              "p99": 0.49,
+              "p100": 0.49,
+              "mean": 0.4796139555295494,
+              "minimum": 0.47,
+              "maximum": 0.49
+            },
+            "track": {
+              "count": 273440,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.39,
+              "p10": 0.4,
+              "p25": 0.4,
+              "p50": 0.47,
+              "p75": 0.49,
+              "p90": 0.65,
+              "p95": 0.65,
+              "p99": 0.65,
+              "p100": 0.65,
+              "mean": 0.47846920713867763,
+              "minimum": 0.39,
+              "maximum": 0.65
+            },
+            "scan_times_track": {
+              "count": 273440,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.1833,
+              "p10": 0.188,
+              "p25": 0.192,
+              "p50": 0.22089999999999999,
+              "p75": 0.24009999999999998,
+              "p90": 0.312,
+              "p95": 0.3185,
+              "p99": 0.3185,
+              "p100": 0.3185,
+              "mean": 0.22952776660327676,
+              "minimum": 0.1833,
+              "maximum": 0.3185
+            }
+          },
+          {
+            "scan_bin_start_km": 0.49,
+            "scan_bin_end_km": 0.53,
+            "rows": 287614,
+            "scan": {
+              "count": 287614,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.5,
+              "p10": 0.5,
+              "p25": 0.5,
+              "p50": 0.51,
+              "p75": 0.52,
+              "p90": 0.53,
+              "p95": 0.53,
+              "p99": 0.53,
+              "p100": 0.53,
+              "mean": 0.5142202396267219,
+              "minimum": 0.5,
+              "maximum": 0.53
+            },
+            "track": {
+              "count": 287614,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.41,
+              "p10": 0.41,
+              "p25": 0.41,
+              "p50": 0.49,
+              "p75": 0.5,
+              "p90": 0.67,
+              "p95": 0.67,
+              "p99": 0.67,
+              "p100": 0.67,
+              "mean": 0.49785997899963147,
+              "minimum": 0.41,
+              "maximum": 0.67
+            },
+            "scan_times_track": {
+              "count": 287614,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.205,
+              "p10": 0.205,
+              "p25": 0.2132,
+              "p50": 0.245,
+              "p75": 0.265,
+              "p90": 0.34840000000000004,
+              "p95": 0.3551,
+              "p99": 0.3551,
+              "p100": 0.3551,
+              "mean": 0.2560433720194427,
+              "minimum": 0.205,
+              "maximum": 0.3551
+            }
+          },
+          {
+            "scan_bin_start_km": 0.53,
+            "scan_bin_end_km": 0.58,
+            "rows": 267966,
+            "scan": {
+              "count": 267966,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.54,
+              "p10": 0.54,
+              "p25": 0.55,
+              "p50": 0.56,
+              "p75": 0.57,
+              "p90": 0.58,
+              "p95": 0.58,
+              "p99": 0.58,
+              "p100": 0.58,
+              "mean": 0.5568535933663227,
+              "minimum": 0.54,
+              "maximum": 0.58
+            },
+            "track": {
+              "count": 267966,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.42,
+              "p10": 0.42,
+              "p25": 0.43,
+              "p50": 0.51,
+              "p75": 0.68,
+              "p90": 0.69,
+              "p95": 0.69,
+              "p99": 0.7,
+              "p100": 0.7,
+              "mean": 0.5254760305411881,
+              "minimum": 0.42,
+              "maximum": 0.7
+            },
+            "scan_times_track": {
+              "count": 267966,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.2268,
+              "p10": 0.2268,
+              "p25": 0.24080000000000001,
+              "p50": 0.2805,
+              "p75": 0.3672,
+              "p90": 0.3864,
+              "p95": 0.3932999999999999,
+              "p99": 0.40599999999999997,
+              "p100": 0.40599999999999997,
+              "mean": 0.29286578334564833,
+              "minimum": 0.2268,
+              "maximum": 0.40599999999999997
+            }
+          },
+          {
+            "scan_bin_start_km": 0.58,
+            "scan_bin_end_km": 0.8,
+            "rows": 264673,
+            "scan": {
+              "count": 264673,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.59,
+              "p10": 0.59,
+              "p25": 0.61,
+              "p50": 0.63,
+              "p75": 0.7,
+              "p90": 0.75,
+              "p95": 0.77,
+              "p99": 0.79,
+              "p100": 0.8,
+              "mean": 0.6564717972743724,
+              "minimum": 0.59,
+              "maximum": 0.8
+            },
+            "track": {
+              "count": 264673,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.52,
+              "p10": 0.53,
+              "p25": 0.54,
+              "p50": 0.72,
+              "p75": 0.75,
+              "p90": 0.77,
+              "p95": 0.78,
+              "p99": 0.78,
+              "p100": 0.78,
+              "mean": 0.6735932641410345,
+              "minimum": 0.52,
+              "maximum": 0.78
+            },
+            "scan_times_track": {
+              "count": 264673,
+              "method": "numpy.quantile method=linear",
+              "p00": 0.3068,
+              "p10": 0.318,
+              "p25": 0.33480000000000004,
+              "p50": 0.4536,
+              "p75": 0.5249999999999999,
+              "p90": 0.5775,
+              "p95": 0.6006,
+              "p99": 0.6162000000000001,
+              "p100": 0.6240000000000001,
+              "mean": 0.4462114511113714,
+              "minimum": 0.3068,
+              "maximum": 0.6240000000000001
+            }
+          }
+        ],
+        "grid_1_degree": {
+          "bin_degrees": 1.0,
+          "equal_degree_cells_are_equal_area": false,
+          "occupied_cells": 8669,
+          "rows": 2771214,
+          "count_maximum_cell": {
+            "latitude_floor": 59,
+            "longitude_floor": -122,
+            "rows": 19185,
+            "cell_area_km2": 6275.300211715634,
+            "rows_per_1000_km2": 3057.2242526632717
+          },
+          "rate_maximum_cell": {
+            "latitude_floor": 59,
+            "longitude_floor": -122,
+            "rows": 19185,
+            "cell_area_km2": 6275.300211715634,
+            "rows_per_1000_km2": 3057.2242526632717
+          },
+          "count_and_rate_maxima_are_the_same_cell": true,
+          "top_cells_by_row_count": [
+            {
+              "latitude_floor": 59,
+              "longitude_floor": -122,
+              "rows": 19185,
+              "cell_area_km2": 6275.300211715634,
+              "rows_per_1000_km2": 3057.2242526632717
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -115,
+              "rows": 17791,
+              "cell_area_km2": 6460.270972732336,
+              "rows_per_1000_km2": 2753.909251654098
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -122,
+              "rows": 16026,
+              "cell_area_km2": 6460.270972732336,
+              "rows_per_1000_km2": 2480.700897476734
+            },
+            {
+              "latitude_floor": 59,
+              "longitude_floor": 121,
+              "rows": 14959,
+              "cell_area_km2": 6275.300211715634,
+              "rows_per_1000_km2": 2383.790335970283
+            },
+            {
+              "latitude_floor": 53,
+              "longitude_floor": 116,
+              "rows": 14902,
+              "cell_area_km2": 7354.501318598911,
+              "rows_per_1000_km2": 2026.2420733155766
+            },
+            {
+              "latitude_floor": 59,
+              "longitude_floor": 119,
+              "rows": 14804,
+              "cell_area_km2": 6275.300211715634,
+              "rows_per_1000_km2": 2359.090322461667
+            },
+            {
+              "latitude_floor": 55,
+              "longitude_floor": 116,
+              "rows": 13733,
+              "cell_area_km2": 7003.153727645815,
+              "rows_per_1000_km2": 1960.9736604506174
+            },
+            {
+              "latitude_floor": 54,
+              "longitude_floor": 118,
+              "rows": 13143,
+              "cell_area_km2": 7179.92105987647,
+              "rows_per_1000_km2": 1830.521518327964
+            }
+          ],
+          "latitude_bands": [
+            {
+              "latitude_start": -90,
+              "latitude_end": -60,
+              "rows": 139,
+              "row_share": 5.01585225825216e-05,
+              "spherical_area_km2": 34167935.223337546,
+              "area_share": 0.06698729810778072
+            },
+            {
+              "latitude_start": -60,
+              "latitude_end": -30,
+              "rows": 23036,
+              "row_share": 0.008312602346841492,
+              "spherical_area_km2": 93348535.01988043,
+              "area_share": 0.1830127018922194
+            },
+            {
+              "latitude_start": -30,
+              "latitude_end": 0,
+              "rows": 1699755,
+              "row_share": 0.6133611478579424,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.25
+            },
+            {
+              "latitude_start": 0,
+              "latitude_end": 30,
+              "rows": 60088,
+              "row_share": 0.02168291586286732,
+              "spherical_area_km2": 127516470.24321795,
+              "area_share": 0.25000000000000006
+            },
+            {
+              "latitude_start": 30,
+              "latitude_end": 60,
+              "rows": 763863,
+              "row_share": 0.2756420110464223,
+              "spherical_area_km2": 93348535.0198804,
+              "area_share": 0.18301270189221935
+            },
+            {
+              "latitude_start": 60,
+              "latitude_end": 90,
+              "rows": 224333,
+              "row_share": 0.08095116436334401,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.06698729810778073
+            }
+          ],
+          "high_latitude_abs_at_least_60": {
+            "rows": 224472,
+            "row_share": 0.08100132288592653,
+            "area_share": 0.13397459621556146,
+            "meaning": "Cells whose latitude centers are at least 60 degrees from the equator. Row share above the area share means equal-degree counts overweight that latitude relative to ground area."
+          },
+          "rows_are_archived_detections": true,
+          "cells_are_not_fires": true,
+          "cells_are_not_analytical_clusters": true
+        },
+        "grid_2_degree": {
+          "bin_degrees": 2.0,
+          "equal_degree_cells_are_equal_area": false,
+          "occupied_cells": 3199,
+          "rows": 2771214,
+          "count_maximum_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -122,
+            "rows": 47887,
+            "cell_area_km2": 25471.14236889594,
+            "rows_per_1000_km2": 1880.0491672677063
+          },
+          "rate_maximum_cell": {
+            "latitude_floor": 58,
+            "longitude_floor": -122,
+            "rows": 47887,
+            "cell_area_km2": 25471.14236889594,
+            "rows_per_1000_km2": 1880.0491672677063
+          },
+          "count_and_rate_maxima_are_the_same_cell": true,
+          "top_cells_by_row_count": [
+            {
+              "latitude_floor": 58,
+              "longitude_floor": -122,
+              "rows": 47887,
+              "cell_area_km2": 25471.14236889594,
+              "rows_per_1000_km2": 1880.0491672677063
+            },
+            {
+              "latitude_floor": -12,
+              "longitude_floor": 16,
+              "rows": 33079,
+              "cell_area_km2": 48546.24727917549,
+              "rows_per_1000_km2": 681.3914947899515
+            },
+            {
+              "latitude_floor": -14,
+              "longitude_floor": 26,
+              "rows": 32980,
+              "cell_area_km2": 48187.34740042188,
+              "rows_per_1000_km2": 684.4120247156675
+            },
+            {
+              "latitude_floor": -12,
+              "longitude_floor": 26,
+              "rows": 30123,
+              "cell_area_km2": 48546.24727917549,
+              "rows_per_1000_km2": 620.5011033452555
+            },
+            {
+              "latitude_floor": -10,
+              "longitude_floor": 18,
+              "rows": 29598,
+              "cell_area_km2": 48846.00103359548,
+              "rows_per_1000_km2": 605.9452027535065
+            },
+            {
+              "latitude_floor": 58,
+              "longitude_floor": 120,
+              "rows": 29198,
+              "cell_area_km2": 25471.14236889594,
+              "rows_per_1000_km2": 1146.3168623192616
+            },
+            {
+              "latitude_floor": 54,
+              "longitude_floor": 116,
+              "rows": 28660,
+              "cell_area_km2": 28366.14957504457,
+              "rows_per_1000_km2": 1010.3591932411564
+            },
+            {
+              "latitude_floor": 54,
+              "longitude_floor": 118,
+              "rows": 26557,
+              "cell_area_km2": 28366.14957504457,
+              "rows_per_1000_km2": 936.2215315738098
+            }
+          ],
+          "latitude_bands": [
+            {
+              "latitude_start": -90,
+              "latitude_end": -60,
+              "rows": 139,
+              "row_share": 5.01585225825216e-05,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.0669872981077807
+            },
+            {
+              "latitude_start": -60,
+              "latitude_end": -30,
+              "rows": 23036,
+              "row_share": 0.008312602346841492,
+              "spherical_area_km2": 93348535.01988041,
+              "area_share": 0.18301270189221933
+            },
+            {
+              "latitude_start": -30,
+              "latitude_end": 0,
+              "rows": 1699755,
+              "row_share": 0.6133611478579424,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.24999999999999994
+            },
+            {
+              "latitude_start": 0,
+              "latitude_end": 30,
+              "rows": 60088,
+              "row_share": 0.02168291586286732,
+              "spherical_area_km2": 127516470.24321792,
+              "area_share": 0.24999999999999994
+            },
+            {
+              "latitude_start": 30,
+              "latitude_end": 60,
+              "rows": 763863,
+              "row_share": 0.2756420110464223,
+              "spherical_area_km2": 93348535.0198804,
+              "area_share": 0.1830127018922193
+            },
+            {
+              "latitude_start": 60,
+              "latitude_end": 90,
+              "rows": 224333,
+              "row_share": 0.08095116436334401,
+              "spherical_area_km2": 34167935.22333755,
+              "area_share": 0.0669872981077807
+            }
+          ],
+          "high_latitude_abs_at_least_60": {
+            "rows": 224472,
+            "row_share": 0.08100132288592653,
+            "area_share": 0.13397459621556138,
+            "meaning": "Cells whose latitude centers are at least 60 degrees from the equator. Row share above the area share means equal-degree counts overweight that latitude relative to ground area."
+          },
+          "rows_are_archived_detections": true,
+          "cells_are_not_fires": true,
+          "cells_are_not_analytical_clusters": true
+        },
+        "published_monthly_1_degree": {
+          "recomputed": false,
+          "occupied_cells": 8669,
+          "rows_in_cells": 2771214,
+          "top_cell": {
+            "latitude_floor": 59,
+            "longitude_floor": -122,
+            "delivered_rows": 19185
+          }
+        },
+        "published_within_sensor_scan_track": {
+          "recomputed": false,
+          "scan_p50_km": 0.44,
+          "track_p50_km": 0.45
+        },
+        "one_degree_occupied_cells_match_published_floor_count": true,
+        "same_fire": "not_assessed",
+        "cells_are_not_analytical_clusters": true
+      }
+    ],
+    "h3": {
+      "h3_library_required": false,
+      "h3_selected": false,
+      "selected_resolution": null,
+      "reason": "H3 is an unselected candidate. No resolution is chosen.",
+      "h3_library_present": false,
+      "average_hexagon_area_km2": null,
+      "comparison": null,
+      "detail": "The h3 package is not installed. No average cell area was read from the library, and none was invented.",
+      "per_satellite_scan_times_track_p50_km2": {
+        "Terra": 1.32,
+        "Aqua": 1.4300000000000002,
+        "SNPP": 0.1978,
+        "N20": 0.1978,
+        "N21": 0.19949999999999998
+      }
+    },
+    "records_processed": 7985467,
+    "validation": [
+      {
+        "name": "h3_not_selected",
+        "passed": true
+      },
+      {
+        "name": "identity_lock_is_false",
+        "passed": true
+      },
+      {
+        "name": "grid_rows_match_satellite_rows",
+        "passed": true
+      },
+      {
+        "name": "source_rows_match_manifest",
+        "passed": true
+      },
+      {
+        "name": "same_fire_not_assessed",
+        "passed": true
+      },
+      {
+        "name": "published_scan_p50_matches",
+        "passed": true
+      }
+    ],
+    "figures": [
+      "footprint_proxy.png",
+      "proxy_versus_scan.png",
+      "high_latitude_share.png"
+    ]
+  },
+  "same_fire": "not_assessed",
+  "scientific_locks": {
+    "same_fire": "not_assessed",
+    "missing_dates_filled": false,
+    "harmonization_coefficient": null,
+    "xgboost_trained": false,
+    "processing_level": "unresolved",
+    "modify_source_rows": false,
+    "clusters_are_confirmed_fires": false,
+    "candidate_pairs_are_confirmed_fires": false,
+    "proximity_establishes_same_fire": false,
+    "h3_selected": false
+  },
+  "harmonization_coefficient": null,
+  "xgboost_trained": false,
+  "missing_dates_filled": false,
+  "processing_level": "unresolved",
+  "source_rows_read": 7985467,
+  "source_bytes_read": 647934174,
+  "records_processed": 7985467,
+  "output_directory": "experiments/D/runs/m11",
+  "config_sha256": "18a3e740e47e8ff96811ba8c6779d745192db86407ed868faf1bae3af896458c",
+  "software": {
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2",
+      "pytest": "9.2.0"
+    },
+    "git_commit": "03e1965191c2e9e60ad70231969d8a02637b3333"
+  },
+  "timing": {
+    "prepare_seconds": 0.034095499984687194,
+    "science_wall_clock_seconds": 23.273667100002058,
+    "cpu_seconds": 22.828125,
+    "peak_working_set_bytes": 494911488
+  },
+  "created_utc": "2026-11-15T13:37:55.967348+00:00"
+}

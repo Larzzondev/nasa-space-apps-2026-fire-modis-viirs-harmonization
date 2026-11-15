@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "eda_marginal_totals_match",
+      "passed": true
+    },
+    {
+      "name": "no_coefficient",
+      "passed": true
+    },
+    {
+      "name": "same_fire_not_assessed",
+      "passed": true
+    },
+    {
+      "name": "ratios_not_recomputed",
+      "passed": true
+    },
+    {
+      "name": "source_rows_match_manifest",
+      "passed": true
+    }
+  ]
+}

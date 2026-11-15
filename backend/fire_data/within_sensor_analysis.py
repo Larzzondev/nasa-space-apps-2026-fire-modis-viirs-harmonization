@@ -412,11 +412,14 @@ def labels_from_pairs(
     eps_m: float,
     window_min: int,
     min_samples: int,
+    border_tie_break: str = "smallest_core_index",
 ) -> np.ndarray:
     """DBSCAN labels. ``min_samples`` counts the point itself. -1 is noise.
 
-    A border row joins the neighboring core component whose lowest core index is
-    smallest. That rule is repeatable. The label is not a fire identifier.
+    A border row joins one neighboring core component. The published tie-break
+    chooses the component whose lowest core index is smallest. The alternate
+    tie-break chooses the component whose highest core index is largest. Either
+    label is an analytical component id, not a fire identifier.
     """
 
     if min_samples < 2:
@@ -474,11 +477,20 @@ def labels_from_pairs(
         border_row = np.empty(0, dtype=np.int64)
         border_core = np.empty(0, dtype=np.int64)
     if border_row.size:
-        minimum = np.full(int(components.max()) + 1, count, dtype=np.int64)
         core_index = np.flatnonzero(core)
-        np.minimum.at(minimum, labels[core_index], core_index)
-        score = minimum[labels[border_core]]
-        order = np.lexsort((border_core, score, border_row))
+        component_count = int(components.max()) + 1
+        if border_tie_break == "smallest_core_index":
+            score_by_component = np.full(component_count, count, dtype=np.int64)
+            np.minimum.at(score_by_component, labels[core_index], core_index)
+            score = score_by_component[labels[border_core]]
+            order = np.lexsort((border_core, score, border_row))
+        elif border_tie_break == "largest_core_index":
+            score_by_component = np.full(component_count, -1, dtype=np.int64)
+            np.maximum.at(score_by_component, labels[core_index], core_index)
+            score = score_by_component[labels[border_core]]
+            order = np.lexsort((-border_core, -score, border_row))
+        else:
+            raise AnalysisError("border_tie_break must be smallest_core_index or largest_core_index")
         border_row = border_row[order]
         border_core = border_core[order]
         first = np.ones(border_row.size, dtype=bool)

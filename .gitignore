@@ -51,8 +51,16 @@ backend/data/**/*.hdf
 backend/data/**/*.h5
 backend/data/manifest/*.csv
 
-# Isolated experiment run directories. Research design files stay tracked.
-backend/experiments/
+# Isolated experiment run directories. Published milestone deliverables stay tracked.
+backend/experiments/*
+!backend/experiments/A_clustering/
+!backend/experiments/A_clustering/**
+!backend/experiments/B_measurements/
+!backend/experiments/B_measurements/**
+!backend/experiments/C_overpasses/
+!backend/experiments/C_overpasses/**
+!backend/experiments/D_resolution/
+!backend/experiments/D_resolution/**
 
 # Logs
 logs/

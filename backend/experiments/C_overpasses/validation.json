@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "snpp_zero_dates_match_configuration",
+      "passed": true
+    },
+    {
+      "name": "snpp_partial_dates_have_rows",
+      "passed": true
+    },
+    {
+      "name": "no_dates_filled",
+      "passed": true
+    },
+    {
+      "name": "snpp_comparisons_use_21_dates_against_complete_sensors",
+      "passed": true
+    },
+    {
+      "name": "same_fire_not_assessed",
+      "passed": true
+    },
+    {
+      "name": "source_rows_match_manifest",
+      "passed": true
+    }
+  ]
+}

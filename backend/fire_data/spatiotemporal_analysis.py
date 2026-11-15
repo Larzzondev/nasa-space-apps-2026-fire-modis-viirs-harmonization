@@ -1152,6 +1152,12 @@ def render_markdown(report: dict[str, object]) -> str:
 
 
 def _peak_working_set() -> int | None:
+    """Peak working set of this process, or null when the call fails.
+
+    Argument types have to be declared. Without them, ctypes truncates the
+    64-bit process handle and ``GetProcessMemoryInfo`` returns failure.
+    """
+
     import ctypes
     from ctypes import wintypes
 
@@ -1169,10 +1175,15 @@ def _peak_working_set() -> int | None:
             ("PeakPagefileUsage", ctypes.c_size_t),
         ]
 
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    query = kernel.K32GetProcessMemoryInfo
+    query.argtypes = [wintypes.HANDLE, ctypes.POINTER(Counters), wintypes.DWORD]
+    query.restype = wintypes.BOOL
+    current = kernel.GetCurrentProcess
+    current.restype = wintypes.HANDLE
     counters = Counters()
     counters.cb = ctypes.sizeof(counters)
-    handle = ctypes.windll.kernel32.GetCurrentProcess()
-    if not ctypes.windll.psapi.GetProcessMemoryInfo(handle, ctypes.byref(counters), counters.cb):
+    if not query(current(), ctypes.byref(counters), counters.cb):
         return None
     return int(counters.PeakWorkingSetSize)
 

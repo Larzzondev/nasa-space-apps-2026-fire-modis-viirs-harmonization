@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "h3_not_selected",
+      "passed": true
+    },
+    {
+      "name": "identity_lock_is_false",
+      "passed": true
+    },
+    {
+      "name": "grid_rows_match_satellite_rows",
+      "passed": true
+    },
+    {
+      "name": "source_rows_match_manifest",
+      "passed": true
+    },
+    {
+      "name": "same_fire_not_assessed",
+      "passed": true
+    },
+    {
+      "name": "published_scan_p50_matches",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "factorial_matches_published",
+      "passed": true
+    },
+    {
+      "name": "core_labels_unchanged_by_border_rule",
+      "passed": true
+    },
+    {
+      "name": "representative_dates_match_rule",
+      "passed": true
+    },
+    {
+      "name": "same_fire_not_assessed",
+      "passed": true
+    },
+    {
+      "name": "full_month_not_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "source_rows_match_manifest",
+      "passed": true
+    }
+  ]
+}

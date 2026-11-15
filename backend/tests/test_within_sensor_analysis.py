@@ -7,6 +7,7 @@ from fire_data.within_sensor_analysis import (
     analyze_sensor,
     coordinate_inventory,
     dbscan_labels,
+    directed_pairs,
     duplicate_inventory,
     labels_from_pairs,
     margin_indices,
@@ -281,6 +282,21 @@ def test_border_row_joins_the_component_with_the_smaller_core_index() -> None:
     assert labels[0] >= 0
     assert labels[8] == labels[0]
     assert labels[8] != labels[4]
+    left, right, distance, delta = directed_pairs(table.ecef, table.epoch, 2_000.0)
+    alternate = labels_from_pairs(
+        table.count,
+        left,
+        right,
+        distance,
+        delta,
+        eps_m=1_000.5,
+        window_min=0,
+        min_samples=4,
+        border_tie_break="largest_core_index",
+    )
+    assert alternate[8] == labels[4]
+    assert alternate[8] != labels[0]
+    assert np.array_equal(alternate[:8], labels[:8])
     with pytest.raises(AnalysisError):
         labels_from_pairs(
             1,
