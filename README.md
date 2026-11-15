@@ -4,7 +4,11 @@ One Planet. Multiple Sensors. One Consistent Fire History.
 
 This repository is the NASA Space Apps Challenge 2026 project for harmonizing MODIS and VIIRS active-fire hot spots. The scientific goal is a fire record that can be compared across Terra, Aqua, Suomi-NPP, NOAA-20, and NOAA-21 without treating every detection as a separate fire or treating every nearby pair as the same fire.
 
-The work so far is a dashboard foundation and a reproducible audit of one global FIRMS day, 2024-07-07. A harmonization algorithm, a historical anomaly engine, a predictive model, and a data-backed interactive calendar are not implemented.
+The FireLens demo is the interactive site. Run `npm install` and `npm run dev`, then open the local URL. It has four screens: a globe, a July 2024 historical explorer, a MODIS and VIIRS comparison, and a conceptual propagation sketch.
+
+The globe draws a bounded synthetic sample labeled DEMO DATA. It is not the FIRMS archive. Historical counts, FRP summaries, confidence, and day/night figures are the July 2024 delivered-row statistics already recorded in `backend/reports/`. A date with no delivered rows, or a month with no loaded archive, is left blank. It is not shown as zero fires. The propagation screen is a demonstration simulation, not a validated forecast, and no forecast model is trained or deployed.
+
+The scientific work so far is a reproducible audit of the July 2024 FIRMS extracts, centered on 2024-07-07. A harmonization algorithm and a predictive model are not implemented.
 
 ## 1. Project overview
 
@@ -56,7 +60,7 @@ Direct comparison fails for specific, observed reasons:
 6. Specify the 30-date, five-sensor bundle required before a temporal validation can be claimed.
 7. Show the audit on a globe once a verified dataset is connected to the interface.
 
-Objectives 1 through 6 are underway for a single day. Objective 7 is a dashboard scaffold. The globe does not yet display FIRMS detections.
+Objectives 1 through 6 are underway for the audited extracts. Objective 7 is the FireLens demo: the globe shows the labeled synthetic sample, and the historical and sensor screens show the verified archive statistics.
 
 ## 5. Proposed scientific methodology
 
@@ -78,7 +82,7 @@ Implemented and planned pieces are listed separately. Nothing in the planned col
 
 ### Implemented
 
-**Frontend.** A React single-page dashboard. It composes a CesiumJS globe, demo area filters, an empty metric row, a placeholder month calendar, and a disabled CSV export. Camera frames in `src/demo/demoAreas.ts` are marked DEMO. `FireHotspot` in `src/types/domain.ts` is a provisional application type, not a MODIS or VIIRS schema. The interface does not call NASA, does not read the backend reports, and does not compute FRP.
+**Frontend.** A React single-page app named FireLens. The globe renders a deterministic synthetic hotspot sample with CesiumJS and an OpenStreetMap basemap, so it does not need a Cesium ion token. The historical explorer and the sensor comparison read July 2024 aggregate statistics transcribed from the tracked reports. They do not load the raw CSVs. CSV export writes the filtered delivered-row table. The propagation view is a canvas sketch with a persistent demonstration disclaimer. The interface does not call NASA.
 
 **Scientific backend.** The Python package `backend/fire_data` reads local CSV archives and writes reports:
 

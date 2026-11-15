@@ -1,5 +1,5 @@
-import { DashboardPage } from './features/dashboard/DashboardPage.tsx'
+import { AppShell } from './features/shell/AppShell.tsx'
 
 export default function App() {
-  return <DashboardPage />
+  return <AppShell />
 }

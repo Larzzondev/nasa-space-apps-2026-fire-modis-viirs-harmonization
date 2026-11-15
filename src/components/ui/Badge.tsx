@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-type BadgeTone = 'demo' | 'placeholder'
+type BadgeTone = 'demo' | 'archive' | 'gap' | 'alert' | 'neutral'
 
 interface BadgeProps {
   tone: BadgeTone
@@ -8,8 +8,11 @@ interface BadgeProps {
 }
 
 const toneClass: Record<BadgeTone, string> = {
-  demo: 'border-[#e07a3d]/50 bg-[#e07a3d]/15 text-[#f3c7a4]',
-  placeholder: 'border-line bg-ink text-mist',
+  demo: 'border-amber/50 bg-amber/15 text-amber',
+  archive: 'border-cyan/40 bg-cyan/10 text-cyan',
+  gap: 'border-line bg-ink text-mist',
+  alert: 'border-hot/50 bg-hot/15 text-[#ffc4ca]',
+  neutral: 'border-line bg-white/5 text-mist',
 }
 
 export function Badge({ tone, children }: BadgeProps) {

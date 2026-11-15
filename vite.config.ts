@@ -22,6 +22,15 @@ export default defineConfig({
   define: {
     CESIUM_BASE_URL: JSON.stringify(`/${cesiumBaseUrl}`),
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/cesium') || id.includes('node_modules/@cesium')) return 'cesium'
+        },
+      },
+    },
+  },
   plugins: [
     react(),
     tailwindcss(),
