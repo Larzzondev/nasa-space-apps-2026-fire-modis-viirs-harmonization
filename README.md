@@ -356,7 +356,17 @@ Commands that the backend documents, once the matching local files are present:
 
 ## Screenshots
 
-Application screenshots are not in the repository yet. The directory [`docs/screenshots/`](docs/screenshots/README.md) lists the five captures still needed, the screen each one must show, and the labels a reviewer should be able to read.
+These five frames were captured from the running FireLens application at 1440×900. The inventory, including which frames show synthetic points, is in [`docs/screenshots/README.md`](docs/screenshots/README.md).
+
+![Global Fire Intelligence on 7 July 2024, with the synthetic globe sample, a selected demo hotspot, and the verified archive total of 277,259 delivered rows.](docs/screenshots/01-global-fire-intelligence.png)
+
+![Global Fire Intelligence on 10 July 2024. The synthetic sample is unavailable, Suomi-NPP has no delivered rows, and that gap is not drawn as zero fire activity.](docs/screenshots/02-global-sample-coverage-limit.png)
+
+![Historical Fire Explorer for July 2024, with the activity calendar and the delivered-row trend.](docs/screenshots/03-historical-fire-explorer.png)
+
+![Sensor comparison of MODIS and VIIRS, including the nadir pixel schematic and the separate confidence scales.](docs/screenshots/04-modis-viirs-comparison.png)
+
+![Fire propagation preview. The banner states that the sketch is not a validated fire forecast.](docs/screenshots/05-fire-propagation-simulation.png)
 
 Plots under `backend/reports/figures/` and `backend/experiments/` are scientific figures from the July analyses. They are not pictures of the FireLens interface.
 
