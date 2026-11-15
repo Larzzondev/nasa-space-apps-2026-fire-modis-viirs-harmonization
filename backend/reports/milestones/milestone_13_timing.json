@@ -1,31 +1,31 @@
 {
   "milestone": 13,
-  "started_at": "2026-11-15T15:23:03Z",
-  "finished_at": "2026-11-15T15:23:08Z",
-  "wall_clock_seconds": 4.934643,
-  "cpu_seconds": 1.03125,
-  "peak_working_set_bytes": 134795264,
+  "started_at": "2026-11-15T15:41:39Z",
+  "finished_at": "2026-11-15T15:41:56Z",
+  "wall_clock_seconds": 17.626673,
+  "cpu_seconds": 4.359375,
+  "peak_working_set_bytes": 376532992,
   "python": {
     "executable": "C:\\Users\\Administrator\\Documents\\Personal\\Code\\NASA Hackathon - Space Apps Challenge 2026\\nasa-fire-harmonization\\backend\\.venv\\Scripts\\python.exe",
     "version": "3.12.14",
     "windows_store_stub": false,
     "venv_name": ".venv"
   },
-  "authenticated_requests_sent": false,
+  "authenticated_requests_sent": true,
   "retries": 0,
   "documentation_pages": [
     {
       "url": "https://firms.modaps.eosdis.nasa.gov/api/",
       "http_status": 200,
-      "retrieved_at": "2026-11-15T15:23:05Z",
-      "elapsed_seconds": 0.952886,
-      "network_wait_seconds": 0.952928,
+      "retrieved_at": "2026-11-15T15:41:40Z",
+      "elapsed_seconds": 0.571008,
+      "network_wait_seconds": 0.571043,
       "body_bytes": 5966,
       "sha256": "b64c927eac537148afdfb3b0f2bd26077a7a59b36e0d9887ee998e7b95c1eacf",
       "retries": 0,
       "headers": {
         "Server": "nginx",
-        "Date": "Sun, 15 Nov 2026 15:23:05 GMT",
+        "Date": "Sun, 15 Nov 2026 15:41:40 GMT",
         "Content-Type": "text/html; charset=UTF-8",
         "Transfer-Encoding": "chunked",
         "Connection": "close",
@@ -33,7 +33,7 @@
         "Cache-Control": "no-cache",
         "Access-Control-Allow-Origin": "*",
         "X-Content-Type-Options": "nosniff",
-        "Request-ID": "e85fd985f176f0d899ff88c0a719c0d6",
+        "Request-ID": "40f00c2101731f9a1c7d608f68398c6e",
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
       },
       "attempts": [
@@ -41,12 +41,12 @@
           "attempt": 1,
           "url": "https://firms.modaps.eosdis.nasa.gov/api/",
           "http_status": 200,
-          "elapsed_seconds": 0.952886,
+          "elapsed_seconds": 0.571008,
           "body_bytes": 5966,
           "sha256": "b64c927eac537148afdfb3b0f2bd26077a7a59b36e0d9887ee998e7b95c1eacf",
           "headers": {
             "Server": "nginx",
-            "Date": "Sun, 15 Nov 2026 15:23:05 GMT",
+            "Date": "Sun, 15 Nov 2026 15:41:40 GMT",
             "Content-Type": "text/html; charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "close",
@@ -54,25 +54,25 @@
             "Cache-Control": "no-cache",
             "Access-Control-Allow-Origin": "*",
             "X-Content-Type-Options": "nosniff",
-            "Request-ID": "e85fd985f176f0d899ff88c0a719c0d6",
+            "Request-ID": "40f00c2101731f9a1c7d608f68398c6e",
             "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
           },
-          "retrieved_at": "2026-11-15T15:23:05Z"
+          "retrieved_at": "2026-11-15T15:41:40Z"
         }
       ]
     },
     {
       "url": "https://firms.modaps.eosdis.nasa.gov/api/area/",
       "http_status": 200,
-      "retrieved_at": "2026-11-15T15:23:06Z",
-      "elapsed_seconds": 0.717009,
-      "network_wait_seconds": 0.717051,
+      "retrieved_at": "2026-11-15T15:41:41Z",
+      "elapsed_seconds": 0.633704,
+      "network_wait_seconds": 0.633747,
       "body_bytes": 25596,
       "sha256": "cf7e8c1a26561bd42f4829ae6b45c697195d4ff24798f3be6aa2242ad14fcb64",
       "retries": 0,
       "headers": {
         "Server": "nginx",
-        "Date": "Sun, 15 Nov 2026 15:23:06 GMT",
+        "Date": "Sun, 15 Nov 2026 15:41:41 GMT",
         "Content-Type": "text/html; charset=UTF-8",
         "Transfer-Encoding": "chunked",
         "Connection": "close",
@@ -80,7 +80,7 @@
         "Cache-Control": "no-cache",
         "Access-Control-Allow-Origin": "*",
         "X-Content-Type-Options": "nosniff",
-        "Request-ID": "7c4383e2f521cee5c46e536749749cdd",
+        "Request-ID": "d8c6feb3d6b3a484f32917940536b231",
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
       },
       "attempts": [
@@ -88,12 +88,12 @@
           "attempt": 1,
           "url": "https://firms.modaps.eosdis.nasa.gov/api/area/",
           "http_status": 200,
-          "elapsed_seconds": 0.717009,
+          "elapsed_seconds": 0.633704,
           "body_bytes": 25596,
           "sha256": "cf7e8c1a26561bd42f4829ae6b45c697195d4ff24798f3be6aa2242ad14fcb64",
           "headers": {
             "Server": "nginx",
-            "Date": "Sun, 15 Nov 2026 15:23:06 GMT",
+            "Date": "Sun, 15 Nov 2026 15:41:41 GMT",
             "Content-Type": "text/html; charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "close",
@@ -101,25 +101,25 @@
             "Cache-Control": "no-cache",
             "Access-Control-Allow-Origin": "*",
             "X-Content-Type-Options": "nosniff",
-            "Request-ID": "7c4383e2f521cee5c46e536749749cdd",
+            "Request-ID": "d8c6feb3d6b3a484f32917940536b231",
             "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
           },
-          "retrieved_at": "2026-11-15T15:23:06Z"
+          "retrieved_at": "2026-11-15T15:41:41Z"
         }
       ]
     },
     {
       "url": "https://firms.modaps.eosdis.nasa.gov/api/data_availability/",
       "http_status": 200,
-      "retrieved_at": "2026-11-15T15:23:06Z",
-      "elapsed_seconds": 0.8462,
-      "network_wait_seconds": 0.846236,
+      "retrieved_at": "2026-11-15T15:41:42Z",
+      "elapsed_seconds": 0.640514,
+      "network_wait_seconds": 0.64055,
       "body_bytes": 17834,
       "sha256": "fc1145f6c4e0a0e2042334a5ffd4b5db9d068701a82ddfbc692b485e65c757f5",
       "retries": 0,
       "headers": {
         "Server": "nginx",
-        "Date": "Sun, 15 Nov 2026 15:23:06 GMT",
+        "Date": "Sun, 15 Nov 2026 15:41:42 GMT",
         "Content-Type": "text/html; charset=UTF-8",
         "Transfer-Encoding": "chunked",
         "Connection": "close",
@@ -127,7 +127,7 @@
         "Cache-Control": "no-cache",
         "Access-Control-Allow-Origin": "*",
         "X-Content-Type-Options": "nosniff",
-        "Request-ID": "88bdc940c01b3ba4068ab4e7814ee853",
+        "Request-ID": "6c8668f2f8e0cb2b74dbfad324ac06da",
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
       },
       "attempts": [
@@ -135,12 +135,12 @@
           "attempt": 1,
           "url": "https://firms.modaps.eosdis.nasa.gov/api/data_availability/",
           "http_status": 200,
-          "elapsed_seconds": 0.8462,
+          "elapsed_seconds": 0.640514,
           "body_bytes": 17834,
           "sha256": "fc1145f6c4e0a0e2042334a5ffd4b5db9d068701a82ddfbc692b485e65c757f5",
           "headers": {
             "Server": "nginx",
-            "Date": "Sun, 15 Nov 2026 15:23:06 GMT",
+            "Date": "Sun, 15 Nov 2026 15:41:42 GMT",
             "Content-Type": "text/html; charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "close",
@@ -148,36 +148,36 @@
             "Cache-Control": "no-cache",
             "Access-Control-Allow-Origin": "*",
             "X-Content-Type-Options": "nosniff",
-            "Request-ID": "88bdc940c01b3ba4068ab4e7814ee853",
+            "Request-ID": "6c8668f2f8e0cb2b74dbfad324ac06da",
             "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
           },
-          "retrieved_at": "2026-11-15T15:23:06Z"
+          "retrieved_at": "2026-11-15T15:41:42Z"
         }
       ]
     },
     {
       "url": "https://firms.modaps.eosdis.nasa.gov/content/academy/data_api/firms_api_use.html",
       "http_status": 200,
-      "retrieved_at": "2026-11-15T15:23:08Z",
-      "elapsed_seconds": 1.375614,
-      "network_wait_seconds": 1.375983,
+      "retrieved_at": "2026-11-15T15:41:42Z",
+      "elapsed_seconds": 0.894775,
+      "network_wait_seconds": 0.895166,
       "body_bytes": 369354,
       "sha256": "8de6484933cbc63e974c299f2aa09ad2cde86489d341a9d729255a2b295490f0",
       "retries": 0,
       "headers": {
         "Server": "nginx",
-        "Date": "Sun, 15 Nov 2026 15:23:07 GMT",
+        "Date": "Sun, 15 Nov 2026 15:41:42 GMT",
         "Content-Type": "text/html",
         "Content-Length": "369354",
         "Connection": "close",
-        "Last-Modified": "Mon, 09 Nov 2026 21:30:34 GMT",
-        "ETag": "\"6af23b7a-5a2ca\"",
+        "Last-Modified": "Mon, 09 Nov 2026 21:30:59 GMT",
+        "ETag": "\"6af23b93-5a2ca\"",
         "Cache-Control": "no-cache",
         "Access-Control-Allow-Origin": "*",
         "X-Frame-Options": "SAMEORIGIN",
         "X-Content-Type-Options": "nosniff",
         "Accept-Ranges": "bytes",
-        "Request-ID": "cac59059518a7381e5a7ed3cae24ccbe",
+        "Request-ID": "3f2af9ed4feb876388a30e35cd171e3a",
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
       },
       "attempts": [
@@ -185,26 +185,26 @@
           "attempt": 1,
           "url": "https://firms.modaps.eosdis.nasa.gov/content/academy/data_api/firms_api_use.html",
           "http_status": 200,
-          "elapsed_seconds": 1.375614,
+          "elapsed_seconds": 0.894775,
           "body_bytes": 369354,
           "sha256": "8de6484933cbc63e974c299f2aa09ad2cde86489d341a9d729255a2b295490f0",
           "headers": {
             "Server": "nginx",
-            "Date": "Sun, 15 Nov 2026 15:23:07 GMT",
+            "Date": "Sun, 15 Nov 2026 15:41:42 GMT",
             "Content-Type": "text/html",
             "Content-Length": "369354",
             "Connection": "close",
-            "Last-Modified": "Mon, 09 Nov 2026 21:30:34 GMT",
-            "ETag": "\"6af23b7a-5a2ca\"",
+            "Last-Modified": "Mon, 09 Nov 2026 21:30:59 GMT",
+            "ETag": "\"6af23b93-5a2ca\"",
             "Cache-Control": "no-cache",
             "Access-Control-Allow-Origin": "*",
             "X-Frame-Options": "SAMEORIGIN",
             "X-Content-Type-Options": "nosniff",
             "Accept-Ranges": "bytes",
-            "Request-ID": "cac59059518a7381e5a7ed3cae24ccbe",
+            "Request-ID": "3f2af9ed4feb876388a30e35cd171e3a",
             "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
           },
-          "retrieved_at": "2026-11-15T15:23:08Z"
+          "retrieved_at": "2026-11-15T15:41:42Z"
         }
       ]
     }
@@ -212,52 +212,68 @@
   "data_requests": [
     {
       "source": "VIIRS_NOAA20_SP",
-      "kind": "area",
-      "sent": false,
-      "http_status": null,
-      "elapsed_seconds": null,
-      "network_wait_seconds": null,
+      "kind": "data_availability",
+      "sent": true,
+      "http_status": 200,
+      "elapsed_seconds": 0.671823,
+      "network_wait_seconds": 0.671855,
       "retries": 0,
-      "body_bytes": null,
+      "body_bytes": 63,
       "rows": null,
-      "sha256": null
+      "sha256": "6e1ffcc96e36347a58da96b498ef83c0b3a635bf7d93c0c7efe109a1937ae9d5"
+    },
+    {
+      "source": "VIIRS_NOAA20_SP",
+      "kind": "area",
+      "sent": true,
+      "http_status": 200,
+      "elapsed_seconds": 4.2878,
+      "network_wait_seconds": 4.294483,
+      "retries": 0,
+      "body_bytes": 6675249,
+      "rows": 82372,
+      "sha256": "e0c284a29a4c8fc91220d186a22def3ba2fd09dfc36d045c20ac53dea9e63b73"
+    },
+    {
+      "source": "VIIRS_NOAA21_SP",
+      "kind": "data_availability",
+      "sent": true,
+      "http_status": 200,
+      "elapsed_seconds": 0.555105,
+      "network_wait_seconds": 0.555138,
+      "retries": 0,
+      "body_bytes": 63,
+      "rows": null,
+      "sha256": "fa124bf4c4ebe5d769a7aa323b43c868a0a592234f70bda0fb5cfe0cf750de3c"
     },
     {
       "source": "VIIRS_NOAA21_SP",
       "kind": "area",
-      "sent": false,
-      "http_status": null,
-      "elapsed_seconds": null,
-      "network_wait_seconds": null,
+      "sent": true,
+      "http_status": 200,
+      "elapsed_seconds": 4.925763,
+      "network_wait_seconds": 4.93206,
       "retries": 0,
-      "body_bytes": null,
-      "rows": null,
-      "sha256": null
+      "body_bytes": 7093756,
+      "rows": 87637,
+      "sha256": "6b72b391fc821a7d6b202505bd9474fcb3182cd301ea2f8e21da762770c235ff"
     }
   ],
   "pytest": {
     "exit_code": 0,
-    "collected": 147,
-    "passed": 147,
+    "collected": 148,
+    "passed": 148,
     "failed": 0,
-    "pytest_reported_seconds": 45.78,
-    "wall_clock_seconds": 46.17,
+    "pytest_reported_seconds": 46.21,
+    "wall_clock_seconds": 46.62,
     "executable": "C:\\Users\\Administrator\\Documents\\Personal\\Code\\NASA Hackathon - Space Apps Challenge 2026\\nasa-fire-harmonization\\backend\\.venv\\Scripts\\python.exe",
     "version": "9.2.0",
-    "windows_store_stub": false,
-    "milestone_12_note": "Milestone 12 invoked py and python, which are Windows Store stubs and exited 9009 before pytest started. This run used backend/.venv/Scripts/python.exe."
-  },
-  "dependencies": {
-    "python": "3.12.14",
-    "pytest": "9.2.0",
-    "numpy": "2.5.4",
-    "scipy": "1.18.1",
-    "matplotlib": "3.11.2"
+    "windows_store_stub": false
   },
   "measured_intervals_seconds": {
-    "provenance_and_documentation": 4.934643,
-    "pytest_command": 46.17,
-    "sum": 51.104643,
-    "editing_gap_not_instrumented": true
+    "provenance_and_api": 17.626673,
+    "pytest_command": 46.62,
+    "sum": 64.246673,
+    "gap_between_intervals_not_instrumented": true
   }
 }

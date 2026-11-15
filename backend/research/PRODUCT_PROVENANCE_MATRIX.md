@@ -109,20 +109,31 @@ The July values `61.03` and `2` are not those examples. They are recorded. They 
 
 ## Milestone 13 area API check
 
-Retrieved 2026-11-15T15:23:03Z through 2026-11-15T15:23:08Z. The log is `backend/reports/firms_api_provenance_2024_07_07.json`. Timing is `backend/reports/milestones/milestone_13_timing.json`.
+The keyed run was retrieved 2026-11-15T15:41:39Z through 2026-11-15T15:41:56Z. The log is `backend/reports/firms_api_provenance_2024_07_07.json`. Timing is `backend/reports/milestones/milestone_13_timing.json`. An earlier pass the same day, at 15:23Z, stopped before any authenticated URL because the key was not configured.
 
-The process environment and `backend/.env` did not contain `FIRMS_MAP_KEY`. No authenticated area URL and no authenticated data-availability URL was opened. `VIIRS_NOAA20_SP` and `VIIRS_NOAA21_SP` were confirmed again as labels on the area page and the data-availability page. They were not returned as a table for 2024-07-07. The local files stay unresolved. `same_fire` stays `not_assessed`. No coefficient was calculated.
+`VIIRS_NOAA20_SP` availability returned HTTP 200. The body names that source from 2018-04-01 through 2026-07-31. `VIIRS_NOAA21_SP` availability returned HTTP 200 and names that source from 2023-03-01 through 2026-07-31. 2024-07-07 falls inside both windows. The area requests used each file's observed detection extent, day range 1, and CSV. Both area responses were HTTP 200, with zero retries. NOAA-20 returned 82,372 rows. NOAA-21 returned 87,637 rows. Every API `acq_date` was 2024-07-07. Every API `version` cell was `2`. Satellites were `N20` and `N21`.
 
-The area page from that retrieval links "Attribute table for VIIRS NOAA-20" to `https://www.earthdata.nasa.gov/learn/find-data/near-real-time/firms/vj114imgtdlnrt` and "Attribute table for VIIRS NOAA-21" to `https://www.earthdata.nasa.gov/learn/find-data/near-real-time/firms/vj214imgtdlnrt`. Those are the NRT attribute paths. The page also lists the `SP` source codes. It does not say that an `SP` response is `fire_archive_J1V-C2` or `fire_archive_J2V-C2`. The link is not used as the stream of either local CSV.
+Shared column names match on all 82,372 NOAA-20 rows and all 87,637 NOAA-21 rows. No shared-field identity was missing, added, or changed. The archive headers contain `brightness` and `bright_t31`. The API headers contain `bright_ti4` and `bright_ti5`. Milestone 13 did not alias those names and did not compare their values. Product equivalence stays `not_assessed`. The local archive streams stay `unresolved`: the query label is Standard Processing, and the response version text is still `2`, which is not one of the attribute-page suffix examples. `same_fire` stays `not_assessed`. No coefficient was calculated. The thermal comparison is the next section.
 
-The day files were read and hashed and not written.
+The area page still links the NOAA-20 attribute table to `https://www.earthdata.nasa.gov/learn/find-data/near-real-time/firms/vj114imgtdlnrt` and the NOAA-21 attribute table to `https://www.earthdata.nasa.gov/learn/find-data/near-real-time/firms/vj214imgtdlnrt`. Those NRT paths are not the stream of the local CSVs.
 
-| File | Rows | SHA-256 | Version text | Observed extent, west south east north |
-| --- | ---: | --- | --- | --- |
-| `fire_archive_J1V-C2_850119.csv` | 82,372 | `b2febdffbf7ad9dcaf7066ed913b8e0028eebff94bb79a9dd4e2e346dd4f9907` | `2` on every row | `-175.0715,-50.57444,175.63397,71.25928` |
-| `fire_archive_J2V-C2_850120.csv` | 87,637 | `5be3094edf2dc4461b9eadc82c97657b730550aaa92000d88fc2b1fbe4b46917` | `2` on every row | `-137.77524,-44.13126,175.6368,71.42756` |
+## Thermal fields on 7 July 2024
 
-Each extent is the range of stored points. It is not the original order area. Full-row duplicates in each file: 0. The monthly NOAA checksums matched `ingestion_2024_07.json`. An API comparison was not performed, so the area service and the archive download remain uncompared. Equivalence stays `not_assessed`.
+The field comparison is `backend/reports/viirs_thermal_field_mapping_2024_07_07.json`. Area responses were retrieved 2026-11-15T16:00:00Z through 2026-11-15T16:00:23Z. The user's guide text layer was read at 2026-11-15T16:06:44Z from the same PDF bytes, SHA-256 `fb957afb6e465cb312fb8229a2b6e424c489344bb09e76a7baee80a248d1ccb7`. No second area request was sent for that reading.
+
+The FIRMS VIIRS attribute page, retrieved 2026-11-15T16:06:41Z, says `Bright_ti4 / Brightness (in web services)` is the VIIRS I-4 channel brightness temperature of the fire pixel in Kelvin, and `Bright_ti5 / Brightness_2 (in web services)` is the I-5 channel brightness temperature of the fire pixel in Kelvin. The same page gives the I-4 interval as 3.55-3.93 µm and calls I-4 mid-infrared. It does not contain `bright_t31`, and it does not state a scale factor. The Earthdata active-fire attribute page states the same Kelvin sentences and the same web-service aliases. On that combined page, `bright_t31` occurs with the MODIS channel 31 sentence. It is not named beside I-5.
+
+The FIRMS MODIS attribute page says `bright_t31` is the channel 31 brightness temperature in Kelvin. That sentence is a MODIS definition. It is not applied to the VIIRS files.
+
+The Collection 2 user's guide, Version 1.2, June 2025, names Level-2 `FP_T4` and `FP_T5` as fire-pixel I4 and I5 brightness temperature in kelvin, and the monthly location fields `T4` and `T5` as the same quantities in K. It calls I5 long-wave infrared and gives 367 K as the nominal I4 saturation temperature. It does not name `brightness`, `bright_t31`, `bright_ti4`, or `bright_ti5`, and it does not mention a scale factor. The Earthdata variable tables for `VJ114IMG` and `VJ214IMG` list `FP_T4` and `FP_T5` in Kelvin, float32, with fill, scale factor, and offset all `N/A`. Those rows describe the Level-2 swath. They are not a scale for the FIRMS CSV.
+
+The archive columns were left as `brightness` and `bright_t31`. The API columns were left as `bright_ti4` and `bright_ti5`. Rows were paired on the shared non-thermal fields. Both platforms aligned on every row: 82,372 NOAA-20 rows and 87,637 NOAA-21 rows. `brightness` equals `bright_ti4` on every paired row, including the raw text. `bright_t31` equals `bright_ti5` on every paired row, including the raw text. The maximum absolute difference, mean absolute difference, mean signed difference, and the type-7 quantiles are 0. No value was missing or invalid. No constant offset was present, and no coefficient was calculated. The crossed pairs are not a mapping. NOAA-20 has 0 crossed equalities. NOAA-21 has 1 crossed equality in each direction out of 87,637 numeric pairs.
+
+`brightness` is the documented web-service alias of the I-4 Kelvin measurement. `bright_t31` is not the documented VIIRS alias of the I-5 measurement; that alias is `Brightness_2`. Because one archive name remains unnamed on the VIIRS attribute page, both platforms are classified `same_observations_field_equivalence_unresolved`. The `VIIRS_NOAA20_SP` and `VIIRS_NOAA21_SP` labels are not used as the processing stream. Each stream stays `unresolved`. Product equivalence stays `not_assessed`. `same_fire` stays `not_assessed`.
+
+The day-file checksums after the comparison matched the checksums before it. The monthly NOAA checksums matched `ingestion_2024_07.json`. The files were not rewritten.
+
+The day files were read and hashed and not written. Their checksums after the run matched the checksums before it. The monthly NOAA checksums matched `ingestion_2024_07.json`. The observed extents are stored-point ranges, not the original order area.
 
 ## Sources
 

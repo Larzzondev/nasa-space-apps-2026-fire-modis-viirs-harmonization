@@ -257,9 +257,9 @@
   "firms_api_provenance": [
     {
       "id": "firms-api-2024-07-07-noaa20-noaa21",
-      "created_at": "2026-11-15T15:23:03Z",
+      "created_at": "2026-11-15T15:41:39Z",
       "report": "reports/firms_api_provenance_2024_07_07.json",
-      "authenticated_requests_sent": false,
+      "authenticated_requests_sent": true,
       "processing_stream": "unresolved",
       "same_fire": "not_assessed",
       "original_sensor_records_modified": false,

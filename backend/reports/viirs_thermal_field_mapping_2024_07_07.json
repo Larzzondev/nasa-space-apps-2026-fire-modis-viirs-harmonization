@@ -1,0 +1,767 @@
+{
+  "milestone": "13b",
+  "created_at": "2026-11-15T16:00:00Z",
+  "finished_at": "2026-11-15T16:00:23Z",
+  "target_day": "2024-07-07",
+  "credential": {
+    "variables": [
+      "FIRMS_MAP_KEY",
+      "MAP_KEY"
+    ],
+    "env_file": "C:\\Users\\Administrator\\Documents\\Personal\\Code\\NASA Hackathon - Space Apps Challenge 2026\\nasa-fire-harmonization\\backend\\.env",
+    "env_file_exists": true,
+    "present": true,
+    "selected_source": "env_file:FIRMS_MAP_KEY",
+    "value_recorded": false
+  },
+  "authenticated_requests_sent": true,
+  "request_gate": "The attribute page defines bright_ti4 and bright_ti5 as Kelvin brightness temperatures. The two area requests were sent.",
+  "documentation_errors": [],
+  "documentation": {
+    "viirs_attribute_page": {
+      "url": "https://firms.modaps.eosdis.nasa.gov/content/descriptions/FIRMS_VIIRS_Firehotspots.html",
+      "http_status": 200,
+      "body_bytes": 10430,
+      "sha256": "b7c304c5c03cbcb2be9c6a73eaa123db75469db3098dc276f9c28274c1ca0e9c",
+      "elapsed_seconds": 0.559438,
+      "retries": 0,
+      "retrieved_at": "2026-11-15T16:06:41Z",
+      "retrieved": true,
+      "statements": {
+        "bright_ti4_present": true,
+        "bright_ti5_present": true,
+        "brightness_web_service_alias_of_bright_ti4": true,
+        "brightness_2_web_service_alias_of_bright_ti5": true,
+        "i4_brightness_temperature_kelvin": true,
+        "i5_brightness_temperature_kelvin": true,
+        "i4_wavelength_on_page": "3.55-3.93 \u00b5m",
+        "i4_called_mid_infrared": true,
+        "bright_t31_present": false,
+        "bright_t31_named_beside_i5": false,
+        "scale_factor_mentioned": false,
+        "archive_download_equated_to_area_api": false
+      }
+    },
+    "modis_attribute_page": {
+      "url": "https://firms.modaps.eosdis.nasa.gov/content/descriptions/FIRMS_MODIS_Firehotspots.html",
+      "http_status": 200,
+      "body_bytes": 6759,
+      "sha256": "3d87556af69a6926fb05f6407fc42c50afa3e12ae3b911af96f4d1e525e68a31",
+      "elapsed_seconds": 0.567908,
+      "retries": 0,
+      "retrieved_at": "2026-11-15T16:06:42Z",
+      "retrieved": true,
+      "statements": {
+        "bright_t31_present": true,
+        "channel_31_kelvin": true,
+        "applied_to_viirs_archive": false
+      }
+    },
+    "earthdata_attributes_page": {
+      "url": "https://www.earthdata.nasa.gov/data/tools/firms/active-fire-data-attributes-modis-viirs",
+      "http_status": 200,
+      "body_bytes": 145284,
+      "sha256": "dafb1b6007393847917798b70217d87f3d893fa710da0540095d16b468188844",
+      "elapsed_seconds": 0.877361,
+      "retries": 0,
+      "retrieved_at": "2026-11-15T16:06:42Z",
+      "retrieved": true,
+      "statements": {
+        "bright_ti4_present": true,
+        "bright_ti5_present": true,
+        "brightness_web_service_alias_of_bright_ti4": true,
+        "brightness_2_web_service_alias_of_bright_ti5": true,
+        "i4_brightness_temperature_kelvin": true,
+        "i5_brightness_temperature_kelvin": true,
+        "i4_wavelength_on_page": "3.55-3.93 \u00b5m",
+        "i4_called_mid_infrared": true,
+        "bright_t31_present": true,
+        "bright_t31_named_beside_i5": false,
+        "scale_factor_mentioned": false,
+        "archive_download_equated_to_area_api": false
+      }
+    },
+    "area_page": {
+      "url": "https://firms.modaps.eosdis.nasa.gov/api/area/",
+      "http_status": 200,
+      "body_bytes": 25596,
+      "sha256": "cf7e8c1a26561bd42f4829ae6b45c697195d4ff24798f3be6aa2242ad14fcb64",
+      "elapsed_seconds": 0.687157,
+      "retries": 0,
+      "retrieved_at": "2026-11-15T16:00:02Z",
+      "retrieved": true,
+      "template_present": true,
+      "target_sources_present": true
+    },
+    "user_guide": {
+      "url": "https://www.earthdata.nasa.gov/s3fs-public/2025-06/VIIRS_C2_AF-375m_User_Guide_1.2.pdf",
+      "http_status": 200,
+      "body_bytes": 1602644,
+      "sha256": "fb957afb6e465cb312fb8229a2b6e424c489344bb09e76a7baee80a248d1ccb7",
+      "elapsed_seconds": 1.503012,
+      "retries": 0,
+      "retrieved_at": "2026-11-15T16:06:40Z",
+      "retrieved": true,
+      "statements": {
+        "fp_t4_i4_kelvin": true,
+        "fp_t5_i5_kelvin": true,
+        "monthly_t4_i4_kelvin": true,
+        "monthly_t5_i5_kelvin": true,
+        "i5_called_long_wave_infrared": true,
+        "i4_nominal_saturation_367k": true,
+        "monthly_columns_include_brightness": false,
+        "guide_names_firms_archive_columns": false,
+        "scale_factor_mentioned": false
+      },
+      "text_extracted": true,
+      "sha256_matches_comparison_pass": true
+    },
+    "level2_catalogs": [
+      {
+        "url": "https://www.earthdata.nasa.gov/data/catalog/lpcloud-vj114img-002",
+        "http_status": 200,
+        "body_bytes": 254726,
+        "sha256": "dd28e864340901b27995e50462e37ff2b51590b3a12f292bb489d0f36fea6d20",
+        "elapsed_seconds": 0.965997,
+        "retries": 0,
+        "retrieved_at": "2026-11-15T16:06:43Z",
+        "retrieved": true,
+        "mentions_fp_t4": true,
+        "mentions_fp_t5": true,
+        "mentions_kelvin": true,
+        "temperature_encoding": {
+          "FP_T4": {
+            "description": "I04 Brightness Temperature of Fire Pixel, valid range ~ 208 to 367",
+            "units": "Kelvin",
+            "data_type": "float32",
+            "fill_value": "N/A",
+            "valid_range": "208 to 367",
+            "scale_factor": "N/A",
+            "offset": "N/A"
+          },
+          "FP_T5": {
+            "description": "I05 Brightness Temperature of Fire Pixel, valid range ~ 205 to 380",
+            "units": "Kelvin",
+            "data_type": "float32",
+            "fill_value": "N/A",
+            "valid_range": "205 to 380",
+            "scale_factor": "N/A",
+            "offset": "N/A"
+          }
+        }
+      },
+      {
+        "url": "https://www.earthdata.nasa.gov/data/catalog/lpcloud-vj214img-002",
+        "http_status": 200,
+        "body_bytes": 244301,
+        "sha256": "a52295b5871ea4af39b9bc53773088e1c5c36ec07291b08e8cf1e6053628ccb8",
+        "elapsed_seconds": 0.977342,
+        "retries": 0,
+        "retrieved_at": "2026-11-15T16:06:44Z",
+        "retrieved": true,
+        "mentions_fp_t4": true,
+        "mentions_fp_t5": true,
+        "mentions_kelvin": true,
+        "temperature_encoding": {
+          "FP_T4": {
+            "description": "I04 Brightness Temperature of Fire Pixel",
+            "units": "Kelvin",
+            "data_type": "float32",
+            "fill_value": "N/A",
+            "valid_range": "208 to 367",
+            "scale_factor": "N/A",
+            "offset": "N/A"
+          },
+          "FP_T5": {
+            "description": "I05 Brightness Temperature of Fire Pixel",
+            "units": "Kelvin",
+            "data_type": "float32",
+            "fill_value": "N/A",
+            "valid_range": "205 to 380",
+            "scale_factor": "N/A",
+            "offset": "N/A"
+          }
+        }
+      }
+    ]
+  },
+  "platforms": [
+    {
+      "platform": "NOAA-20",
+      "filename": "fire_archive_J1V-C2_850119.csv",
+      "sha256_before": "b2febdffbf7ad9dcaf7066ed913b8e0028eebff94bb79a9dd4e2e346dd4f9907",
+      "sha256_after": "b2febdffbf7ad9dcaf7066ed913b8e0028eebff94bb79a9dd4e2e346dd4f9907",
+      "bytes": 6691837,
+      "rows": 82372,
+      "header": [
+        "latitude",
+        "longitude",
+        "brightness",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "instrument",
+        "confidence",
+        "version",
+        "bright_t31",
+        "frp",
+        "daynight",
+        "type"
+      ],
+      "api_source_label": "VIIRS_NOAA20_SP",
+      "api_source_is_not_a_processing_stream_assignment": true,
+      "processing_stream": "unresolved",
+      "product_equivalence": "not_assessed",
+      "same_fire": "not_assessed",
+      "thermal_relationship": "same_observations_field_equivalence_unresolved",
+      "fields_renamed": false,
+      "harmonization_coefficient_calculated": false,
+      "request": {
+        "url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/[MAP_KEY]/VIIRS_NOAA20_SP/-175.0715,-50.57444,175.63397,71.25928/1/2024-07-07",
+        "sent": true,
+        "http_status": 200,
+        "rows": 82372,
+        "body_bytes": 6675249,
+        "elapsed_seconds": 3.038315,
+        "retries": 0,
+        "sha256": "e0c284a29a4c8fc91220d186a22def3ba2fd09dfc36d045c20ac53dea9e63b73",
+        "kind": "area",
+        "source": "VIIRS_NOAA20_SP",
+        "attempts": [
+          {
+            "attempt": 1,
+            "url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/[MAP_KEY]/VIIRS_NOAA20_SP/-175.0715,-50.57444,175.63397,71.25928/1/2024-07-07",
+            "http_status": 200,
+            "elapsed_seconds": 3.038315,
+            "body_bytes": 6675249,
+            "sha256": "e0c284a29a4c8fc91220d186a22def3ba2fd09dfc36d045c20ac53dea9e63b73",
+            "headers": {
+              "Server": "nginx",
+              "Date": "Sun, 15 Nov 2026 16:00:08 GMT",
+              "Content-Type": "text/plain;charset=UTF-8",
+              "Transfer-Encoding": "chunked",
+              "Connection": "close",
+              "X-Frame-Options": "SAMEORIGIN",
+              "Cache-Control": "no-cache",
+              "Access-Control-Allow-Origin": "*",
+              "X-Content-Type-Options": "nosniff",
+              "Request-ID": "18ac2492f0a64e05efa706097616fa03",
+              "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+            },
+            "retrieved_at": "2026-11-15T16:00:10Z"
+          }
+        ],
+        "header": [
+          "latitude",
+          "longitude",
+          "bright_ti4",
+          "scan",
+          "track",
+          "acq_date",
+          "acq_time",
+          "satellite",
+          "instrument",
+          "confidence",
+          "version",
+          "bright_ti5",
+          "frp",
+          "daynight",
+          "type"
+        ],
+        "parse": {
+          "parsed_as_fire_table": true,
+          "header_only": false,
+          "rows": 82372,
+          "zero_fire_activity": false,
+          "reason": "Rows were parsed. Product equivalence is still not_assessed."
+        }
+      },
+      "comparison": {
+        "fields_renamed": false,
+        "observation_fields": [
+          "latitude",
+          "longitude",
+          "scan",
+          "track",
+          "acq_date",
+          "acq_time",
+          "satellite",
+          "instrument",
+          "confidence",
+          "version",
+          "frp",
+          "daynight",
+          "type"
+        ],
+        "candidate_pairs": [
+          {
+            "archive_field": "brightness",
+            "api_field": "bright_ti4"
+          },
+          {
+            "archive_field": "bright_t31",
+            "api_field": "bright_ti5"
+          }
+        ],
+        "archive_rows": 82372,
+        "api_rows": 82372,
+        "same_fire": "not_assessed",
+        "harmonization_coefficient_calculated": false,
+        "alignment": "performed",
+        "aligned_unique_rows": 82372,
+        "aligned_ambiguous_rows_with_matching_thermal_multiset": 0,
+        "ambiguous_groups": 0,
+        "unaligned_archive_rows": 0,
+        "unaligned_api_rows": 0,
+        "observations_aligned": true,
+        "pairs": [
+          {
+            "archive_field": "brightness",
+            "api_field": "bright_ti4",
+            "fields_present": true,
+            "fields_renamed": false,
+            "raw_string_equality": 82372,
+            "paired_rows": 82372,
+            "numeric_pairs": 82372,
+            "exact_numeric_equality": 82372,
+            "maximum_absolute_difference": "0",
+            "mean_signed_difference_api_minus_archive": "0",
+            "mean_absolute_difference": "0",
+            "signed_difference_quantiles_type7": {
+              "0": "0",
+              "0.25": "0",
+              "0.5": "0",
+              "0.75": "0",
+              "0.95": "0",
+              "0.99": "0",
+              "1": "0"
+            },
+            "absolute_difference_quantiles_type7": {
+              "0": "0",
+              "0.25": "0",
+              "0.5": "0",
+              "0.75": "0",
+              "0.95": "0",
+              "0.99": "0",
+              "1": "0"
+            },
+            "distinct_signed_differences": 1,
+            "signed_differences_when_few": [
+              "0"
+            ],
+            "systematic_offset": "none_observed",
+            "scale_or_other_transformation": "not_calculated",
+            "harmonization_coefficient_calculated": false,
+            "missing_archive": 0,
+            "missing_api": 0,
+            "missing_both": 0,
+            "invalid_archive": 0,
+            "invalid_api": 0,
+            "invalid_rows": 0,
+            "name_documented": true
+          },
+          {
+            "archive_field": "bright_t31",
+            "api_field": "bright_ti5",
+            "fields_present": true,
+            "fields_renamed": false,
+            "raw_string_equality": 82372,
+            "paired_rows": 82372,
+            "numeric_pairs": 82372,
+            "exact_numeric_equality": 82372,
+            "maximum_absolute_difference": "0",
+            "mean_signed_difference_api_minus_archive": "0",
+            "mean_absolute_difference": "0",
+            "signed_difference_quantiles_type7": {
+              "0": "0",
+              "0.25": "0",
+              "0.5": "0",
+              "0.75": "0",
+              "0.95": "0",
+              "0.99": "0",
+              "1": "0"
+            },
+            "absolute_difference_quantiles_type7": {
+              "0": "0",
+              "0.25": "0",
+              "0.5": "0",
+              "0.75": "0",
+              "0.95": "0",
+              "0.99": "0",
+              "1": "0"
+            },
+            "distinct_signed_differences": 1,
+            "signed_differences_when_few": [
+              "0"
+            ],
+            "systematic_offset": "none_observed",
+            "scale_or_other_transformation": "not_calculated",
+            "harmonization_coefficient_calculated": false,
+            "missing_archive": 0,
+            "missing_api": 0,
+            "missing_both": 0,
+            "invalid_archive": 0,
+            "invalid_api": 0,
+            "invalid_rows": 0,
+            "name_documented": false
+          }
+        ],
+        "controls": [
+          {
+            "archive_field": "brightness",
+            "api_field": "bright_ti5",
+            "fields_present": true,
+            "fields_renamed": false,
+            "raw_string_equality": 0,
+            "paired_rows": 82372,
+            "exact_numeric_equality": 0,
+            "numeric_pairs": 82372,
+            "harmonization_coefficient_calculated": false,
+            "missing_archive": 0,
+            "missing_api": 0,
+            "missing_both": 0,
+            "invalid_archive": 0,
+            "invalid_api": 0,
+            "invalid_rows": 0,
+            "role": "crossed_control",
+            "documented_alias": false
+          },
+          {
+            "archive_field": "bright_t31",
+            "api_field": "bright_ti4",
+            "fields_present": true,
+            "fields_renamed": false,
+            "raw_string_equality": 0,
+            "paired_rows": 82372,
+            "exact_numeric_equality": 0,
+            "numeric_pairs": 82372,
+            "harmonization_coefficient_calculated": false,
+            "missing_archive": 0,
+            "missing_api": 0,
+            "missing_both": 0,
+            "invalid_archive": 0,
+            "invalid_api": 0,
+            "invalid_rows": 0,
+            "role": "crossed_control",
+            "documented_alias": false
+          }
+        ],
+        "records_are_unique_fires": false
+      }
+    },
+    {
+      "platform": "NOAA-21",
+      "filename": "fire_archive_J2V-C2_850120.csv",
+      "sha256_before": "5be3094edf2dc4461b9eadc82c97657b730550aaa92000d88fc2b1fbe4b46917",
+      "sha256_after": "5be3094edf2dc4461b9eadc82c97657b730550aaa92000d88fc2b1fbe4b46917",
+      "bytes": 7113989,
+      "rows": 87637,
+      "header": [
+        "latitude",
+        "longitude",
+        "brightness",
+        "scan",
+        "track",
+        "acq_date",
+        "acq_time",
+        "satellite",
+        "instrument",
+        "confidence",
+        "version",
+        "bright_t31",
+        "frp",
+        "daynight",
+        "type"
+      ],
+      "api_source_label": "VIIRS_NOAA21_SP",
+      "api_source_is_not_a_processing_stream_assignment": true,
+      "processing_stream": "unresolved",
+      "product_equivalence": "not_assessed",
+      "same_fire": "not_assessed",
+      "thermal_relationship": "same_observations_field_equivalence_unresolved",
+      "fields_renamed": false,
+      "harmonization_coefficient_calculated": false,
+      "request": {
+        "url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/[MAP_KEY]/VIIRS_NOAA21_SP/-137.77524,-44.13126,175.6368,71.42756/1/2024-07-07",
+        "sent": true,
+        "http_status": 200,
+        "rows": 87637,
+        "body_bytes": 7093756,
+        "elapsed_seconds": 4.062924,
+        "retries": 0,
+        "sha256": "6b72b391fc821a7d6b202505bd9474fcb3182cd301ea2f8e21da762770c235ff",
+        "kind": "area",
+        "source": "VIIRS_NOAA21_SP",
+        "attempts": [
+          {
+            "attempt": 1,
+            "url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/[MAP_KEY]/VIIRS_NOAA21_SP/-137.77524,-44.13126,175.6368,71.42756/1/2024-07-07",
+            "http_status": 200,
+            "elapsed_seconds": 4.062924,
+            "body_bytes": 7093756,
+            "sha256": "6b72b391fc821a7d6b202505bd9474fcb3182cd301ea2f8e21da762770c235ff",
+            "headers": {
+              "Server": "nginx",
+              "Date": "Sun, 15 Nov 2026 16:00:16 GMT",
+              "Content-Type": "text/plain;charset=UTF-8",
+              "Transfer-Encoding": "chunked",
+              "Connection": "close",
+              "X-Frame-Options": "SAMEORIGIN",
+              "Cache-Control": "no-cache",
+              "Access-Control-Allow-Origin": "*",
+              "X-Content-Type-Options": "nosniff",
+              "Request-ID": "acc49116679e360d0f196949c2312341",
+              "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+            },
+            "retrieved_at": "2026-11-15T16:00:18Z"
+          }
+        ],
+        "header": [
+          "latitude",
+          "longitude",
+          "bright_ti4",
+          "scan",
+          "track",
+          "acq_date",
+          "acq_time",
+          "satellite",
+          "instrument",
+          "confidence",
+          "version",
+          "bright_ti5",
+          "frp",
+          "daynight",
+          "type"
+        ],
+        "parse": {
+          "parsed_as_fire_table": true,
+          "header_only": false,
+          "rows": 87637,
+          "zero_fire_activity": false,
+          "reason": "Rows were parsed. Product equivalence is still not_assessed."
+        }
+      },
+      "comparison": {
+        "fields_renamed": false,
+        "observation_fields": [
+          "latitude",
+          "longitude",
+          "scan",
+          "track",
+          "acq_date",
+          "acq_time",
+          "satellite",
+          "instrument",
+          "confidence",
+          "version",
+          "frp",
+          "daynight",
+          "type"
+        ],
+        "candidate_pairs": [
+          {
+            "archive_field": "brightness",
+            "api_field": "bright_ti4"
+          },
+          {
+            "archive_field": "bright_t31",
+            "api_field": "bright_ti5"
+          }
+        ],
+        "archive_rows": 87637,
+        "api_rows": 87637,
+        "same_fire": "not_assessed",
+        "harmonization_coefficient_calculated": false,
+        "alignment": "performed",
+        "aligned_unique_rows": 87637,
+        "aligned_ambiguous_rows_with_matching_thermal_multiset": 0,
+        "ambiguous_groups": 0,
+        "unaligned_archive_rows": 0,
+        "unaligned_api_rows": 0,
+        "observations_aligned": true,
+        "pairs": [
+          {
+            "archive_field": "brightness",
+            "api_field": "bright_ti4",
+            "fields_present": true,
+            "fields_renamed": false,
+            "raw_string_equality": 87637,
+            "paired_rows": 87637,
+            "numeric_pairs": 87637,
+            "exact_numeric_equality": 87637,
+            "maximum_absolute_difference": "0",
+            "mean_signed_difference_api_minus_archive": "0",
+            "mean_absolute_difference": "0",
+            "signed_difference_quantiles_type7": {
+              "0": "0",
+              "0.25": "0",
+              "0.5": "0",
+              "0.75": "0",
+              "0.95": "0",
+              "0.99": "0",
+              "1": "0"
+            },
+            "absolute_difference_quantiles_type7": {
+              "0": "0",
+              "0.25": "0",
+              "0.5": "0",
+              "0.75": "0",
+              "0.95": "0",
+              "0.99": "0",
+              "1": "0"
+            },
+            "distinct_signed_differences": 1,
+            "signed_differences_when_few": [
+              "0"
+            ],
+            "systematic_offset": "none_observed",
+            "scale_or_other_transformation": "not_calculated",
+            "harmonization_coefficient_calculated": false,
+            "missing_archive": 0,
+            "missing_api": 0,
+            "missing_both": 0,
+            "invalid_archive": 0,
+            "invalid_api": 0,
+            "invalid_rows": 0,
+            "name_documented": true
+          },
+          {
+            "archive_field": "bright_t31",
+            "api_field": "bright_ti5",
+            "fields_present": true,
+            "fields_renamed": false,
+            "raw_string_equality": 87637,
+            "paired_rows": 87637,
+            "numeric_pairs": 87637,
+            "exact_numeric_equality": 87637,
+            "maximum_absolute_difference": "0",
+            "mean_signed_difference_api_minus_archive": "0",
+            "mean_absolute_difference": "0",
+            "signed_difference_quantiles_type7": {
+              "0": "0",
+              "0.25": "0",
+              "0.5": "0",
+              "0.75": "0",
+              "0.95": "0",
+              "0.99": "0",
+              "1": "0"
+            },
+            "absolute_difference_quantiles_type7": {
+              "0": "0",
+              "0.25": "0",
+              "0.5": "0",
+              "0.75": "0",
+              "0.95": "0",
+              "0.99": "0",
+              "1": "0"
+            },
+            "distinct_signed_differences": 1,
+            "signed_differences_when_few": [
+              "0"
+            ],
+            "systematic_offset": "none_observed",
+            "scale_or_other_transformation": "not_calculated",
+            "harmonization_coefficient_calculated": false,
+            "missing_archive": 0,
+            "missing_api": 0,
+            "missing_both": 0,
+            "invalid_archive": 0,
+            "invalid_api": 0,
+            "invalid_rows": 0,
+            "name_documented": false
+          }
+        ],
+        "controls": [
+          {
+            "archive_field": "brightness",
+            "api_field": "bright_ti5",
+            "fields_present": true,
+            "fields_renamed": false,
+            "raw_string_equality": 1,
+            "paired_rows": 87637,
+            "exact_numeric_equality": 1,
+            "numeric_pairs": 87637,
+            "harmonization_coefficient_calculated": false,
+            "missing_archive": 0,
+            "missing_api": 0,
+            "missing_both": 0,
+            "invalid_archive": 0,
+            "invalid_api": 0,
+            "invalid_rows": 0,
+            "role": "crossed_control",
+            "documented_alias": false
+          },
+          {
+            "archive_field": "bright_t31",
+            "api_field": "bright_ti4",
+            "fields_present": true,
+            "fields_renamed": false,
+            "raw_string_equality": 1,
+            "paired_rows": 87637,
+            "exact_numeric_equality": 1,
+            "numeric_pairs": 87637,
+            "harmonization_coefficient_calculated": false,
+            "missing_archive": 0,
+            "missing_api": 0,
+            "missing_both": 0,
+            "invalid_archive": 0,
+            "invalid_api": 0,
+            "invalid_rows": 0,
+            "role": "crossed_control",
+            "documented_alias": false
+          }
+        ],
+        "records_are_unique_fires": false
+      }
+    }
+  ],
+  "monthly_checksums": [
+    {
+      "filename": "fire_archive_J1V-C2_850320.csv",
+      "sha256": "9a192db30e307c257955047ca1177e3f2f463b8c8cdfda7b28ceac6b3aa92bd5",
+      "matches_ingestion_manifest": true
+    },
+    {
+      "filename": "fire_archive_J2V-C2_850321.csv",
+      "sha256": "c86e46d4ca730eea6db448ff928126ddc6b44ba4c4d11dfbc3a2d999f4937007",
+      "matches_ingestion_manifest": true
+    }
+  ],
+  "original_day_files_unchanged": true,
+  "timing": {
+    "wall_clock_seconds": 22.959564,
+    "cpu_seconds": 8.75,
+    "peak_working_set_bytes": 362438656,
+    "authenticated_retries": 0,
+    "cancellations": 0,
+    "documentation_bytes": 2289740,
+    "area_response_bytes": 13769005,
+    "python": {
+      "executable": "C:\\Users\\Administrator\\Documents\\Personal\\Code\\NASA Hackathon - Space Apps Challenge 2026\\nasa-fire-harmonization\\backend\\.venv\\Scripts\\python.exe",
+      "version": "3.12.14",
+      "windows_store_stub": false,
+      "venv_name": ".venv"
+    },
+    "pytest": {
+      "exit_code": 0,
+      "passed": 165,
+      "failed": 0,
+      "pytest_reported_seconds": 46.35,
+      "command_stopwatch_seconds": 54.76,
+      "executable": "C:\\Users\\Administrator\\Documents\\Personal\\Code\\NASA Hackathon - Space Apps Challenge 2026\\nasa-fire-harmonization\\backend\\.venv\\Scripts\\python.exe"
+    }
+  },
+  "same_fire": "not_assessed",
+  "processing_stream": "unresolved",
+  "harmonization_coefficient_calculated": false,
+  "documentation_text_refresh": {
+    "retrieved_at": "2026-11-15T16:06:44Z",
+    "wall_clock_seconds": 6.042335,
+    "area_requests_repeated": false,
+    "previous_user_guide_sha256": "fb957afb6e465cb312fb8229a2b6e424c489344bb09e76a7baee80a248d1ccb7",
+    "user_guide_sha256": "fb957afb6e465cb312fb8229a2b6e424c489344bb09e76a7baee80a248d1ccb7",
+    "reason": "The comparison pass hashed the user's guide PDF. Its text layer is read here, without another area request."
+  }
+}

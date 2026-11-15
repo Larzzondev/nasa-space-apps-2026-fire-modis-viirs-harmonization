@@ -1,7 +1,7 @@
 # Milestone 13 timing
 
-Started: 2026-11-15T15:23:03Z
-Finished: 2026-11-15T15:23:08Z
+Started: 2026-11-15T15:41:39Z
+Finished: 2026-11-15T15:41:56Z
 
 The MAP_KEY is not in this file.
 
@@ -13,40 +13,32 @@ Windows Store stub: `false`.
 
 ## Accounting
 
-Wall clock: 4.934643 seconds.
-CPU seconds: 1.03125.
-Peak working set: 134795264 bytes.
-Authenticated data requests sent: `false`.
+Wall clock: 17.626673 seconds.
+CPU seconds: 4.359375.
+Peak working set: 376532992 bytes.
+Authenticated data requests sent: `true`.
 Retries on data requests: 0.
 
 ## Documentation fetches
 
 | URL | HTTP | Seconds | Bytes | Retries |
 | --- | ---: | ---: | ---: | ---: |
-| https://firms.modaps.eosdis.nasa.gov/api/ | 200 | 0.952886 | 5966 | 0 |
-| https://firms.modaps.eosdis.nasa.gov/api/area/ | 200 | 0.717009 | 25596 | 0 |
-| https://firms.modaps.eosdis.nasa.gov/api/data_availability/ | 200 | 0.8462 | 17834 | 0 |
-| https://firms.modaps.eosdis.nasa.gov/content/academy/data_api/firms_api_use.html | 200 | 1.375614 | 369354 | 0 |
+| https://firms.modaps.eosdis.nasa.gov/api/ | 200 | 0.571008 | 5966 | 0 |
+| https://firms.modaps.eosdis.nasa.gov/api/area/ | 200 | 0.633704 | 25596 | 0 |
+| https://firms.modaps.eosdis.nasa.gov/api/data_availability/ | 200 | 0.640514 | 17834 | 0 |
+| https://firms.modaps.eosdis.nasa.gov/content/academy/data_api/firms_api_use.html | 200 | 0.894775 | 369354 | 0 |
 
 ## Data requests
 
 | Source | Kind | Sent | HTTP | Seconds | Bytes | Rows |
 | --- | --- | --- | ---: | ---: | ---: | ---: |
-| VIIRS_NOAA20_SP | area | false | None | None | None | None |
-| VIIRS_NOAA21_SP | area | false | None | None | None | None |
+| VIIRS_NOAA20_SP | data_availability | true | 200 | 0.671823 | 63 | None |
+| VIIRS_NOAA20_SP | area | true | 200 | 4.2878 | 6675249 | 82372 |
+| VIIRS_NOAA21_SP | data_availability | true | 200 | 0.555105 | 63 | None |
+| VIIRS_NOAA21_SP | area | true | 200 | 4.925763 | 7093756 | 87637 |
 
 ## pytest
 
-Exit code 0. 147 passed, 0 failed. Pytest reported 45.78 seconds. The command stopwatch, including process startup, was 46.17 seconds. This run is the confirmation against the final tree.
+Exit code 0. 148 passed, 0 failed. Pytest reported 46.21 seconds. The command stopwatch was 46.62 seconds. Interpreter: `backend/.venv/Scripts/python.exe`.
 
-Interpreter: `backend/.venv/Scripts/python.exe`, Python 3.12.14. Windows Store stub: false.
-
-Installed in that environment: pytest 9.2.0, numpy 2.5.4, scipy 1.18.1, matplotlib 3.11.2.
-
-Milestone 12 invoked `py` and `python`. Those commands are Windows Store stubs and exited 9009 before pytest started. This run did not use them.
-
-## Measured intervals
-
-Provenance and documentation: 4.935 seconds. Pytest command: 46.17 seconds. Sum of those two stopwatches: 51.105 seconds. The editing interval between them was not instrumented and is not added as CPU time.
-
-Authenticated data requests: 0. Retries on those requests: 0. Response bytes and row counts for the area API: none, because the requests were not opened.
+Provenance and API requests: 17.627 seconds. Pytest: 46.62 seconds. Sum of those two stopwatches: 64.247 seconds. The gap between them was not instrumented. Data-request retries: 0.

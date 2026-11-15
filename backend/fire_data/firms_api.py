@@ -461,6 +461,41 @@ def date_inside(day: str, row: dict[str, str]) -> bool | None:
     return start <= target <= end
 
 
+def interpret_availability(text: str, source: str, day: str) -> dict[str, object]:
+    """Read one data-availability CSV. A missing window is not an outside-window result."""
+
+    try:
+        rows = parse_availability(text)
+    except FirmsApiError as error:
+        return {
+            "parsed": False,
+            "rows": [],
+            "inside": None,
+            "error": str(error),
+            "reason": "The data-availability body was not a data_id, min_date, max_date table.",
+        }
+    matched = [row for row in rows if row["data_id"] == source]
+    if not matched:
+        return {
+            "parsed": True,
+            "rows": [],
+            "inside": None,
+            "error": None,
+            "reason": f"The data-availability table did not contain {source}.",
+        }
+    inside = date_inside(day, matched[0])
+    if inside is None:
+        reason = f"The served window for {source} could not be read as dates."
+    elif inside:
+        reason = f"{day} is inside the served window for {source}."
+    else:
+        reason = (
+            f"{day} is outside the served window for {source}: "
+            f"{matched[0]['min_date']} through {matched[0]['max_date']}."
+        )
+    return {"parsed": True, "rows": matched, "inside": inside, "error": None, "reason": reason}
+
+
 def parse_fire_csv(text: str) -> tuple[list[str], list[dict[str, str]], dict[str, object]]:
     """Parse a FIRMS CSV. A header-only file is an empty table, not zero fires."""
 
@@ -784,13 +819,27 @@ def build_report(
     comparison: dict[str, object] | None,
 ) -> dict[str, object]:
     authenticated = [item for item in requests if item.get("authenticated") is True and item.get("sent") is True]
+    area_tables = [
+        item
+        for item in requests
+        if item.get("kind") == "area" and isinstance(item.get("parse"), dict) and item["parse"].get("parsed_as_fire_table") is True
+    ]
+    area_sent = [item for item in requests if item.get("kind") == "area" and item.get("sent") is True]
+    if not authenticated:
+        result = "not_requested"
+    elif area_tables:
+        result = "retrieved"
+    elif area_sent:
+        result = "request_failed"
+    else:
+        result = "area_not_sent"
     return {
         "created_at": created_at,
         "question": (
             "Does an authenticated FIRMS area response for VIIRS_NOAA20_SP and VIIRS_NOAA21_SP "
             "on 2024-07-07 identify the processing stream of the local July 7 archive CSVs?"
         ),
-        "result": "not_requested" if not authenticated else "retrieved",
+        "result": result,
         "authenticated_requests_sent": bool(authenticated),
         "processing_stream": "unresolved",
         "same_fire": "not_assessed",
@@ -908,25 +957,55 @@ def render_markdown(report: dict[str, object]) -> str:
             "Each extent is the axis-aligned range of stored points. It is the smallest rectangle that contains those points. "
             "It is not the archive order's area of interest. Longitude slices outside that range were not part of the planned request.",
             "",
-            "Planned requests, with the key still unsubstituted:",
+            "Requests. Stored URLs keep the key position unsubstituted:",
             "",
         ]
     )
     for item in report["requests"]:
-        lines.append(f"- `{item['source']}`: `{item['url']}` sent=`{str(item['sent']).lower()}`. {item['reason']}")
+        lines.append(
+            f"- `{item.get('source')}` `{item.get('kind', 'area')}` sent=`{str(item.get('sent')).lower()}` "
+            f"HTTP `{item.get('http_status')}` rows `{item.get('rows')}` bytes `{item.get('body_bytes')}` "
+            f"seconds `{item.get('elapsed_seconds')}` retries `{item.get('retries', 0)}`. {item.get('reason', '')}"
+        )
+        if item.get("body_prefix"):
+            lines.append(f"  Response prefix: `{item['body_prefix']}`")
+        if item.get("availability_rows"):
+            lines.append(f"  Availability rows: `{item['availability_rows']}`.")
+        if item.get("summary"):
+            lines.append(f"  API field summary: `{item['summary']}`.")
     lines.extend(["", "## Comparison", ""])
-    if report["comparison"] is None:
+    comparison = report["comparison"]
+    if comparison is None:
         lines.extend(
             [
-                "Not performed. No API table was returned, so record counts, coordinate differences, "
+                "Not performed. No API fire table was parsed, so record counts, coordinate differences, "
                 "timestamp differences, duplicate observations, and missing observations were not calculated from an API response.",
-                "An empty response was not received and is not interpreted as zero fire activity.",
+                "An empty or failed response is not interpreted as zero fire activity.",
                 "",
             ]
         )
     else:
-        lines.append("A comparison object is in the JSON report. Product equivalence remains `not_assessed`.")
-        lines.append("")
+        for source, item in comparison.items():
+            lines.append(f"### {source}")
+            lines.append("")
+            lines.append(
+                f"Archive rows `{item.get('archive_rows')}`. API rows `{item.get('api_rows')}`. "
+                f"Exact shared-field matches `{item.get('exact_shared_field_matches')}`. "
+                f"Archive rows without an API identity `{item.get('archive_rows_without_api_identity')}`. "
+                f"API rows without an archive identity `{item.get('api_rows_without_archive_identity')}`. "
+                f"Same identity with changed shared values `{item.get('same_identity_changed_shared_values')}`."
+            )
+            lines.append(
+                f"Columns only in the archive: `{item.get('archive_only_columns')}`. "
+                f"Columns only in the API table: `{item.get('api_only_columns')}`."
+            )
+            lines.append(
+                "Field names were not renamed. Product equivalence remains `not_assessed`. "
+                "`same_fire` remains `not_assessed`."
+            )
+            if item.get("reason"):
+                lines.append(str(item["reason"]))
+            lines.append("")
     lines.extend(["## Monthly archive checksums", ""])
     for item in report["monthly_checksums"]:
         lines.append(
@@ -938,8 +1017,8 @@ def render_markdown(report: dict[str, object]) -> str:
     lines.extend(
         [
             "",
-            "The download readme's statement that standard-quality NOAA-20 and NOAA-21 data are not yet available from FIRMS "
-            "was not replaced by an API response. Both local files stay unresolved.",
+            "The local NOAA-20 and NOAA-21 archive streams stay `unresolved`. "
+            "A catalog label, an API version cell, or a row overlap does not by itself name the stream of the archive file.",
             "",
         ]
     )
@@ -1050,20 +1129,20 @@ def execute_requests(archives: list[dict[str, object]], key: str) -> tuple[list[
             }
         )
         requests.append(availability_record)
-        window = None
         inside: bool | None = None
-        if availability_record.get("http_status") == 200 and availability_record.get("text"):
-            try:
-                rows = parse_availability(str(availability_record["text"]))
-            except FirmsApiError as error:
-                availability_record["parse_error"] = str(error)
-                rows = []
-            matched = [row for row in rows if row["data_id"] == source]
-            availability_record["availability_rows"] = matched
-            if matched:
-                window = matched[0]
-                inside = date_inside(TARGET_DAY, window)
-                availability_record["target_date_inside_served_window"] = inside
+        availability_text = str(availability_record.get("text") or "")
+        if availability_text:
+            availability_record["body_prefix"] = _redacted_prefix(availability_text, key)
+        if availability_record.get("http_status") == 200 and availability_text:
+            interpreted = interpret_availability(availability_text, source, TARGET_DAY)
+            availability_record["availability_rows"] = interpreted["rows"]
+            availability_record["target_date_inside_served_window"] = interpreted["inside"]
+            availability_record["availability_reason"] = interpreted["reason"]
+            if interpreted["error"]:
+                availability_record["parse_error"] = redact(str(interpreted["error"]), key)
+            inside = interpreted["inside"]
+        elif availability_text:
+            availability_record["availability_reason"] = "The data-availability response was not HTTP 200."
         if inside is not True:
             requests.append(
                 {
@@ -1083,8 +1162,8 @@ def execute_requests(archives: list[dict[str, object]], key: str) -> tuple[list[
                     "retries": 0,
                     "attempts": [],
                     "reason": (
-                        "The area request was not sent. The data-availability response did not place "
-                        f"{TARGET_DAY} inside the served window for {source}."
+                        "The area request was not sent. "
+                        + str(availability_record.get("availability_reason") or "The served window was not confirmed.")
                     ),
                     "zero_fire_activity": False,
                 }
@@ -1109,6 +1188,11 @@ def execute_requests(archives: list[dict[str, object]], key: str) -> tuple[list[
             area_record["parse"] = parsed
             area_record["rows"] = parsed["rows"]
             area_record["header"] = header
+            area_record["summary"] = summarize_fire_table(header, rows)
+            if not parsed["parsed_as_fire_table"]:
+                prefix = str(parsed.get("body_prefix") or "")
+                area_record["body_prefix"] = redact(prefix, key)
+                parsed["body_prefix"] = area_record["body_prefix"]
             if parsed["parsed_as_fire_table"]:
                 archive_header = list(archive["header"])
                 archive_rows = _load_rows(Path(str(archive["path"])))
@@ -1122,6 +1206,8 @@ def execute_requests(archives: list[dict[str, object]], key: str) -> tuple[list[
                     "zero_fire_activity": False,
                 }
         else:
+            if area_record.get("text"):
+                area_record["body_prefix"] = _redacted_prefix(str(area_record["text"]), key)
             area_record.pop("text", None)
             comparisons[source] = {
                 "product_equivalence": "not_assessed",
@@ -1171,11 +1257,30 @@ def _call(template_url: str, key: str, kind: str) -> dict[str, object]:
     return stored
 
 
-def _drop_response_text(requests: list[dict[str, object]]) -> None:
+def _redacted_prefix(text: str, key: str, limit: int = 180) -> str:
+    return redact(" ".join(text.split())[:limit], key)
+
+
+def summarize_fire_table(header: list[str], rows: list[dict[str, str]]) -> dict[str, object]:
+    """Keep field evidence from an API table without storing the rows."""
+
+    summary: dict[str, object] = {"rows": len(rows), "columns": header}
+    for column in ("satellite", "instrument", "version", "confidence", "acq_date", "daynight"):
+        if column not in header:
+            continue
+        summary[column] = dict(Counter(row.get(column, "") for row in rows))
+    return summary
+
+
+def _drop_response_text(requests: list[dict[str, object]], key: str | None = None) -> None:
     for item in requests:
         text = item.pop("text", None)
-        if text is not None and "sha256" not in item:
-            item["sha256"] = sha256_bytes(str(text).encode("utf-8"))
+        if not isinstance(text, str):
+            continue
+        if "sha256" not in item:
+            item["sha256"] = sha256_bytes(text.encode("utf-8"))
+        if item.get("http_status") != 200 or item.get("parse_error") or item.get("parsed_as_fire_table") is False:
+            item["body_prefix"] = _redacted_prefix(text, key or "")
 
 
 def peak_working_set() -> int | None:
@@ -1232,7 +1337,7 @@ def run(environ: dict[str, str] | None = None) -> dict[str, object]:
         if not facts["area_template_present"] or set(TARGET_SOURCES) - set(facts["target_sources_on_area_page"]):
             raise FirmsApiError("The live area page no longer shows the documented template or target sources. No area URL was opened.")
         requests, comparison = execute_requests(archives, key)
-    _drop_response_text(requests)
+    _drop_response_text(requests, key)
     for archive in archives:
         archive.pop("monthly_path", None)
         archive.pop("path", None)
@@ -1254,6 +1359,10 @@ def run(environ: dict[str, str] | None = None) -> dict[str, object]:
     after = {spec["path"].name: sha256_file(spec["path"]) for spec in ARCHIVES}
     report["original_day_files_unchanged"] = before == after
     report["checksums_after_run"] = after
+    if key:
+        encoded = json.dumps(report)
+        if key in encoded:
+            report = json.loads(redact(encoded, key))
     write_reports(report)
     append_manifest_record(
         INGESTION_MANIFEST,

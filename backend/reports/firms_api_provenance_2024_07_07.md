@@ -1,22 +1,14 @@
 # FIRMS area API provenance, 7 July 2024
 
-Created 2026-11-15T15:23:03Z.
+Created 2026-11-15T15:41:39Z.
 
 ## Result
 
-Authenticated FIRMS requests were not sent.
+Authenticated FIRMS requests were sent. The processing stream of the local files remains a separate conclusion.
 
 Processing stream of the local NOAA-20 and NOAA-21 archive CSVs: `unresolved`.
 `same_fire` is `not_assessed`. Product equivalence is `not_assessed`.
 No harmonization coefficient was calculated. No missing observation was filled.
-
-## Configuration required before a keyed request
-
-`FIRMS_MAP_KEY` was absent from the process environment and from `backend/.env`.
-The file did not exist at the time of this run (`env_file_exists` is false in the JSON).
-Create `backend/.env` with one line, `FIRMS_MAP_KEY=<MAP_KEY issued by FIRMS>`. The value is the MAP_KEY issued at https://firms.modaps.eosdis.nasa.gov/api/map_key.
-`MAP_KEY` is also read. The process environment takes precedence over the file.
-The file is covered by the repository gitignore. It must not be committed. The client keeps the value out of reports, exception text, and stored URLs.
 
 ## Official API statements used
 
@@ -35,7 +27,7 @@ Target source identifiers present on the area page: VIIRS_NOAA20_SP, VIIRS_NOAA2
 The area page labels `VIIRS_NOAA20_SP` as VIIRS NOAA-20 Standard Processing and `VIIRS_NOAA21_SP` as VIIRS NOAA-21 Standard Processing. Those are catalog labels.
 The retrieved area page names a CSV query for a source code. It does not say that the response is the archive-download file fire_archive_J1V-C2 or fire_archive_J2V-C2. Equivalence stays not_assessed.
 
-The code-examples page shows a `VIIRS_NOAA20_NRT` world request whose sample columns include `bright_ti4` and `bright_ti5` and whose sample version cell is `2.0NRT`. That example is not a 7 July 2024 standard-processing response, and its column names are not renamed onto the local header. The same page also contains `brightness` and `bright_t31` in a MODIS country example. Those strings are not a header returned for `VIIRS_NOAA20_SP` or `VIIRS_NOAA21_SP`.
+The code-examples page shows a `VIIRS_NOAA20_NRT` world request whose sample columns include `bright_ti4` and `bright_ti5` and whose sample version cell is `2.0NRT`. That example is not a 7 July 2024 standard-processing response, and its column names are not renamed onto the local header.
 
 ## Local July 7 archive CSVs
 
@@ -48,15 +40,32 @@ The comparison files are the single-day archive downloads `fire_archive_J1V-C2_8
 
 Each extent is the axis-aligned range of stored points. It is the smallest rectangle that contains those points. It is not the archive order's area of interest. Longitude slices outside that range were not part of the planned request.
 
-Planned requests, with the key still unsubstituted:
+Requests. Stored URLs keep the key position unsubstituted:
 
-- `VIIRS_NOAA20_SP`: `https://firms.modaps.eosdis.nasa.gov/api/area/csv/[MAP_KEY]/VIIRS_NOAA20_SP/-175.0715,-50.57444,175.63397,71.25928/1/2024-07-07` sent=`false`. FIRMS_MAP_KEY is not configured. The authenticated URL was not opened.
-- `VIIRS_NOAA21_SP`: `https://firms.modaps.eosdis.nasa.gov/api/area/csv/[MAP_KEY]/VIIRS_NOAA21_SP/-137.77524,-44.13126,175.6368,71.42756/1/2024-07-07` sent=`false`. FIRMS_MAP_KEY is not configured. The authenticated URL was not opened.
+- `VIIRS_NOAA20_SP` `data_availability` sent=`true` HTTP `200` rows `None` bytes `63` seconds `0.671823` retries `0`. HTTP 200
+  Response prefix: `data_id,min_date,max_date VIIRS_NOAA20_SP,2018-04-01,2026-07-31`
+  Availability rows: `[{'data_id': 'VIIRS_NOAA20_SP', 'min_date': '2018-04-01', 'max_date': '2026-07-31'}]`.
+- `VIIRS_NOAA20_SP` `area` sent=`true` HTTP `200` rows `82372` bytes `6675249` seconds `4.2878` retries `0`. HTTP 200
+  API field summary: `{'rows': 82372, 'columns': ['latitude', 'longitude', 'bright_ti4', 'scan', 'track', 'acq_date', 'acq_time', 'satellite', 'instrument', 'confidence', 'version', 'bright_ti5', 'frp', 'daynight', 'type'], 'satellite': {'N20': 82372}, 'instrument': {'VIIRS': 82372}, 'version': {'2': 82372}, 'confidence': {'n': 72727, 'h': 2708, 'l': 6937}, 'acq_date': {'2024-07-07': 82372}, 'daynight': {'D': 51168, 'N': 31204}}`.
+- `VIIRS_NOAA21_SP` `data_availability` sent=`true` HTTP `200` rows `None` bytes `63` seconds `0.555105` retries `0`. HTTP 200
+  Response prefix: `data_id,min_date,max_date VIIRS_NOAA21_SP,2023-03-01,2026-07-31`
+  Availability rows: `[{'data_id': 'VIIRS_NOAA21_SP', 'min_date': '2023-03-01', 'max_date': '2026-07-31'}]`.
+- `VIIRS_NOAA21_SP` `area` sent=`true` HTTP `200` rows `87637` bytes `7093756` seconds `4.925763` retries `0`. HTTP 200
+  API field summary: `{'rows': 87637, 'columns': ['latitude', 'longitude', 'bright_ti4', 'scan', 'track', 'acq_date', 'acq_time', 'satellite', 'instrument', 'confidence', 'version', 'bright_ti5', 'frp', 'daynight', 'type'], 'satellite': {'N21': 87637}, 'instrument': {'VIIRS': 87637}, 'version': {'2': 87637}, 'confidence': {'n': 74845, 'h': 6879, 'l': 5913}, 'acq_date': {'2024-07-07': 87637}, 'daynight': {'N': 37857, 'D': 49780}}`.
 
 ## Comparison
 
-Not performed. No API table was returned, so record counts, coordinate differences, timestamp differences, duplicate observations, and missing observations were not calculated from an API response.
-An empty response was not received and is not interpreted as zero fire activity.
+### VIIRS_NOAA20_SP
+
+Archive rows `82372`. API rows `82372`. Exact shared-field matches `82372`. Archive rows without an API identity `0`. API rows without an archive identity `0`. Same identity with changed shared values `0`.
+Columns only in the archive: `['brightness', 'bright_t31']`. Columns only in the API table: `['bright_ti4', 'bright_ti5']`.
+Field names were not renamed. Product equivalence remains `not_assessed`. `same_fire` remains `not_assessed`.
+
+### VIIRS_NOAA21_SP
+
+Archive rows `87637`. API rows `87637`. Exact shared-field matches `87637`. Archive rows without an API identity `0`. API rows without an archive identity `0`. Same identity with changed shared values `0`.
+Columns only in the archive: `['brightness', 'bright_t31']`. Columns only in the API table: `['bright_ti4', 'bright_ti5']`.
+Field names were not renamed. Product equivalence remains `not_assessed`. `same_fire` remains `not_assessed`.
 
 ## Monthly archive checksums
 
@@ -71,4 +80,4 @@ An empty response was not received and is not interpreted as zero fire activity.
 - A Level-2 swath identifier is not a FIRMS location CSV.
 - same_fire remains not_assessed.
 
-The download readme's statement that standard-quality NOAA-20 and NOAA-21 data are not yet available from FIRMS was not replaced by an API response. Both local files stay unresolved.
+The local NOAA-20 and NOAA-21 archive streams stay `unresolved`. A catalog label, an API version cell, or a row overlap does not by itself name the stream of the archive file.

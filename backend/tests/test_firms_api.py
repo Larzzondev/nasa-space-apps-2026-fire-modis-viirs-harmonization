@@ -16,6 +16,7 @@ from fire_data.firms_api import (
     credential_status,
     documentation_facts,
     format_bbox,
+    interpret_availability,
     load_map_key,
     parse_fire_csv,
     planned_requests,
@@ -291,6 +292,29 @@ def test_report_writer_accepts_placeholders_and_rejects_a_key(tmp_path: Path, mo
     ]
     with pytest.raises(FirmsApiError, match="MAP_KEY value"):
         write_reports(leaked)
+
+
+def test_availability_window_decides_whether_the_date_is_served() -> None:
+    served = interpret_availability(
+        "data_id,min_date,max_date\nVIIRS_NOAA20_SP,2018-04-01,2026-08-31\n",
+        "VIIRS_NOAA20_SP",
+        "2024-07-07",
+    )
+    assert served["inside"] is True
+    closed = interpret_availability(
+        "data_id,min_date,max_date\nVIIRS_NOAA21_SP,2025-01-01,2026-01-01\n",
+        "VIIRS_NOAA21_SP",
+        "2024-07-07",
+    )
+    assert closed["inside"] is False
+    assert closed["rows"][0]["min_date"] == "2025-01-01"
+    missing = interpret_availability(
+        "data_id,min_date,max_date\nMODIS_SP,2000-11-01,2026-01-01\n",
+        "VIIRS_NOAA20_SP",
+        "2024-07-07",
+    )
+    assert missing["inside"] is None
+    assert "did not contain" in str(missing["reason"])
 
 
 def test_redact_removes_the_key_from_a_url() -> None:
