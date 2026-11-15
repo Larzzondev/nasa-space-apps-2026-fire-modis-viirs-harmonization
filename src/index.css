@@ -12,7 +12,7 @@
   --color-hot: #ff4458;
   --color-cyan: #5ee0ff;
   --color-mist: #93a4b8;
-  --color-muted: #6d7f93;
+  --color-muted: #7a8ea3;
   --color-paper: #e8eef6;
 }
 
@@ -80,6 +80,19 @@ input[type='range'] {
 
 .cesium-viewer-bottom {
   background: linear-gradient(to top, rgba(7, 11, 16, 0.92), transparent);
+}
+
+.cesium-credit-logoContainer,
+.cesium-credit-textContainer,
+.cesium-credit-expand-link {
+  color: #d5e2ef;
+  font-size: 11px;
+}
+
+.cesium-credit-textContainer a,
+.cesium-credit-logoContainer a,
+.cesium-credit-expand-link {
+  color: #d5e2ef;
 }
 
 .gap-hatch {

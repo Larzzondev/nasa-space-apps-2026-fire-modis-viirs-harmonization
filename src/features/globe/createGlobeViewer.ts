@@ -1,4 +1,6 @@
 import {
+  Credit,
+  CreditDisplay,
   EllipsoidTerrainProvider,
   ImageryLayer,
   Ion,
@@ -34,13 +36,23 @@ export function createGlobeViewer(container: HTMLElement): Viewer {
     })
   }
 
+  // The default widget credit is the Cesium ion logo. This path does not use ion,
+  // so replace that logo with a library credit and keep the map credit on screen.
+  CreditDisplay.cesiumCredit = new Credit(
+    '<a href="https://cesium.com/platform/cesiumjs/">CesiumJS</a>',
+    true,
+  )
+
   return new Viewer(container, {
     ...sharedOptions,
     baseLayer: new ImageryLayer(
       new OpenStreetMapImageryProvider({
         url: 'https://tile.openstreetmap.org/',
         fileExtension: 'png',
-        credit: '© OpenStreetMap contributors',
+        credit: new Credit(
+          '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>',
+          true,
+        ),
       }),
     ),
     terrainProvider: new EllipsoidTerrainProvider(),

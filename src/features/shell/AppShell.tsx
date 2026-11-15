@@ -47,7 +47,7 @@ export function AppShell() {
       </header>
 
       <div className="flex min-h-0 flex-1">
-        <nav className="hidden w-[196px] shrink-0 flex-col border-r border-line bg-panel/80 p-2 lg:flex" aria-label="Screens">
+        <nav className="hidden w-[196px] shrink-0 flex-col border-r border-line bg-panel/80 p-2 lg:flex lg:min-h-0 lg:overflow-y-auto" aria-label="Screens">
           <ul className="space-y-1">
             {SCREENS.map((item) => {
               const Icon = item.icon

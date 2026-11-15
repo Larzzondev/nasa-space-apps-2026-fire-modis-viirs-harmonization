@@ -143,7 +143,7 @@ export default function HistoryScreen() {
           </div>
         </div>
 
-        <Card title="Detection count trend">
+        <Card title="Delivered-row trend">
           <div className="mb-3 flex flex-wrap gap-3">
             {series.map((item) => (
               <span key={item.id} className="flex items-center gap-1.5 text-xs text-mist">

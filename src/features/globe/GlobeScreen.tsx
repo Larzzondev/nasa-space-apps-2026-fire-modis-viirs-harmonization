@@ -43,7 +43,9 @@ function Legend() {
           </span>
         ))}
       </div>
-      <p className="mt-2 text-[11px] text-muted">Fill is demo FRP. Ring is the platform. Size grows with FRP.</p>
+      <p className="mt-2 text-[11px] text-muted">
+        Marker color and size follow demo FRP. FRP is radiative power in megawatts, not fire size. The ring is the platform.
+      </p>
       <p className="mt-1 text-[11px] text-cyan">{globeBasemapLabel()}</p>
     </div>
   )
@@ -103,13 +105,13 @@ export default function GlobeScreen({ active }: { active: boolean }) {
             </div>
           </div>
         ) : null}
-        <div className="pointer-events-none absolute bottom-8 left-[348px] z-10 hidden max-w-sm lg:block">
+        <div className="pointer-events-none absolute bottom-14 left-[22.5rem] z-10 hidden w-[19rem] xl:block">
           <Legend />
         </div>
       </div>
 
       <div className="min-h-0 flex-1 space-y-3 overflow-y-auto p-3 lg:pointer-events-none lg:absolute lg:inset-0 lg:overflow-visible lg:p-0">
-        <section className="pointer-events-auto space-y-3 rounded-lg border border-line bg-panel/92 p-3 shadow-[0_16px_40px_rgba(0,0,0,0.28)] backdrop-blur-md lg:absolute lg:top-3 lg:left-3 lg:max-h-[calc(100%-1.5rem)] lg:w-[332px] lg:overflow-y-auto">
+        <section className="pointer-events-auto space-y-3 rounded-lg border border-line bg-panel/92 p-3 shadow-[0_16px_40px_rgba(0,0,0,0.28)] backdrop-blur-md lg:absolute lg:top-3 lg:left-3 lg:max-h-[calc(100%-3.75rem)] lg:w-[332px] lg:overflow-y-auto">
           <div className="flex items-start justify-between gap-2">
             <div>
               <p className="text-[10px] font-semibold tracking-[0.16em] text-mist uppercase">Global fire intelligence</p>
@@ -172,7 +174,7 @@ export default function GlobeScreen({ active }: { active: boolean }) {
             </div>
             <dl className="mt-2 grid grid-cols-2 gap-2 text-xs">
               <div>
-                <dt className="text-muted">Detections</dt>
+                <dt className="text-muted">Sample points</dt>
                 <dd className="font-semibold text-paper tabular-nums">{formatCount(summary.count)}</dd>
               </div>
               <div>
@@ -251,12 +253,12 @@ export default function GlobeScreen({ active }: { active: boolean }) {
           <Button className="w-full" onClick={() => setFlyHomeToken((token) => token + 1)}>
             World view
           </Button>
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <Legend />
           </div>
         </section>
 
-        <aside className="pointer-events-auto rounded-lg border border-line bg-panel/92 p-3 shadow-[0_16px_40px_rgba(0,0,0,0.28)] backdrop-blur-md lg:absolute lg:top-3 lg:right-3 lg:max-h-[calc(100%-1.5rem)] lg:w-[340px] lg:overflow-y-auto">
+        <aside className="pointer-events-auto rounded-lg border border-line bg-panel/92 p-3 shadow-[0_16px_40px_rgba(0,0,0,0.28)] backdrop-blur-md lg:absolute lg:top-3 lg:right-3 lg:max-h-[calc(100%-6.5rem)] lg:w-[340px] lg:overflow-y-auto">
           {selected ? (
             <div>
               <div className="flex items-start justify-between gap-2">
