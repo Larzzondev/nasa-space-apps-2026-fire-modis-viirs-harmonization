@@ -1,0 +1,120 @@
+{
+  "milestone": 10,
+  "base_commit": "56f6766133c0c7930026179b146568dbff304b42",
+  "same_fire": "not_assessed",
+  "science_executed": false,
+  "harmonization_coefficient": null,
+  "xgboost_trained": false,
+  "missing_dates_filled": false,
+  "source_rows_scanned": 0,
+  "records_processed": 0,
+  "contract_confirmation_rows_read": 4,
+  "dataset_rows_not_reprocessed": 7985467,
+  "throughput_rows_per_second": null,
+  "clocks": {
+    "request_timestamp_minute_resolution": "2026-11-15T06:54:00-06:00",
+    "request_timestamp_note": "Minute printed on the request. Not a stopwatch start.",
+    "first_measured_local_clock": "2026-11-15T06:57:09.8607747-06:00",
+    "instrumented_run_end_local_clock": "2026-11-15T07:12:50.7690061-06:00",
+    "span_first_clock_to_instrumented_end_seconds": 940.908232,
+    "span_note": "datetime.total_seconds() between the two measured clocks. The repr of that float is 940.908232. The span includes uninstrumented authoring as well as the commands below. It is not a sum of task CPU."
+  },
+  "validation": {
+    "framework_tests": {
+      "pytest_reported_seconds": 0.41,
+      "passed": 9,
+      "tool_reported_elapsed_ms": 9205,
+      "tool_elapsed_note": "Includes shell startup. The 0.41 s figure is pytest's own report."
+    },
+    "full_suite_untraced": [
+      {
+        "started_local": "2026-11-15T07:05:03.3493844-06:00",
+        "ended_local": "2026-11-15T07:05:49.6267199-06:00",
+        "wall_clock_seconds": 46.2773355,
+        "pytest_reported": "121 passed in 45.30s",
+        "exit_code": 0,
+        "cpu_seconds": null,
+        "peak_working_set_bytes": null,
+        "process_object_total_processor_time_seconds": 0.015625,
+        "process_object_note": "The exited process handle returned 0.015625 s of processor time. That value does not account for the 46 s wall clock, so it is not used as the test CPU."
+      },
+      {
+        "started_local": "2026-11-15T07:06:09.8884084-06:00",
+        "ended_local": "2026-11-15T07:06:55.3558192-06:00",
+        "wall_clock_seconds": 45.467410799999996,
+        "pytest_reported": "121 passed in 44.83s",
+        "exit_code": null,
+        "cpu_seconds": null,
+        "peak_working_set_bytes": null,
+        "polled_handle_peak_working_set_bytes": 4448256,
+        "polled_handle_note": "The Start-Process handle peaked at 4,448,256 bytes. A later direct query of the Python PID showed a much larger working set, so this handle is not the interpreter footprint."
+      }
+    ],
+    "full_suite_with_tracemalloc": {
+      "python_pid": 40460,
+      "started_local": "2026-11-15T07:07:19.2651613-06:00",
+      "ended_local": "2026-11-15T07:12:50.7690061-06:00",
+      "wall_clock_seconds": 331.50384479999997,
+      "pytest_reported": "121 passed in 329.34s (0:05:29)",
+      "pytest_perf_counter_seconds": 330.0008746999956,
+      "pytest_exit_code": 0,
+      "tracemalloc_current_bytes": 71273207,
+      "tracemalloc_peak_bytes": 464695929,
+      "schema_and_prepare_perf_counter_seconds": 0.21214240000699647,
+      "schema_and_prepare_tracemalloc_peak_bytes": 1778256,
+      "configs_validated": 4,
+      "runs_prepared": 4,
+      "prepare_directory": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\m10-prepare-si6byhxi",
+      "prepare_note": "Prepared outside the repository. No source CSV was opened.",
+      "cpu_seconds_final": null,
+      "cpu_seconds_at_sample": 305.109375,
+      "working_set_bytes_at_sample": 352612352,
+      "peak_working_set_bytes_at_sample": 1747030016,
+      "paged_memory_bytes_at_sample": 1652215808,
+      "sample_note": "Get-Process on PID 40460 while the traced suite was still running. Processor time and the working-set peak were not read again after exit, because the Start-Process handle no longer exposed them. The sample is not a final total.",
+      "launcher_handle_peak_working_set_bytes": 4534272,
+      "launcher_handle_samples": 1583,
+      "launcher_handle_note": "The handle returned by Start-Process stayed near 4.5 MB while PID 40460 held the traced interpreter. That is why the earlier post-exit counters were not usable."
+    }
+  },
+  "retry_overhead": {
+    "failed_test_runs": 0,
+    "extra_full_suite_runs_for_counters": 2,
+    "extra_untraced_wall_clock_seconds": 45.467410799999996,
+    "traced_wall_clock_seconds": 331.50384479999997,
+    "note": "Both extra runs passed 121 tests. They were repeated to obtain CPU and memory after the first process handle did not return usable counters. The traced run is slower because tracemalloc was enabled, and its 329.34 s is not the untraced test time."
+  },
+  "waiting_seconds": null,
+  "waiting_note": "The traced run continued past two minutes because its output was still advancing. It was not cancelled. Its wall clock is the 331.50384479999997 s figure. A separate waiting interval was not measured.",
+  "inspection_commands": [
+    {"command": "git log and status", "tool_reported_elapsed_ms": 9620, "exit_code": 0},
+    {"command": "python alias", "tool_reported_elapsed_ms": 7835, "exit_code": 9009},
+    {"command": "derive load rates in the virtualenv", "tool_reported_elapsed_ms": 8336, "exit_code": 0},
+    {"command": "header read of four monthly CSVs", "tool_reported_elapsed_ms": 8104, "exit_code": 0, "records_read": 0},
+    {"command": "first data row of four monthly CSVs", "tool_reported_elapsed_ms": 7997, "exit_code": 0, "records_read": 4}
+  ],
+  "prior_recorded_performance": {
+    "note": "Copied from completed report JSON. Not remeasured in this milestone. Derived rates are 7985467 divided by the recorded load time.",
+    "within_sensor": {
+      "load_seconds": 176.18339190000552,
+      "analysis_seconds": 661.1942539000011,
+      "peak_python_bytes": 1900924045,
+      "peak_working_set_bytes": null,
+      "derived_load_rows_per_second": 45324.74323421032
+    },
+    "nearest_neighbor": {
+      "load_seconds": 168.90355260000797,
+      "analysis_seconds": 1347.4298895999964,
+      "peak_python_bytes": 1684953502,
+      "peak_working_set_bytes": 1897316352,
+      "derived_load_rows_per_second": 47278.26547799696
+    },
+    "candidate_pairs": {
+      "load_seconds": 181.8602064000006,
+      "match_seconds": 111.33626359999471,
+      "peak_python_bytes": 1119952034,
+      "peak_working_set_bytes": null,
+      "derived_load_rows_per_second": 43909.919372003824
+    }
+  }
+}

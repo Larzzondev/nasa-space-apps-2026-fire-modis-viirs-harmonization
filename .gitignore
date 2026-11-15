@@ -51,6 +51,9 @@ backend/data/**/*.hdf
 backend/data/**/*.h5
 backend/data/manifest/*.csv
 
+# Isolated experiment run directories. Research design files stay tracked.
+backend/experiments/
+
 # Logs
 logs/
 *.log

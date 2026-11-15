@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "A",
+  "title": "Spatial-temporal clustering of July 2024 detections",
+  "dataset_id": "firms_monthly_2024_07",
+  "period": {
+    "start": "2024-07-01",
+    "end": "2024-07-31",
+    "timezone": "UTC"
+  },
+  "inputs": {
+    "dataset_root": "data/raw/monthly_2024_07",
+    "access": "read_only",
+    "ingestion_manifest": "reports/ingestion_2024_07.json",
+    "expected_rows": 7985467,
+    "archives": [
+      {
+        "sensor": "modis",
+        "relative_csv": "modis/fire_archive_M-C61_850319.csv",
+        "sha256": "97e1a4312fbe488e63fd06461865b21dd5d01c419f2e80fa6e178c0015f10c81",
+        "rows": 676636,
+        "satellites": { "Aqua": 481320, "Terra": 195316 },
+        "confidence": "modis_0_100",
+        "stored_instrument": "MODIS",
+        "version_text": "61.03",
+        "processing_stream": null
+      },
+      {
+        "sensor": "viirs_snpp",
+        "relative_csv": "viirs_snpp/fire_archive_SV-C2_850322.csv",
+        "sha256": "bc5ff311c2df9113baf4eedaf4247d55954e8f4fa2ca052f940a943365314f21",
+        "rows": 1635020,
+        "satellites": { "SNPP": 1635020 },
+        "confidence": "viirs_lnh",
+        "stored_instrument": "SNPP",
+        "version_text": "2",
+        "processing_stream": null
+      },
+      {
+        "sensor": "viirs_noaa20",
+        "relative_csv": "viirs_noaa20/fire_archive_J1V-C2_850320.csv",
+        "sha256": "9a192db30e307c257955047ca1177e3f2f463b8c8cdfda7b28ceac6b3aa92bd5",
+        "rows": 2902597,
+        "satellites": { "N20": 2902597 },
+        "confidence": "viirs_lnh",
+        "stored_instrument": "VIIRS",
+        "version_text": "2",
+        "processing_stream": null
+      },
+      {
+        "sensor": "viirs_noaa21",
+        "relative_csv": "viirs_noaa21/fire_archive_J2V-C2_850321.csv",
+        "sha256": "c86e46d4ca730eea6db448ff928126ddc6b44ba4c4d11dfbc3a2d999f4937007",
+        "rows": 2771214,
+        "satellites": { "N21": 2771214 },
+        "confidence": "viirs_lnh",
+        "stored_instrument": "VIIRS",
+        "version_text": "2",
+        "processing_stream": null
+      }
+    ]
+  },
+  "outputs": {
+    "relative_directory": "experiments/A/runs",
+    "overwrite": false,
+    "protected_reports": [
+      "reports/ingestion_2024_07.json",
+      "reports/temporal_coverage_2024_07.json",
+      "reports/temporal_coverage_2024_07.md",
+      "reports/coverage_investigation_2024_07.json",
+      "reports/coverage_investigation_2024_07.md",
+      "reports/monthly_eda_2024_07.json",
+      "reports/monthly_eda_2024_07.md",
+      "reports/spatiotemporal_analysis_2024_07.json",
+      "reports/spatiotemporal_analysis_2024_07.md",
+      "reports/nearest_neighbor_analysis_2024_07.json",
+      "reports/nearest_neighbor_analysis_2024_07.md",
+      "reports/within_sensor_analysis_2024_07.json",
+      "reports/within_sensor_analysis_2024_07.md"
+    ]
+  },
+  "scientific_locks": {
+    "same_fire": "not_assessed",
+    "missing_dates_filled": false,
+    "harmonization_coefficient": null,
+    "xgboost_trained": false,
+    "processing_level": "unresolved",
+    "modify_source_rows": false,
+    "clusters_are_confirmed_fires": false,
+    "candidate_pairs_are_confirmed_fires": false,
+    "proximity_establishes_same_fire": false,
+    "h3_selected": false
+  },
+  "parameters": {
+    "baseline_report": "reports/within_sensor_analysis_2024_07.json",
+    "execution_scope": "published_baseline_plus_representative_date",
+    "earth_radius_m": 6371008.8,
+    "distance": "great_circle_from_ecef_chord",
+    "spatial_index": "scipy.spatial.cKDTree",
+    "partition": "utc_date_plus_adjacent_180_minute_margin",
+    "min_samples_includes_row": true,
+    "satellites": ["Terra", "Aqua", "SNPP", "N20", "N21"],
+    "pool_satellites": false,
+    "representative_dates": {
+      "Terra": "2024-07-12",
+      "Aqua": "2024-07-19",
+      "SNPP": "2024-07-30",
+      "N20": "2024-07-29",
+      "N21": "2024-07-07"
+    },
+    "reuse_published_full_month_settings": true,
+    "alternatives": [
+      "border_assignment",
+      "margin_only_neighbor_count",
+      "noise_label_stability",
+      "same_minute_components"
+    ],
+    "component_identity": "analytical_component_not_a_fire"
+  }
+}

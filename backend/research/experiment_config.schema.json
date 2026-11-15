@@ -1,0 +1,481 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.nasa-fire-harmonization/schemas/experiment_config.schema.json",
+  "title": "July 2024 parallel experiment configuration",
+  "description": "Shared input contract and isolated output locations for experiments A through D. A valid configuration cannot fill missing dates, assign same-fire status, infer processing level, or store a harmonization coefficient.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "experiment_id",
+    "title",
+    "dataset_id",
+    "period",
+    "inputs",
+    "outputs",
+    "scientific_locks",
+    "parameters"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "experiment_id": { "enum": ["A", "B", "C", "D"] },
+    "title": { "type": "string", "minLength": 1 },
+    "dataset_id": { "const": "firms_monthly_2024_07" },
+    "period": { "$ref": "#/$defs/period" },
+    "inputs": { "$ref": "#/$defs/inputs" },
+    "outputs": { "$ref": "#/$defs/outputs" },
+    "scientific_locks": { "$ref": "#/$defs/scientificLocks" },
+    "parameters": { "type": "object" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "experiment_id": { "const": "A" } },
+        "required": ["experiment_id"]
+      },
+      "then": {
+        "properties": {
+          "parameters": { "$ref": "#/$defs/parametersA" },
+          "outputs": {
+            "properties": { "relative_directory": { "const": "experiments/A/runs" } }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "experiment_id": { "const": "B" } },
+        "required": ["experiment_id"]
+      },
+      "then": {
+        "properties": {
+          "parameters": { "$ref": "#/$defs/parametersB" },
+          "outputs": {
+            "properties": { "relative_directory": { "const": "experiments/B/runs" } }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "experiment_id": { "const": "C" } },
+        "required": ["experiment_id"]
+      },
+      "then": {
+        "properties": {
+          "parameters": { "$ref": "#/$defs/parametersC" },
+          "outputs": {
+            "properties": { "relative_directory": { "const": "experiments/C/runs" } }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "experiment_id": { "const": "D" } },
+        "required": ["experiment_id"]
+      },
+      "then": {
+        "properties": {
+          "parameters": { "$ref": "#/$defs/parametersD" },
+          "outputs": {
+            "properties": { "relative_directory": { "const": "experiments/D/runs" } }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "period": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end", "timezone"],
+      "properties": {
+        "start": { "const": "2024-07-01" },
+        "end": { "const": "2024-07-31" },
+        "timezone": { "const": "UTC" }
+      }
+    },
+    "scientificLocks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "same_fire",
+        "missing_dates_filled",
+        "harmonization_coefficient",
+        "xgboost_trained",
+        "processing_level",
+        "modify_source_rows",
+        "clusters_are_confirmed_fires",
+        "candidate_pairs_are_confirmed_fires",
+        "proximity_establishes_same_fire",
+        "h3_selected"
+      ],
+      "properties": {
+        "same_fire": { "const": "not_assessed" },
+        "missing_dates_filled": { "const": false },
+        "harmonization_coefficient": { "const": null },
+        "xgboost_trained": { "const": false },
+        "processing_level": { "const": "unresolved" },
+        "modify_source_rows": { "const": false },
+        "clusters_are_confirmed_fires": { "const": false },
+        "candidate_pairs_are_confirmed_fires": { "const": false },
+        "proximity_establishes_same_fire": { "const": false },
+        "h3_selected": { "const": false }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dataset_root", "access", "ingestion_manifest", "expected_rows", "archives"],
+      "properties": {
+        "dataset_root": { "const": "data/raw/monthly_2024_07" },
+        "access": { "const": "read_only" },
+        "ingestion_manifest": { "const": "reports/ingestion_2024_07.json" },
+        "expected_rows": { "const": 7985467 },
+        "archives": { "$ref": "#/$defs/archives" }
+      }
+    },
+    "archives": {
+      "const": [
+        {
+          "sensor": "modis",
+          "relative_csv": "modis/fire_archive_M-C61_850319.csv",
+          "sha256": "97e1a4312fbe488e63fd06461865b21dd5d01c419f2e80fa6e178c0015f10c81",
+          "rows": 676636,
+          "satellites": { "Aqua": 481320, "Terra": 195316 },
+          "confidence": "modis_0_100",
+          "stored_instrument": "MODIS",
+          "version_text": "61.03",
+          "processing_stream": null
+        },
+        {
+          "sensor": "viirs_snpp",
+          "relative_csv": "viirs_snpp/fire_archive_SV-C2_850322.csv",
+          "sha256": "bc5ff311c2df9113baf4eedaf4247d55954e8f4fa2ca052f940a943365314f21",
+          "rows": 1635020,
+          "satellites": { "SNPP": 1635020 },
+          "confidence": "viirs_lnh",
+          "stored_instrument": "SNPP",
+          "version_text": "2",
+          "processing_stream": null
+        },
+        {
+          "sensor": "viirs_noaa20",
+          "relative_csv": "viirs_noaa20/fire_archive_J1V-C2_850320.csv",
+          "sha256": "9a192db30e307c257955047ca1177e3f2f463b8c8cdfda7b28ceac6b3aa92bd5",
+          "rows": 2902597,
+          "satellites": { "N20": 2902597 },
+          "confidence": "viirs_lnh",
+          "stored_instrument": "VIIRS",
+          "version_text": "2",
+          "processing_stream": null
+        },
+        {
+          "sensor": "viirs_noaa21",
+          "relative_csv": "viirs_noaa21/fire_archive_J2V-C2_850321.csv",
+          "sha256": "c86e46d4ca730eea6db448ff928126ddc6b44ba4c4d11dfbc3a2d999f4937007",
+          "rows": 2771214,
+          "satellites": { "N21": 2771214 },
+          "confidence": "viirs_lnh",
+          "stored_instrument": "VIIRS",
+          "version_text": "2",
+          "processing_stream": null
+        }
+      ]
+    },
+    "protectedReports": {
+      "const": [
+        "reports/ingestion_2024_07.json",
+        "reports/temporal_coverage_2024_07.json",
+        "reports/temporal_coverage_2024_07.md",
+        "reports/coverage_investigation_2024_07.json",
+        "reports/coverage_investigation_2024_07.md",
+        "reports/monthly_eda_2024_07.json",
+        "reports/monthly_eda_2024_07.md",
+        "reports/spatiotemporal_analysis_2024_07.json",
+        "reports/spatiotemporal_analysis_2024_07.md",
+        "reports/nearest_neighbor_analysis_2024_07.json",
+        "reports/nearest_neighbor_analysis_2024_07.md",
+        "reports/within_sensor_analysis_2024_07.json",
+        "reports/within_sensor_analysis_2024_07.md"
+      ]
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relative_directory", "overwrite", "protected_reports"],
+      "properties": {
+        "relative_directory": {
+          "type": "string",
+          "pattern": "^experiments/[ABCD]/runs$"
+        },
+        "overwrite": { "const": false },
+        "protected_reports": { "$ref": "#/$defs/protectedReports" }
+      }
+    },
+    "parametersA": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "baseline_report",
+        "execution_scope",
+        "earth_radius_m",
+        "distance",
+        "spatial_index",
+        "partition",
+        "min_samples_includes_row",
+        "satellites",
+        "pool_satellites",
+        "representative_dates",
+        "reuse_published_full_month_settings",
+        "alternatives",
+        "component_identity"
+      ],
+      "properties": {
+        "baseline_report": { "const": "reports/within_sensor_analysis_2024_07.json" },
+        "execution_scope": {
+          "enum": ["published_baseline_plus_representative_date", "full_month_rebuild"]
+        },
+        "earth_radius_m": { "const": 6371008.8 },
+        "distance": { "const": "great_circle_from_ecef_chord" },
+        "spatial_index": { "const": "scipy.spatial.cKDTree" },
+        "partition": { "const": "utc_date_plus_adjacent_180_minute_margin" },
+        "min_samples_includes_row": { "const": true },
+        "satellites": { "const": ["Terra", "Aqua", "SNPP", "N20", "N21"] },
+        "pool_satellites": { "const": false },
+        "representative_dates": {
+          "const": {
+            "Terra": "2024-07-12",
+            "Aqua": "2024-07-19",
+            "SNPP": "2024-07-30",
+            "N20": "2024-07-29",
+            "N21": "2024-07-07"
+          }
+        },
+        "reuse_published_full_month_settings": { "const": true },
+        "alternatives": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "border_assignment",
+              "margin_only_neighbor_count",
+              "noise_label_stability",
+              "same_minute_components"
+            ]
+          }
+        },
+        "component_identity": { "const": "analytical_component_not_a_fire" }
+      }
+    },
+    "parametersB": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "monthly_eda_report",
+        "nearest_neighbor_report",
+        "estimate_calibration_coefficient",
+        "fit_regression",
+        "frp_quantiles_include_nonpositive",
+        "frp_ratio_rule",
+        "confidence_scales_converted",
+        "brightness_367_is_confirmed_saturation",
+        "strata",
+        "modis_reporting"
+      ],
+      "properties": {
+        "monthly_eda_report": { "const": "reports/monthly_eda_2024_07.json" },
+        "nearest_neighbor_report": { "const": "reports/nearest_neighbor_analysis_2024_07.json" },
+        "estimate_calibration_coefficient": { "const": false },
+        "fit_regression": { "const": false },
+        "frp_quantiles_include_nonpositive": { "const": true },
+        "frp_ratio_rule": { "const": "partner_over_reference_when_both_positive" },
+        "confidence_scales_converted": { "const": false },
+        "brightness_367_is_confirmed_saturation": { "const": false },
+        "strata": {
+          "const": ["satellite", "daynight", "scan_quartile"]
+        },
+        "modis_reporting": {
+          "const": "terra_and_aqua_separate_unless_citing_a_published_pair_label"
+        }
+      }
+    },
+    "parametersC": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "temporal_coverage_report",
+        "coverage_investigation_report",
+        "spatiotemporal_report",
+        "fill_absent_dates",
+        "absent_date_is_zero_fire",
+        "repair_partial_delivery",
+        "clock",
+        "clock_resolution",
+        "compare_only_when_both_have_rows",
+        "snpp_zero_row_dates",
+        "snpp_partial_dates"
+      ],
+      "properties": {
+        "temporal_coverage_report": { "const": "reports/temporal_coverage_2024_07.json" },
+        "coverage_investigation_report": { "const": "reports/coverage_investigation_2024_07.json" },
+        "spatiotemporal_report": { "const": "reports/spatiotemporal_analysis_2024_07.json" },
+        "fill_absent_dates": { "const": false },
+        "absent_date_is_zero_fire": { "const": false },
+        "repair_partial_delivery": { "const": false },
+        "clock": { "const": "UTC" },
+        "clock_resolution": { "const": "minute" },
+        "compare_only_when_both_have_rows": { "const": true },
+        "snpp_zero_row_dates": {
+          "const": [
+            "2024-07-10",
+            "2024-07-11",
+            "2024-07-12",
+            "2024-07-13",
+            "2024-07-14",
+            "2024-07-15",
+            "2024-07-25",
+            "2024-07-26",
+            "2024-07-27",
+            "2024-07-28"
+          ]
+        },
+        "snpp_partial_dates": {
+          "const": ["2024-07-16", "2024-07-24", "2024-07-29"]
+        }
+      }
+    },
+    "parametersD": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "within_sensor_report",
+        "monthly_eda_report",
+        "h3_selected",
+        "h3_library_required",
+        "thresholds_are_sensor_footprints",
+        "equal_degree_cells_are_equal_area",
+        "product_of_medians_is_median_of_products",
+        "footprint_proxy",
+        "candidate_methods"
+      ],
+      "properties": {
+        "within_sensor_report": { "const": "reports/within_sensor_analysis_2024_07.json" },
+        "monthly_eda_report": { "const": "reports/monthly_eda_2024_07.json" },
+        "h3_selected": { "const": false },
+        "h3_library_required": { "const": false },
+        "thresholds_are_sensor_footprints": { "const": false },
+        "equal_degree_cells_are_equal_area": { "const": false },
+        "product_of_medians_is_median_of_products": { "const": false },
+        "footprint_proxy": { "const": "scan_times_track_km2_distribution" },
+        "candidate_methods": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "equal_degree_1",
+              "equal_degree_2",
+              "spherical_zone_area",
+              "h3_unselected"
+            ]
+          }
+        }
+      }
+    },
+    "experimentRun": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "record_type",
+        "experiment_id",
+        "run_id",
+        "status",
+        "science_executed",
+        "results",
+        "same_fire",
+        "scientific_locks",
+        "harmonization_coefficient",
+        "xgboost_trained",
+        "missing_dates_filled",
+        "processing_level",
+        "source_rows_read",
+        "source_bytes_read",
+        "records_processed",
+        "output_directory",
+        "config_sha256",
+        "software",
+        "timing",
+        "created_utc"
+      ],
+      "properties": {
+        "schema_version": { "const": "1.0.0" },
+        "record_type": { "const": "experiment_run" },
+        "experiment_id": { "enum": ["A", "B", "C", "D"] },
+        "run_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$" },
+        "status": { "enum": ["prepared", "completed", "failed"] },
+        "science_executed": { "type": "boolean" },
+        "results": { "type": ["object", "null"] },
+        "same_fire": { "const": "not_assessed" },
+        "scientific_locks": { "$ref": "#/$defs/scientificLocks" },
+        "harmonization_coefficient": { "const": null },
+        "xgboost_trained": { "const": false },
+        "missing_dates_filled": { "const": false },
+        "processing_level": { "const": "unresolved" },
+        "source_rows_read": { "type": "integer", "minimum": 0 },
+        "source_bytes_read": { "type": "integer", "minimum": 0 },
+        "records_processed": { "type": "integer", "minimum": 0 },
+        "output_directory": { "type": "string", "minLength": 1 },
+        "config_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "software": { "$ref": "#/$defs/software" },
+        "timing": { "$ref": "#/$defs/timing" },
+        "created_utc": { "type": "string", "minLength": 1 }
+      },
+      "if": {
+        "properties": { "science_executed": { "const": false } },
+        "required": ["science_executed"]
+      },
+      "then": {
+        "properties": { "results": { "const": null } }
+      }
+    },
+    "software": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["python", "packages", "git_commit"],
+      "properties": {
+        "python": { "type": "string", "minLength": 1 },
+        "packages": { "$ref": "#/$defs/packages" },
+        "git_commit": { "type": ["string", "null"], "pattern": "^[0-9a-f]{40}$" }
+      }
+    },
+    "packages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numpy", "scipy", "matplotlib", "pytest"],
+      "properties": {
+        "numpy": { "type": ["string", "null"] },
+        "scipy": { "type": ["string", "null"] },
+        "matplotlib": { "type": ["string", "null"] },
+        "pytest": { "type": ["string", "null"] }
+      }
+    },
+    "timing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prepare_seconds",
+        "science_wall_clock_seconds",
+        "cpu_seconds",
+        "peak_working_set_bytes"
+      ],
+      "properties": {
+        "prepare_seconds": { "type": "number", "minimum": 0 },
+        "science_wall_clock_seconds": { "type": ["number", "null"], "minimum": 0 },
+        "cpu_seconds": { "type": ["number", "null"], "minimum": 0 },
+        "peak_working_set_bytes": { "type": ["integer", "null"], "minimum": 0 }
+      }
+    }
+  }
+}
