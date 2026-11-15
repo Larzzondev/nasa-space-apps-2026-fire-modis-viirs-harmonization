@@ -6,6 +6,8 @@ __pycache__/
 # Raw FIRMS extracts stay local. Reports under ../reports are tracked from the repository root.
 data/raw/**/*.csv
 data/raw/**/*.zip
+data/incoming/**/*.zip
+data/incoming/**/*.csv
 data/**/*.parquet
 data/**/*.nc
 data/**/*.hdf

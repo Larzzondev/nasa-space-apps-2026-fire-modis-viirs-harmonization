@@ -1,0 +1,2145 @@
+{
+  "period": {
+    "start": "2024-07-01",
+    "end": "2024-07-31"
+  },
+  "matrix": [
+    {
+      "date": "2024-07-01",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 5335,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 11085,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 75912,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 70842,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 76090,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-02",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 7052,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 11553,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 76448,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 75850,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 77742,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-03",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 5110,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 13003,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 70183,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 69114,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 71875,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-04",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 4711,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 10524,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 73754,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 70625,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 74140,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-05",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 4643,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 15312,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 73331,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 72047,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 74121,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-06",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 4779,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 12137,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 77793,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 74903,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 78437,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-07",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 7044,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 13366,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 82372,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 87637,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 86840,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-08",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 8180,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 16290,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 107599,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 101659,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 106502,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-09",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 8022,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 16528,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 112171,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 108575,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 103164,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-10",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 8117,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 21073,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 124687,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 121607,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 0,
+          "status": "zero_rows_delivered",
+          "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+        }
+      }
+    },
+    {
+      "date": "2024-07-11",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 7689,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 15009,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 111556,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 109401,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 0,
+          "status": "zero_rows_delivered",
+          "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+        }
+      }
+    },
+    {
+      "date": "2024-07-12",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 6162,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 17356,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 98679,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 101150,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 0,
+          "status": "zero_rows_delivered",
+          "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+        }
+      }
+    },
+    {
+      "date": "2024-07-13",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 5141,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 12133,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 75315,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 78327,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 0,
+          "status": "zero_rows_delivered",
+          "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+        }
+      }
+    },
+    {
+      "date": "2024-07-14",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 4926,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 12176,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 63519,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 60072,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 0,
+          "status": "zero_rows_delivered",
+          "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+        }
+      }
+    },
+    {
+      "date": "2024-07-15",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 4099,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 15315,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 77359,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 72728,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 0,
+          "status": "zero_rows_delivered",
+          "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+        }
+      }
+    },
+    {
+      "date": "2024-07-16",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 6040,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 14254,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 86129,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 85741,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 15643,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-17",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 6218,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 16512,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 88818,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 83675,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 89521,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-18",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 7150,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 16467,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 104021,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 101410,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 105489,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-19",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 7306,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 15517,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 101200,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 97945,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 102434,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-20",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 6354,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 17112,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 94486,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 33039,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 94011,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-21",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 5977,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 12686,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 82654,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 75528,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 79398,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-22",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 6148,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 15779,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 93738,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 90257,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 90260,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-23",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 5431,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 18065,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 101915,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 104530,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 107101,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-24",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 7950,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 20325,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 123134,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 119286,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 14621,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-25",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 7950,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 20836,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 127817,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 125747,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 0,
+          "status": "zero_rows_delivered",
+          "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+        }
+      }
+    },
+    {
+      "date": "2024-07-26",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 8823,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 19693,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 125100,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 114781,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 0,
+          "status": "zero_rows_delivered",
+          "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+        }
+      }
+    },
+    {
+      "date": "2024-07-27",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 7204,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 20762,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 120098,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 117758,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 0,
+          "status": "zero_rows_delivered",
+          "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+        }
+      }
+    },
+    {
+      "date": "2024-07-28",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 7225,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 16122,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 97028,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 93261,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 0,
+          "status": "zero_rows_delivered",
+          "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+        }
+      }
+    },
+    {
+      "date": "2024-07-29",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 4641,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 16865,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 92596,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 94972,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 17802,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-30",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 4390,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 15461,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 78611,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 77275,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 82443,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    },
+    {
+      "date": "2024-07-31",
+      "satellites": {
+        "Terra": {
+          "source_file": "present",
+          "delivered_rows": 5499,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "Aqua": {
+          "source_file": "present",
+          "delivered_rows": 12004,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N20": {
+          "source_file": "present",
+          "delivered_rows": 84574,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "N21": {
+          "source_file": "present",
+          "delivered_rows": 81472,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        },
+        "SNPP": {
+          "source_file": "present",
+          "delivered_rows": 87386,
+          "status": "rows_delivered",
+          "meaning": "The source CSV contains this many rows with this acquisition date."
+        }
+      }
+    }
+  ],
+  "snpp_windows": [
+    {
+      "window": {
+        "start": "2024-07-10",
+        "end": "2024-07-16"
+      },
+      "dates": [
+        {
+          "date": "2024-07-10",
+          "snpp": {
+            "source_file": "present",
+            "delivered_rows": 0,
+            "status": "zero_rows_delivered",
+            "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+          },
+          "other_archives": {
+            "Terra": {
+              "source_file": "present",
+              "delivered_rows": 8117,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "Aqua": {
+              "source_file": "present",
+              "delivered_rows": 21073,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N20": {
+              "source_file": "present",
+              "delivered_rows": 124687,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N21": {
+              "source_file": "present",
+              "delivered_rows": 121607,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            }
+          }
+        },
+        {
+          "date": "2024-07-11",
+          "snpp": {
+            "source_file": "present",
+            "delivered_rows": 0,
+            "status": "zero_rows_delivered",
+            "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+          },
+          "other_archives": {
+            "Terra": {
+              "source_file": "present",
+              "delivered_rows": 7689,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "Aqua": {
+              "source_file": "present",
+              "delivered_rows": 15009,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N20": {
+              "source_file": "present",
+              "delivered_rows": 111556,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N21": {
+              "source_file": "present",
+              "delivered_rows": 109401,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            }
+          }
+        },
+        {
+          "date": "2024-07-12",
+          "snpp": {
+            "source_file": "present",
+            "delivered_rows": 0,
+            "status": "zero_rows_delivered",
+            "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+          },
+          "other_archives": {
+            "Terra": {
+              "source_file": "present",
+              "delivered_rows": 6162,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "Aqua": {
+              "source_file": "present",
+              "delivered_rows": 17356,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N20": {
+              "source_file": "present",
+              "delivered_rows": 98679,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N21": {
+              "source_file": "present",
+              "delivered_rows": 101150,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            }
+          }
+        },
+        {
+          "date": "2024-07-13",
+          "snpp": {
+            "source_file": "present",
+            "delivered_rows": 0,
+            "status": "zero_rows_delivered",
+            "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+          },
+          "other_archives": {
+            "Terra": {
+              "source_file": "present",
+              "delivered_rows": 5141,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "Aqua": {
+              "source_file": "present",
+              "delivered_rows": 12133,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N20": {
+              "source_file": "present",
+              "delivered_rows": 75315,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N21": {
+              "source_file": "present",
+              "delivered_rows": 78327,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            }
+          }
+        },
+        {
+          "date": "2024-07-14",
+          "snpp": {
+            "source_file": "present",
+            "delivered_rows": 0,
+            "status": "zero_rows_delivered",
+            "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+          },
+          "other_archives": {
+            "Terra": {
+              "source_file": "present",
+              "delivered_rows": 4926,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "Aqua": {
+              "source_file": "present",
+              "delivered_rows": 12176,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N20": {
+              "source_file": "present",
+              "delivered_rows": 63519,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N21": {
+              "source_file": "present",
+              "delivered_rows": 60072,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            }
+          }
+        },
+        {
+          "date": "2024-07-15",
+          "snpp": {
+            "source_file": "present",
+            "delivered_rows": 0,
+            "status": "zero_rows_delivered",
+            "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+          },
+          "other_archives": {
+            "Terra": {
+              "source_file": "present",
+              "delivered_rows": 4099,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "Aqua": {
+              "source_file": "present",
+              "delivered_rows": 15315,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N20": {
+              "source_file": "present",
+              "delivered_rows": 77359,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N21": {
+              "source_file": "present",
+              "delivered_rows": 72728,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            }
+          }
+        },
+        {
+          "date": "2024-07-16",
+          "snpp": {
+            "source_file": "present",
+            "delivered_rows": 15643,
+            "status": "rows_delivered",
+            "meaning": "The source CSV contains this many rows with this acquisition date."
+          },
+          "other_archives": {
+            "Terra": {
+              "source_file": "present",
+              "delivered_rows": 6040,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "Aqua": {
+              "source_file": "present",
+              "delivered_rows": 14254,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N20": {
+              "source_file": "present",
+              "delivered_rows": 86129,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N21": {
+              "source_file": "present",
+              "delivered_rows": 85741,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            }
+          }
+        }
+      ],
+      "snpp_zero_rows_delivered": [
+        "2024-07-10",
+        "2024-07-11",
+        "2024-07-12",
+        "2024-07-13",
+        "2024-07-14",
+        "2024-07-15"
+      ],
+      "snpp_dates_with_rows": [
+        "2024-07-16"
+      ],
+      "inference": "These dates describe rows stored in the local S-NPP CSV. A date with zero delivered rows is not evidence of zero fire activity, and rows in the other archives are not evidence of an S-NPP outage."
+    },
+    {
+      "window": {
+        "start": "2024-07-25",
+        "end": "2024-07-28"
+      },
+      "dates": [
+        {
+          "date": "2024-07-25",
+          "snpp": {
+            "source_file": "present",
+            "delivered_rows": 0,
+            "status": "zero_rows_delivered",
+            "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+          },
+          "other_archives": {
+            "Terra": {
+              "source_file": "present",
+              "delivered_rows": 7950,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "Aqua": {
+              "source_file": "present",
+              "delivered_rows": 20836,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N20": {
+              "source_file": "present",
+              "delivered_rows": 127817,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N21": {
+              "source_file": "present",
+              "delivered_rows": 125747,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            }
+          }
+        },
+        {
+          "date": "2024-07-26",
+          "snpp": {
+            "source_file": "present",
+            "delivered_rows": 0,
+            "status": "zero_rows_delivered",
+            "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+          },
+          "other_archives": {
+            "Terra": {
+              "source_file": "present",
+              "delivered_rows": 8823,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "Aqua": {
+              "source_file": "present",
+              "delivered_rows": 19693,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N20": {
+              "source_file": "present",
+              "delivered_rows": 125100,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N21": {
+              "source_file": "present",
+              "delivered_rows": 114781,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            }
+          }
+        },
+        {
+          "date": "2024-07-27",
+          "snpp": {
+            "source_file": "present",
+            "delivered_rows": 0,
+            "status": "zero_rows_delivered",
+            "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+          },
+          "other_archives": {
+            "Terra": {
+              "source_file": "present",
+              "delivered_rows": 7204,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "Aqua": {
+              "source_file": "present",
+              "delivered_rows": 20762,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N20": {
+              "source_file": "present",
+              "delivered_rows": 120098,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N21": {
+              "source_file": "present",
+              "delivered_rows": 117758,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            }
+          }
+        },
+        {
+          "date": "2024-07-28",
+          "snpp": {
+            "source_file": "present",
+            "delivered_rows": 0,
+            "status": "zero_rows_delivered",
+            "meaning": "The source CSV is present and contains no row with this acquisition date. The delivered-row count is zero. That is not a measurement of zero fire activity."
+          },
+          "other_archives": {
+            "Terra": {
+              "source_file": "present",
+              "delivered_rows": 7225,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "Aqua": {
+              "source_file": "present",
+              "delivered_rows": 16122,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N20": {
+              "source_file": "present",
+              "delivered_rows": 97028,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            },
+            "N21": {
+              "source_file": "present",
+              "delivered_rows": 93261,
+              "status": "rows_delivered",
+              "meaning": "The source CSV contains this many rows with this acquisition date."
+            }
+          }
+        }
+      ],
+      "snpp_zero_rows_delivered": [
+        "2024-07-25",
+        "2024-07-26",
+        "2024-07-27",
+        "2024-07-28"
+      ],
+      "snpp_dates_with_rows": [],
+      "inference": "These dates describe rows stored in the local S-NPP CSV. A date with zero delivered rows is not evidence of zero fire activity, and rows in the other archives are not evidence of an S-NPP outage."
+    }
+  ],
+  "smallest_positive_days": {
+    "Terra": [
+      {
+        "date": "2024-07-15",
+        "delivered_rows": 4099
+      },
+      {
+        "date": "2024-07-30",
+        "delivered_rows": 4390
+      },
+      {
+        "date": "2024-07-29",
+        "delivered_rows": 4641
+      }
+    ],
+    "Aqua": [
+      {
+        "date": "2024-07-04",
+        "delivered_rows": 10524
+      },
+      {
+        "date": "2024-07-01",
+        "delivered_rows": 11085
+      },
+      {
+        "date": "2024-07-02",
+        "delivered_rows": 11553
+      }
+    ],
+    "N20": [
+      {
+        "date": "2024-07-14",
+        "delivered_rows": 63519
+      },
+      {
+        "date": "2024-07-03",
+        "delivered_rows": 70183
+      },
+      {
+        "date": "2024-07-05",
+        "delivered_rows": 73331
+      }
+    ],
+    "N21": [
+      {
+        "date": "2024-07-20",
+        "delivered_rows": 33039
+      },
+      {
+        "date": "2024-07-14",
+        "delivered_rows": 60072
+      },
+      {
+        "date": "2024-07-03",
+        "delivered_rows": 69114
+      }
+    ],
+    "SNPP": [
+      {
+        "date": "2024-07-24",
+        "delivered_rows": 14621
+      },
+      {
+        "date": "2024-07-16",
+        "delivered_rows": 15643
+      },
+      {
+        "date": "2024-07-29",
+        "delivered_rows": 17802
+      }
+    ]
+  },
+  "notable_hour_counts": {
+    "Terra": {
+      "2024-07-15": [
+        114,
+        0,
+        99,
+        280,
+        430,
+        0,
+        206,
+        0,
+        1057,
+        108,
+        0,
+        189,
+        151,
+        228,
+        92,
+        14,
+        107,
+        161,
+        158,
+        318,
+        384,
+        0,
+        0,
+        3
+      ],
+      "2024-07-29": [
+        77,
+        76,
+        1246,
+        60,
+        160,
+        170,
+        108,
+        236,
+        937,
+        49,
+        7,
+        11,
+        383,
+        75,
+        146,
+        34,
+        53,
+        72,
+        171,
+        29,
+        538,
+        0,
+        3,
+        0
+      ],
+      "2024-07-30": [
+        90,
+        539,
+        121,
+        164,
+        149,
+        44,
+        111,
+        478,
+        729,
+        1,
+        46,
+        15,
+        42,
+        743,
+        51,
+        17,
+        63,
+        118,
+        72,
+        397,
+        305,
+        53,
+        0,
+        42
+      ]
+    },
+    "Aqua": {
+      "2024-07-01": [
+        65,
+        1,
+        32,
+        132,
+        45,
+        1671,
+        144,
+        1,
+        15,
+        5,
+        129,
+        1494,
+        11,
+        5495,
+        5,
+        0,
+        44,
+        8,
+        1336,
+        13,
+        85,
+        123,
+        20,
+        211
+      ],
+      "2024-07-02": [
+        89,
+        38,
+        11,
+        2,
+        914,
+        619,
+        898,
+        87,
+        2,
+        42,
+        223,
+        13,
+        6273,
+        225,
+        10,
+        0,
+        5,
+        554,
+        724,
+        559,
+        87,
+        13,
+        156,
+        9
+      ],
+      "2024-07-04": [
+        0,
+        34,
+        5,
+        2,
+        181,
+        1462,
+        74,
+        73,
+        42,
+        23,
+        169,
+        2034,
+        2124,
+        2479,
+        2,
+        0,
+        212,
+        30,
+        733,
+        377,
+        272,
+        0,
+        196,
+        0
+      ]
+    },
+    "SNPP": {
+      "2024-07-16": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1414,
+        1417,
+        2504,
+        3525,
+        787,
+        1856,
+        4140
+      ],
+      "2024-07-24": [
+        3523,
+        582,
+        105,
+        2526,
+        6930,
+        955,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "2024-07-29": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        304,
+        1692,
+        788,
+        7088,
+        151,
+        1427,
+        516,
+        4694,
+        1142
+      ]
+    },
+    "N20": {
+      "2024-07-03": [
+        1495,
+        109,
+        235,
+        3995,
+        3752,
+        7809,
+        401,
+        260,
+        871,
+        705,
+        1090,
+        24161,
+        37,
+        5378,
+        53,
+        532,
+        1688,
+        5524,
+        7563,
+        199,
+        827,
+        63,
+        3342,
+        94
+      ],
+      "2024-07-05": [
+        971,
+        409,
+        631,
+        208,
+        5868,
+        1365,
+        1306,
+        285,
+        471,
+        2896,
+        13310,
+        624,
+        24698,
+        3,
+        150,
+        671,
+        1066,
+        2123,
+        4356,
+        1701,
+        122,
+        2349,
+        1147,
+        6601
+      ],
+      "2024-07-14": [
+        2268,
+        657,
+        164,
+        2277,
+        2246,
+        2249,
+        647,
+        340,
+        1196,
+        802,
+        1939,
+        27536,
+        4,
+        6476,
+        32,
+        267,
+        1642,
+        988,
+        3568,
+        33,
+        2350,
+        1095,
+        3442,
+        1301
+      ]
+    },
+    "N21": {
+      "2024-07-03": [
+        116,
+        378,
+        855,
+        2475,
+        8855,
+        3640,
+        217,
+        471,
+        343,
+        1599,
+        6035,
+        18,
+        22673,
+        12,
+        12,
+        483,
+        1348,
+        3244,
+        8783,
+        1244,
+        10,
+        1654,
+        4,
+        4645
+      ],
+      "2024-07-14": [
+        180,
+        705,
+        1137,
+        399,
+        4060,
+        1565,
+        376,
+        683,
+        33,
+        2767,
+        7609,
+        320,
+        24337,
+        2,
+        126,
+        470,
+        491,
+        2932,
+        1251,
+        1829,
+        131,
+        2728,
+        175,
+        5766
+      ],
+      "2024-07-20": [
+        830,
+        340,
+        678,
+        2475,
+        2245,
+        2644,
+        1124,
+        1032,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        180,
+        83,
+        736,
+        6947,
+        940,
+        2754,
+        4098,
+        701,
+        1510,
+        3722
+      ]
+    }
+  },
+  "integrity": {
+    "manifest_passed": true,
+    "archives": [
+      {
+        "sensor": "modis",
+        "zip_filename": "DL_FIRE_M-C61_850319.zip",
+        "zip_sha256": "e7c1b1376a8e3d808e1cee0948b8f124f87099fd07e064e9f053654911ab791a",
+        "zip_sha256_matches_file": true,
+        "csv_filename": "fire_archive_M-C61_850319.csv",
+        "csv_sha256": "97e1a4312fbe488e63fd06461865b21dd5d01c419f2e80fa6e178c0015f10c81",
+        "csv_sha256_matches_manifest": true,
+        "expected_rows": 676636,
+        "record_count": 676636,
+        "difference": 0,
+        "date_min": "2024-07-01",
+        "date_max": "2024-07-31",
+        "satellites_observed": {
+          "Aqua": 481320,
+          "Terra": 195316
+        },
+        "instrument_observed": {
+          "MODIS": 676636
+        },
+        "version_observed": {
+          "61.03": 676636
+        },
+        "exact_duplicate_rows": 0,
+        "location_time_duplicate_rows": 0,
+        "empty_cells": {},
+        "malformed": {}
+      },
+      {
+        "sensor": "viirs_snpp",
+        "zip_filename": "DL_FIRE_SV-C2_850322.zip",
+        "zip_sha256": "600f9fd0b914327879a0fc906427b9ac0d5cf946397c270dcbea60390a113f84",
+        "zip_sha256_matches_file": true,
+        "csv_filename": "fire_archive_SV-C2_850322.csv",
+        "csv_sha256": "bc5ff311c2df9113baf4eedaf4247d55954e8f4fa2ca052f940a943365314f21",
+        "csv_sha256_matches_manifest": true,
+        "expected_rows": 1635020,
+        "record_count": 1635020,
+        "difference": 0,
+        "date_min": "2024-07-01",
+        "date_max": "2024-07-31",
+        "satellites_observed": {
+          "SNPP": 1635020
+        },
+        "instrument_observed": {
+          "SNPP": 1635020
+        },
+        "version_observed": {
+          "2": 1635020
+        },
+        "exact_duplicate_rows": 0,
+        "location_time_duplicate_rows": 0,
+        "empty_cells": {},
+        "malformed": {}
+      },
+      {
+        "sensor": "viirs_noaa20",
+        "zip_filename": "DL_FIRE_J1V-C2_850320.zip",
+        "zip_sha256": "3dac539f2c935dd8a263c43f6fa9b377bdcc6aca47de24063b40987182cc1e2a",
+        "zip_sha256_matches_file": true,
+        "csv_filename": "fire_archive_J1V-C2_850320.csv",
+        "csv_sha256": "9a192db30e307c257955047ca1177e3f2f463b8c8cdfda7b28ceac6b3aa92bd5",
+        "csv_sha256_matches_manifest": true,
+        "expected_rows": 2902597,
+        "record_count": 2902597,
+        "difference": 0,
+        "date_min": "2024-07-01",
+        "date_max": "2024-07-31",
+        "satellites_observed": {
+          "N20": 2902597
+        },
+        "instrument_observed": {
+          "VIIRS": 2902597
+        },
+        "version_observed": {
+          "2": 2902597
+        },
+        "exact_duplicate_rows": 0,
+        "location_time_duplicate_rows": 1,
+        "empty_cells": {},
+        "malformed": {}
+      },
+      {
+        "sensor": "viirs_noaa21",
+        "zip_filename": "DL_FIRE_J2V-C2_850321.zip",
+        "zip_sha256": "b9e08e8584665e6a00d8eada52b800a934f950ab86cb7ecefd0a2e5bd4f4312f",
+        "zip_sha256_matches_file": true,
+        "csv_filename": "fire_archive_J2V-C2_850321.csv",
+        "csv_sha256": "c86e46d4ca730eea6db448ff928126ddc6b44ba4c4d11dfbc3a2d999f4937007",
+        "csv_sha256_matches_manifest": true,
+        "expected_rows": 2771214,
+        "record_count": 2771214,
+        "difference": 0,
+        "date_min": "2024-07-01",
+        "date_max": "2024-07-31",
+        "satellites_observed": {
+          "N21": 2771214
+        },
+        "instrument_observed": {
+          "VIIRS": 2771214
+        },
+        "version_observed": {
+          "2": 2771214
+        },
+        "exact_duplicate_rows": 0,
+        "location_time_duplicate_rows": 4,
+        "empty_cells": {},
+        "malformed": {}
+      }
+    ],
+    "total_rows": 7985467,
+    "expected_total": 7985467,
+    "total_difference": 0,
+    "exact_duplicate_rows": 0,
+    "location_time_duplicate_rows": 5,
+    "empty_cells": {},
+    "malformed": {},
+    "july7_sample_hashes": {
+      "modis": {
+        "before_scan": "45b23bd13722f989f974943b35e07c74ee1164d2399717e17c9a35f707c19352",
+        "after_scan": "45b23bd13722f989f974943b35e07c74ee1164d2399717e17c9a35f707c19352",
+        "unchanged": true
+      },
+      "viirs_noaa20": {
+        "before_scan": "b2febdffbf7ad9dcaf7066ed913b8e0028eebff94bb79a9dd4e2e346dd4f9907",
+        "after_scan": "b2febdffbf7ad9dcaf7066ed913b8e0028eebff94bb79a9dd4e2e346dd4f9907",
+        "unchanged": true
+      },
+      "viirs_noaa21": {
+        "before_scan": "5be3094edf2dc4461b9eadc82c97657b730550aaa92000d88fc2b1fbe4b46917",
+        "after_scan": "5be3094edf2dc4461b9eadc82c97657b730550aaa92000d88fc2b1fbe4b46917",
+        "unchanged": true
+      },
+      "viirs_snpp": {
+        "before_scan": "f6ceca9e5b8677febd42826fe3df5e84701da4b60bb9a7156f4440f3bebfd4a9",
+        "after_scan": "f6ceca9e5b8677febd42826fe3df5e84701da4b60bb9a7156f4440f3bebfd4a9",
+        "unchanged": true
+      }
+    },
+    "processing_stream": null
+  },
+  "harmonization_coefficients_calculated": false,
+  "limitations": [
+    "MODIS and VIIRS have different spatial resolutions and detection characteristics. Row counts are not a comparison of sensitivity.",
+    "Repeat detections are not necessarily unique fires. Exact duplicate rows and repeated location-time keys are retained.",
+    "A date with zero delivered rows, and a date whose source file is missing, are not zero fire detections.",
+    "MODIS confidence is an integer from 0 through 100. VIIRS confidence is the flag l, n, or h. The scales are not interchangeable.",
+    "Processing-level provenance stays unresolved. The ZIP name, the fire_archive prefix, and the version field are not treated as a processing stream.",
+    "One month cannot establish a globally valid harmonization factor. No coefficient is calculated.",
+    "Spatial proximity is not assessed here and cannot, by itself, prove that two observations are the same fire.",
+    "FRP is the stored fire radiative power value. It is not fire size and it is not total fire energy."
+  ]
+}

@@ -145,6 +145,15 @@ If a FIRMS `MAP_KEY` is required for a later API client, put it in an untracked 
 
 Place CSVs under `backend/data/raw/` using the paths in [`backend/data/raw/README.md`](backend/data/raw/README.md). Those files are gitignored.
 
+The July 2024 monthly intake is separate from the 7 July sample. Copy four unmodified FIRMS ZIP archives into `backend/data/incoming/2024-07/`: MODIS C6.1 (`M-C61`), VIIRS S-NPP (`SV-C2`), VIIRS NOAA-20 (`J1V-C2`), and VIIRS NOAA-21 (`J2V-C2`). From `backend/`:
+
+```bash
+.venv\Scripts\python -m fire_data.ingest --dry-run
+.venv\Scripts\python -m fire_data.ingest
+```
+
+The dry run does not extract files. The second command writes CSVs under `backend/data/raw/monthly_2024_07/` and `backend/reports/ingestion_2024_07.json`. It does not replace the 7 July sample. A date missing from a CSV stays absent and is not counted as zero detections. Those ZIPs have not been ingested in this repository yet.
+
 ## 9. Data provenance and reproducibility
 
 Reproducibility here means another person can rerun the same commands on the same local CSVs and obtain the same report types. It does not mean the processing center of each file has been identified.
@@ -214,6 +223,13 @@ python -m venv .venv
 On macOS or Linux, use `.venv/bin/python`.
 
 Put the FIRMS CSVs in `backend/data/raw/` before the commands that read them. Discovery, validation, EDA, investigation, temporal audit, and readiness all expect those local files.
+
+After the four July 2024 ZIP archives are copied into `backend/data/incoming/2024-07/`:
+
+```bash
+.venv\Scripts\python -m fire_data.ingest --dry-run
+.venv\Scripts\python -m fire_data.ingest
+```
 
 ## 12. Testing and validation
 
@@ -291,9 +307,10 @@ Software noted in the reports includes CesiumJS. OpenStreetMap imagery is used o
 
 ```text
 src/                  React dashboard. DEMO data only.
-backend/fire_data/    Discovery, validation, EDA, investigation, temporal audit, readiness.
+backend/fire_data/    Discovery, validation, EDA, investigation, temporal audit, readiness, ingestion.
 backend/tests/        Pytest suite.
 backend/reports/      Committed scientific reports and figures.
-backend/data/raw/     Local FIRMS CSVs. Gitignored.
+backend/data/raw/     Local FIRMS CSVs, including the untouched 7 July sample. Gitignored.
+backend/data/incoming/2024-07/  Drop folder for the four July 2024 ZIP archives. Gitignored.
 .env.example          Empty Cesium ion placeholder.
 ```

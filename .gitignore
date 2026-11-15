@@ -40,6 +40,8 @@ ui-debug.log
 backend/data/raw/**/*.csv
 backend/data/raw/**/*.zip
 backend/data/raw/**/*.txt
+backend/data/incoming/**/*.zip
+backend/data/incoming/**/*.csv
 backend/data/**/*.parquet
 backend/data/**/*.geoparquet
 backend/data/**/*.nc

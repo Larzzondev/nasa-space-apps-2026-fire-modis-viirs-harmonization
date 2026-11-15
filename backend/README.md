@@ -64,3 +64,14 @@ On macOS or Linux, use `.venv/bin/python` instead of `.venv\Scripts\python`.
 ```bash
 .venv\Scripts\python -m fire_data.readiness
 ```
+
+`ingest` reads four unmodified FIRMS ZIP archives from `data/incoming/2024-07/` and extracts one CSV into each subdirectory of `data/raw/monthly_2024_07/`. It does not write into the 7 July 2024 sample directories, does not overwrite an existing extract, and does not treat a missing date as zero detections. A dry run validates the archives and writes nothing.
+
+Copy the four ZIPs into `data/incoming/2024-07/` first. From this directory:
+
+```bash
+.venv\Scripts\python -m fire_data.ingest --dry-run
+.venv\Scripts\python -m fire_data.ingest
+```
+
+The second command writes `reports/ingestion_2024_07.json` only after the ZIPs are present. The incoming ZIPs and the extracted CSVs stay gitignored.
