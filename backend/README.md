@@ -75,3 +75,9 @@ Copy the four ZIPs into `data/incoming/2024-07/` first. From this directory:
 ```
 
 The second command writes `reports/ingestion_2024_07.json` only after the ZIPs are present. The incoming ZIPs and the extracted CSVs stay gitignored.
+
+`within_sensor_analysis` reads those July extracts and writes `reports/within_sensor_analysis_2024_07.md`, `reports/within_sensor_analysis_2024_07.json`, and `reports/figures/within_sensor_2024_07/`. It measures nearest neighbors, neighborhood counts, and DBSCAN components inside each satellite. Those results are not confirmed fires, `same_fire` stays `not_assessed`, and a date with no rows is left null. It does not calculate a harmonization coefficient or train a model.
+
+```bash
+.venv\Scripts\python -m fire_data.within_sensor_analysis
+```
